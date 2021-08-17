@@ -10,7 +10,7 @@ namespace RPGAdventure
         float MovementSpeed;
 
         //GameObject
-        private Rigidbody m_Rb;
+        private CharacterController m_CharController;
         private Camera m_MainCamera;
 
         //Movement
@@ -22,7 +22,7 @@ namespace RPGAdventure
 
         private void Awake()
         {
-            m_Rb = GetComponent<Rigidbody>();
+            m_CharController = GetComponent<CharacterController>();
             m_MainCamera = Camera.main;
         }
 
@@ -37,8 +37,8 @@ namespace RPGAdventure
             m_targetDirecton.y = 0;
             m_targetDirecton.Normalize();
 
-            m_Rb.MoveRotation(Quaternion.Euler(0, m_CameraRotation.eulerAngles.y, 0));
-            m_Rb.MovePosition(m_Rb.position + m_targetDirecton * MovementSpeed * Time.fixedDeltaTime);
+            m_CharController.transform.rotation = Quaternion.Euler(0, m_CameraRotation.eulerAngles.y, 0);
+            m_CharController.Move(m_targetDirecton * MovementSpeed * Time.fixedDeltaTime);
         }
     }
 }
