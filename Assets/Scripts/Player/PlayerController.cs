@@ -9,51 +9,36 @@ namespace RPGAdventure
         [SerializeField]
         float MovementSpeed;
 
-        [SerializeField]
-        float RotationSpeed;
-
         //GameObject
         private Rigidbody m_Rb;
+        private Camera m_MainCamera;
 
         //Movement
         private float m_HorizonalInput;
         private float m_VerticalInput;
         private Vector3 m_MovementDirection;
-        private Vector3 m_CameraDirection;
-        private Vector3 m_TargetDirection;
+        private Vector3 m_targetDirecton;
+        private Quaternion m_CameraRotation;
 
         private void Awake()
         {
             m_Rb = GetComponent<Rigidbody>();
-        }
-
-        void Start()
-        {
+            m_MainCamera = Camera.main;
         }
 
         void FixedUpdate()
         {
             m_HorizonalInput = Input.GetAxis("Horizontal");
             m_VerticalInput = Input.GetAxis("Vertical");
-            m_MovementDirection = new Vector3(m_HorizonalInput, 0, m_VerticalInput);
+            m_MovementDirection.Set(m_HorizonalInput, 0, m_VerticalInput);
 
-            /*if (m_MovementDirection.Equals(Vector3.zero))
-                return;
+            m_CameraRotation = m_MainCamera.transform.rotation;
+            m_targetDirecton = m_CameraRotation * m_MovementDirection;
+            m_targetDirecton.y = 0;
+            m_targetDirecton.Normalize();
 
-            m_CameraDirection = m_FollowingCamera.transform.rotation * m_MovementDirection;
-            m_TargetDirection = m_CameraDirection;
-            m_TargetDirection.y = .0f;
-
-            if (m_MovementDirection.z >= 0)
-            {
-                transform.rotation = Quaternion.Slerp(
-                    transform.rotation,
-                    Quaternion.LookRotation(m_TargetDirection),
-                    0.1f);
-            }
-
-            m_Rb.MovePosition(m_Rb.position + m_TargetDirection.normalized * MovementSpeed * Time.fixedDeltaTime);*/
-            m_Rb.MovePosition(m_Rb.position + m_MovementDirection.normalized * MovementSpeed * Time.fixedDeltaTime);
+            m_Rb.MoveRotation(Quaternion.Euler(0, m_CameraRotation.eulerAngles.y, 0));
+            m_Rb.MovePosition(m_Rb.position + m_targetDirecton * MovementSpeed * Time.fixedDeltaTime);
         }
     }
 }
