@@ -1,22 +1,25 @@
 using Cinemachine;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+namespace RPGAdventure
 {
-    [SerializeField]
-    CinemachineFreeLook FreeLookCamera;
-
-    void Update()
+    public class CameraController : MonoBehaviour
     {
-        if (Input.GetMouseButtonDown(1))
+        [SerializeField]
+        CinemachineFreeLook FreeLookCamera;
+
+        void Update()
         {
-            FreeLookCamera.m_YAxis.m_MaxSpeed = 10;
-            FreeLookCamera.m_XAxis.m_MaxSpeed = 650;
-        }
-        if (Input.GetMouseButtonUp(1))
-        {
-            FreeLookCamera.m_YAxis.m_MaxSpeed = 0;
-            FreeLookCamera.m_XAxis.m_MaxSpeed = 0;
+            if (Input.GetMouseButtonDown(1))
+            {
+                FreeLookCamera.m_YAxis.m_MaxSpeed = 10;
+                FreeLookCamera.m_XAxis.m_MaxSpeed = 650;
+            }
+            if (Input.GetMouseButtonUp(1))
+            {
+                FreeLookCamera.m_YAxis.m_MaxSpeed = 0;
+                FreeLookCamera.m_XAxis.m_MaxSpeed = 0;
+            }
         }
     }
 }
