@@ -13,7 +13,7 @@ namespace RPGAdventure
             get { return m_PlayerInput; }
         }
 
-        void FixedUpdate()
+        void Update()
         {
             m_PlayerInput.Set(
                 Input.GetAxis("Horizontal"),
