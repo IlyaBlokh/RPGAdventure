@@ -10,7 +10,12 @@ namespace RPGAdventure
 
         public Vector3 MoveInput
         {
-            get { return m_PlayerInput; }
+            get { return m_PlayerInput.normalized; }
+        }
+
+        public bool IsMoving
+        {
+            get { return !Mathf.Approximately(m_PlayerInput.magnitude, 0); }
         }
 
         void Update()

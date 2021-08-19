@@ -8,6 +8,11 @@ namespace RPGAdventure
         [SerializeField]
         CinemachineFreeLook FreeLookCamera;
 
+        public CinemachineFreeLook m_FreeLookCamera
+        {
+            get { return FreeLookCamera; }
+        }
+
         void Update()
         {
             if (Input.GetMouseButtonDown(1))
