@@ -40,7 +40,7 @@ namespace RPGAdventure
             m_CharController = GetComponent<CharacterController>();
             m_PlayerInput = GetComponent<PlayerInput>();
             m_Animator = GetComponent<Animator>();
-            m_CameraController = GetComponent<CameraController>();
+            m_CameraController = Camera.main.GetComponent<CameraController>();
         }
 
         private void FixedUpdate()
@@ -57,6 +57,11 @@ namespace RPGAdventure
                 m_DesiredForwardSpeed, 
                 (m_PlayerInput.IsMoving? k_Acceleration : k_Deceleration) * Time.fixedDeltaTime);
             m_Animator.SetFloat(m_HashedForwardSpeed, m_ForwardSpeed);
+        }
+
+        private void OnAnimatorMove()
+        {
+            m_CharController.Move(m_Animator.deltaPosition);
         }
 
         private void ComputeRotation()
