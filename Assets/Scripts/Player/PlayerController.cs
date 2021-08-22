@@ -10,13 +10,16 @@ namespace RPGAdventure
         const float k_Deceleration = 40.0f;
 
         [SerializeField]
-        float MaxMovementSpeed = 8.0f;
+        float MaxMovementSpeed = 12.0f;
 
         [SerializeField]
         float MinRotationSpeed = 400.0f;
 
         [SerializeField]
         float MaxRotationSpeed = 1200.0f;
+
+        [SerializeField]
+        float Gravity = 10.0f;
 
         //Components
         private CharacterController m_CharController;
@@ -27,7 +30,9 @@ namespace RPGAdventure
         //Movement
         private float m_DesiredForwardSpeed;
         private float m_ForwardSpeed = .0f;
+        private float m_VerticalSpeed = .0f;
         private readonly int m_HashedForwardSpeed = Animator.StringToHash("ForwardSpeed");
+        private Vector3 m_MovementDirection;
 
         //Rotation
         private Quaternion m_MovementRotation;
@@ -45,11 +50,12 @@ namespace RPGAdventure
 
         private void FixedUpdate()
         {
-            ComputeMovement();
+            ComputeForwardMovement();
+            ComputeVerticalMovement();
             ComputeRotation();
         }
 
-        private void ComputeMovement()
+        private void ComputeForwardMovement()
         {
             m_DesiredForwardSpeed = m_PlayerInput.MoveInput.magnitude * MaxMovementSpeed;
             m_ForwardSpeed = Mathf.MoveTowards(
@@ -59,9 +65,16 @@ namespace RPGAdventure
             m_Animator.SetFloat(m_HashedForwardSpeed, m_ForwardSpeed);
         }
 
+        private void ComputeVerticalMovement()
+        {
+            m_VerticalSpeed = -Gravity;
+        }
+
         private void OnAnimatorMove()
         {
-            m_CharController.Move(m_Animator.deltaPosition);
+            m_MovementDirection = m_Animator.deltaPosition;
+            m_MovementDirection += Vector3.up * m_VerticalSpeed * Time.fixedDeltaTime;
+            m_CharController.Move(m_MovementDirection);
         }
 
         private void ComputeRotation()
