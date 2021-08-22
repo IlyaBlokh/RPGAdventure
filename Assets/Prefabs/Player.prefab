@@ -1455,7 +1455,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 7e30eee73c241d5448ce0ac372cf6602, type: 3}
   m_Controller: {fileID: 9100000, guid: 8376ee38c6c42044f8cc78e1f702f279, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -1516,7 +1516,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a3aa3fe23dbcd54bbfe1a350785a348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 20
+  MaxMovementSpeed: 12
+  MinRotationSpeed: 400
+  MaxRotationSpeed: 1200
+  Gravity: 10
 --- !u!143 &2483567010061508714
 CharacterController:
   m_ObjectHideFlags: 0

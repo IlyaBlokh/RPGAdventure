@@ -6,8 +6,10 @@ namespace RPGAdventure
 {
     public class PlayerController : MonoBehaviour
     {
-        const float k_Acceleration = 20.0f;
-        const float k_Deceleration = 40.0f;
+        public static PlayerController Instance
+        {
+            get { return s_Instance; }
+        }
 
         [SerializeField]
         float MaxMovementSpeed = 12.0f;
@@ -21,6 +23,8 @@ namespace RPGAdventure
         [SerializeField]
         float Gravity = 10.0f;
 
+
+        private static PlayerController s_Instance;
         //Components
         private CharacterController m_CharController;
         private CameraController m_CameraController;
@@ -40,12 +44,15 @@ namespace RPGAdventure
         private Quaternion m_TargetRotation;
         private float m_RotationSpeed;
 
+        const float k_Acceleration = 20.0f;
+        const float k_Deceleration = 40.0f;
         private void Awake()
         {
             m_CharController = GetComponent<CharacterController>();
             m_PlayerInput = GetComponent<PlayerInput>();
             m_Animator = GetComponent<Animator>();
             m_CameraController = Camera.main.GetComponent<CameraController>();
+            s_Instance = this;
         }
 
         private void FixedUpdate()
