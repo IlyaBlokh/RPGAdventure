@@ -12,6 +12,12 @@ namespace RPGAdventure
         [SerializeField]
         float MaxMovementSpeed = 8.0f;
 
+        [SerializeField]
+        float MinRotationSpeed = 400.0f;
+
+        [SerializeField]
+        float MaxRotationSpeed = 1200.0f;
+
         //Components
         private CharacterController m_CharController;
         private CameraController m_CameraController;
@@ -27,6 +33,7 @@ namespace RPGAdventure
         private Quaternion m_MovementRotation;
         private Vector3 m_CameraDirection;
         private Quaternion m_TargetRotation;
+        private float m_RotationSpeed;
 
         private void Awake()
         {
@@ -55,10 +62,24 @@ namespace RPGAdventure
         private void ComputeRotation()
         {
             m_MovementRotation = Quaternion.FromToRotation(Vector3.forward, m_PlayerInput.MoveInput);
-            m_CameraDirection = Quaternion.Euler(0, m_CameraController.m_FreeLookCamera.m_XAxis.Value, 0) * Vector3.forward;
-            m_TargetRotation = Quaternion.LookRotation(m_MovementRotation * m_CameraDirection);
+
+            if (Mathf.Approximately(Vector3.Dot(Vector3.forward, m_PlayerInput.MoveInput), -1))
+            {
+                m_TargetRotation = Quaternion.LookRotation(-m_CameraDirection);
+            }
+            else
+            {
+                m_CameraDirection = Quaternion.Euler(0, m_CameraController.m_FreeLookCamera.m_XAxis.Value, 0) * Vector3.forward;
+                m_TargetRotation = Quaternion.LookRotation(m_MovementRotation * m_CameraDirection);
+            }
+
             if (m_PlayerInput.IsMoving)
             {
+                m_RotationSpeed = Mathf.Lerp(MaxRotationSpeed, MinRotationSpeed , m_ForwardSpeed / m_DesiredForwardSpeed);
+                m_TargetRotation = Quaternion.RotateTowards(
+                    transform.rotation,
+                    m_TargetRotation,
+                    m_RotationSpeed * Time.fixedDeltaTime);
                 transform.rotation = m_TargetRotation;
             }
         }
