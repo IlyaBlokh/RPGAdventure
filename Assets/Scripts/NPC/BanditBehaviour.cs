@@ -11,7 +11,8 @@ namespace RPGAdventure
         [SerializeField]
         float DetectionAngle = 90.0f;
 
-        private float m_CurrentDistance;
+        private float m_DistanceToPlayer;
+        private Vector3 m_LookAtPlayer;
 
         private void Update()
         {
@@ -25,15 +26,17 @@ namespace RPGAdventure
                 return null;
             }
 
-            m_CurrentDistance = (PlayerController.Instance.transform.position - transform.position).magnitude;
-            if (m_CurrentDistance <= DetectionRange)
+            m_LookAtPlayer = PlayerController.Instance.transform.position - transform.position;
+            m_DistanceToPlayer = m_LookAtPlayer.magnitude;
+            if (m_DistanceToPlayer <= DetectionRange)
             {
-                return PlayerController.Instance;
+                if (Vector3.Dot(transform.forward, m_LookAtPlayer) > Mathf.Cos(Mathf.Deg2Rad * DetectionAngle / 2))
+                {
+                    return PlayerController.Instance;
+                }
             }
-            else
-            {
-                return null;
-            }
+
+            return null;
         }
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
