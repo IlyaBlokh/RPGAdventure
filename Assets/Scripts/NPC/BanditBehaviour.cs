@@ -8,6 +8,8 @@ namespace RPGAdventure
     {
         [SerializeField]
         float DetectionRange = 10.0f;
+        [SerializeField]
+        float DetectionAngle = 90.0f;
 
         private float m_CurrentDistance;
 
@@ -33,5 +35,18 @@ namespace RPGAdventure
                 return null;
             }
         }
+#if UNITY_EDITOR
+        private void OnDrawGizmosSelected()
+        {
+            UnityEditor.Handles.color = new Color(0.8f, 0, 0, 0.4f);
+            Vector3 m_RotatedForward = Quaternion.Euler(0, -DetectionAngle / 2, 0) * transform.forward;
+            UnityEditor.Handles.DrawSolidArc(
+                transform.position,
+                Vector3.up,
+                m_RotatedForward,
+                DetectionAngle,
+                DetectionRange);
+        }
+#endif
     }
 }
