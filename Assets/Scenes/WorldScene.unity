@@ -354,7 +354,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206395341}
   m_LocalRotation: {x: -0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -10, y: 1.5, z: -17.99}
+  m_LocalPosition: {x: -10, y: 1.45, z: -18.06}
   m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 127503574}
@@ -2522,6 +2522,10 @@ PrefabInstance:
       propertyPath: DetectionRange
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8949339792170754615, guid: c08383f595b01af42abc8d0cfcf4ac8c, type: 3}
+      propertyPath: TimeToReturnToSpotPos
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c08383f595b01af42abc8d0cfcf4ac8c, type: 3}
 --- !u!1001 &8965270943736439036
@@ -2582,6 +2586,10 @@ PrefabInstance:
     - target: {fileID: 6781415423198019732, guid: 0501fba4e7a82c0448c5e2bb863a142b, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682198836124395831, guid: 0501fba4e7a82c0448c5e2bb863a142b, type: 3}
+      propertyPath: MinRotationSpeed
+      value: 800
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0501fba4e7a82c0448c5e2bb863a142b, type: 3}

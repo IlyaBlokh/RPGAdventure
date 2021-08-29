@@ -1,5 +1,6 @@
 using UnityEngine.AI;
 using UnityEngine;
+using System.Collections;
 
 namespace RPGAdventure
 {
@@ -11,43 +12,58 @@ namespace RPGAdventure
         float DetectionAngle = 90.0f;
         [SerializeField]
         float TimeToStopPursuit = 2.0f;
+        [SerializeField]
+        float TimeToReturnToSpotPos = 2.0f;
 
 
         private NavMeshAgent m_NavMeshAgent;
 
         private float m_DistanceToPlayer;
         private Vector3 m_LookAtPlayer;
-        private PlayerController m_Target;
+        private PlayerController m_MemorizedTarget;
         private float m_TimeNoDetecting;
+        private Vector3 m_SpotPosition;
 
         private void Awake()
         {
             m_NavMeshAgent = GetComponent<NavMeshAgent>();
+            m_SpotPosition = transform.position;
         }
 
         private void Update()
         {
-            var target = LookForPlayer();
-            if (m_Target == null)
+            var targetSpottedNow = LookForPlayer();
+            if (m_MemorizedTarget == null)
             {
-                if (target != null)
+                if (targetSpottedNow != null)
                 {
-                    m_Target = target;
+                    m_MemorizedTarget = targetSpottedNow;
                 }
             }
             else
             {
-                m_NavMeshAgent.SetDestination(m_Target.transform.position);
-                if (target == null)
+                m_NavMeshAgent.SetDestination(m_MemorizedTarget.transform.position);
+                if (targetSpottedNow == null)
                 {
                     m_TimeNoDetecting += Time.deltaTime;
                     if (m_TimeNoDetecting > TimeToStopPursuit)
                     {
-                        m_Target = null;
+                        m_MemorizedTarget = null;
                         m_TimeNoDetecting = .0f;
+                        StartCoroutine(ReturnToSpotPosition());
                     }
                 }
+                else
+                {
+                    m_TimeNoDetecting = .0f;
+                }
             }
+        }
+
+        private IEnumerator ReturnToSpotPosition()
+        {
+            yield return new WaitForSeconds(TimeToReturnToSpotPos);
+            m_NavMeshAgent.SetDestination(m_SpotPosition);
         }
 
         private PlayerController LookForPlayer()
