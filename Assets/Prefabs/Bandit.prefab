@@ -2253,6 +2253,7 @@ GameObject:
   - component: {fileID: 7024818442592757703}
   - component: {fileID: 7042431936196571195}
   - component: {fileID: 8949339792170754615}
+  - component: {fileID: 5736420700930012240}
   m_Layer: 0
   m_Name: Bandit
   m_TagString: Untagged
@@ -2353,6 +2354,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 637cc6beaeb3e6d46b1b769df951f8c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DetectionRange: 10
+  DetectionAngle: 90
+  TimeToStopPursuit: 2
+  TimeToReturnToSpotPos: 2
+--- !u!114 &5736420700930012240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6929509841265667465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610afacfb6f63d64d94a60fc62e7e458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeedModifyer: 0.7
 --- !u!1 &6929511641289839865
 GameObject:
   m_ObjectHideFlags: 0

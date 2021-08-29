@@ -15,18 +15,26 @@ namespace RPGAdventure
         [SerializeField]
         float TimeToReturnToSpotPos = 2.0f;
 
+        //Components
+        private EnemyController m_EnemyController;
+        private Animator m_Animator;
 
-        private NavMeshAgent m_NavMeshAgent;
-
+        //AI
         private float m_DistanceToPlayer;
         private Vector3 m_LookAtPlayer;
+        private Vector3 m_SpotPosition;
         private PlayerController m_MemorizedTarget;
         private float m_TimeNoDetecting;
-        private Vector3 m_SpotPosition;
+        private Vector3 m_toBase;
+
+        private readonly int m_HashedInPursuit = Animator.StringToHash("inPursuit");
+        private readonly int m_HashedNearSpot = Animator.StringToHash("NearSpot");
+        private readonly int m_HashedIsAwared = Animator.StringToHash("isAwared");
 
         private void Awake()
         {
-            m_NavMeshAgent = GetComponent<NavMeshAgent>();
+            m_EnemyController = GetComponent<EnemyController>();
+            m_Animator = GetComponent<Animator>();
             m_SpotPosition = transform.position;
         }
 
@@ -42,14 +50,16 @@ namespace RPGAdventure
             }
             else
             {
-                m_NavMeshAgent.SetDestination(m_MemorizedTarget.transform.position);
+                m_EnemyController.SetDestination(m_MemorizedTarget.transform.position);
+                m_Animator.SetBool(m_HashedInPursuit, true);
+                m_Animator.SetBool(m_HashedIsAwared, false);
                 if (targetSpottedNow == null)
                 {
                     m_TimeNoDetecting += Time.deltaTime;
                     if (m_TimeNoDetecting > TimeToStopPursuit)
                     {
                         m_MemorizedTarget = null;
-                        m_TimeNoDetecting = .0f;
+                        m_Animator.SetBool(m_HashedIsAwared, true);
                         StartCoroutine(ReturnToSpotPosition());
                     }
                 }
@@ -58,12 +68,18 @@ namespace RPGAdventure
                     m_TimeNoDetecting = .0f;
                 }
             }
+
+            m_toBase = m_SpotPosition - transform.position;
+            m_toBase.y = .0f;
+            m_Animator.SetBool(m_HashedNearSpot, Mathf.Approximately(m_toBase.magnitude, .0f));
         }
 
         private IEnumerator ReturnToSpotPosition()
         {
             yield return new WaitForSeconds(TimeToReturnToSpotPos);
-            m_NavMeshAgent.SetDestination(m_SpotPosition);
+            m_EnemyController.SetDestination(m_SpotPosition);
+            m_Animator.SetBool(m_HashedIsAwared, false);
+            m_Animator.SetBool(m_HashedInPursuit, false);
         }
 
         private PlayerController LookForPlayer()
