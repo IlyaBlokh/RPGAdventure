@@ -3,31 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour
+namespace RPGAdventure
 {
-    [SerializeField]
-    float SpeedModifyer = 0.7f;
-
-    //Components
-    private NavMeshAgent m_NavMeshAgent;
-    private Animator m_Animator;
-
-    private void Awake()
+    public class EnemyController : MonoBehaviour
     {
-        m_NavMeshAgent = GetComponent<NavMeshAgent>();
-        m_Animator = GetComponent<Animator>();
-    }
+        [SerializeField]
+        float SpeedModifyer = 0.7f;
 
-    private void OnAnimatorMove()
-    {
-        if (m_NavMeshAgent == null) return;
+        //Components
+        private NavMeshAgent m_NavMeshAgent;
+        private Animator m_Animator;
 
-        m_NavMeshAgent.speed = (m_Animator.deltaPosition / Time.fixedDeltaTime).magnitude;
-        m_NavMeshAgent.speed *= SpeedModifyer;
-    }
+        private void Awake()
+        {
+            m_NavMeshAgent = GetComponent<NavMeshAgent>();
+            m_Animator = GetComponent<Animator>();
+        }
 
-    public bool SetDestination(Vector3 destination)
-    {
-        return m_NavMeshAgent.SetDestination(destination);
+        private void OnAnimatorMove()
+        {
+            if (m_NavMeshAgent == null) return;
+
+            m_NavMeshAgent.speed = (m_Animator.deltaPosition / Time.fixedDeltaTime).magnitude;
+            m_NavMeshAgent.speed *= SpeedModifyer;
+        }
+
+        public bool SetDestination(Vector3 destination)
+        {
+            return m_NavMeshAgent.SetDestination(destination);
+        }
     }
 }
