@@ -24,15 +24,22 @@ namespace RPGAdventure
 
         private void OnAnimatorMove()
         {
-            if (m_NavMeshAgent == null) return;
-
-            m_NavMeshAgent.speed = (m_Animator.deltaPosition / Time.fixedDeltaTime).magnitude;
-            m_NavMeshAgent.speed *= SpeedModifyer;
+            if (m_NavMeshAgent.enabled)
+            {
+                m_NavMeshAgent.speed = (m_Animator.deltaPosition / Time.fixedDeltaTime).magnitude;
+                m_NavMeshAgent.speed *= SpeedModifyer;
+            }
         }
 
         public bool SetDestination(Vector3 destination)
         {
+            if (!m_NavMeshAgent.enabled) m_NavMeshAgent.enabled = true;
             return m_NavMeshAgent.SetDestination(destination);
+        }
+
+        public void DisableNavMeshAgent()
+        {
+            m_NavMeshAgent.enabled = false;
         }
     }
 }

@@ -50,6 +50,7 @@ namespace RPGAdventure
 
                 if((m_MemorizedTarget.transform.position - transform.position).magnitude <= m_EnemyController.NavMeshAgent.stoppingDistance)
                 {
+                    m_EnemyController.DisableNavMeshAgent();
                     m_Animator.SetTrigger(m_HashedAttack);
                 }
                 else
