@@ -2254,6 +2254,7 @@ GameObject:
   - component: {fileID: 7042431936196571195}
   - component: {fileID: 8949339792170754615}
   - component: {fileID: 5736420700930012240}
+  - component: {fileID: 1651231980}
   m_Layer: 0
   m_Name: Bandit
   m_TagString: Untagged
@@ -2291,10 +2292,10 @@ Animator:
   m_GameObject: {fileID: 6929509841265667465}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 7e30eee73c241d5448ce0ac372cf6602, type: 3}
-  m_Controller: {fileID: 9100000, guid: d7c55390ab0320c47b84f63184ecb1b9, type: 2}
+  m_Controller: {fileID: 9100000, guid: bbbe52fb7eea7144c932bc4e75aee9b4, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -2354,10 +2355,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 637cc6beaeb3e6d46b1b769df951f8c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DetectionRange: 10
-  DetectionAngle: 90
   TimeToStopPursuit: 2
   TimeToReturnToSpotPos: 2
+  m_PlayerScanner:
+    DetectionRange: 10
+    DetectionAngle: 90
 --- !u!114 &5736420700930012240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2371,6 +2373,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpeedModifyer: 0.7
+--- !u!195 &1651231980
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6929509841265667465}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 7
+  m_Acceleration: 200
+  avoidancePriority: 50
+  m_AngularSpeed: 600
+  m_StoppingDistance: 1.1
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &6929511641289839865
 GameObject:
   m_ObjectHideFlags: 0

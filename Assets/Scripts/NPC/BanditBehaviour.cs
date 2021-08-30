@@ -26,6 +26,7 @@ namespace RPGAdventure
         private readonly int m_HashedInPursuit = Animator.StringToHash("inPursuit");
         private readonly int m_HashedNearSpot = Animator.StringToHash("NearSpot");
         private readonly int m_HashedIsAwared = Animator.StringToHash("isAwared");
+        private readonly int m_HashedAttack = Animator.StringToHash("Attack");
 
         private void Awake()
         {
@@ -46,9 +47,18 @@ namespace RPGAdventure
             }
             else
             {
-                m_EnemyController.SetDestination(m_MemorizedTarget.transform.position);
-                m_Animator.SetBool(m_HashedInPursuit, true);
-                m_Animator.SetBool(m_HashedIsAwared, false);
+
+                if((m_MemorizedTarget.transform.position - transform.position).magnitude <= m_EnemyController.NavMeshAgent.stoppingDistance)
+                {
+                    m_Animator.SetTrigger(m_HashedAttack);
+                }
+                else
+                {
+                    m_EnemyController.SetDestination(m_MemorizedTarget.transform.position);
+                    m_Animator.SetBool(m_HashedInPursuit, true);
+                    m_Animator.SetBool(m_HashedIsAwared, false);
+                }
+
                 if (targetSpottedNow == null)
                 {
                     m_TimeNoDetecting += Time.deltaTime;

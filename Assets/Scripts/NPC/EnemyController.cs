@@ -14,6 +14,8 @@ namespace RPGAdventure
         private NavMeshAgent m_NavMeshAgent;
         private Animator m_Animator;
 
+        public NavMeshAgent NavMeshAgent { get => m_NavMeshAgent; set => m_NavMeshAgent = value; }
+
         private void Awake()
         {
             m_NavMeshAgent = GetComponent<NavMeshAgent>();
