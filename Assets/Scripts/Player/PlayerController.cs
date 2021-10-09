@@ -44,6 +44,10 @@ namespace RPGAdventure
         private Quaternion m_TargetRotation;
         private float m_RotationSpeed;
 
+        //Combat
+        private readonly int m_HashedMeleeAttack= Animator.StringToHash("MeleeAttack");
+
+
         const float k_Acceleration = 20.0f;
         const float k_Deceleration = 40.0f;
         private void Awake()
@@ -60,6 +64,7 @@ namespace RPGAdventure
             ComputeForwardMovement();
             ComputeVerticalMovement();
             ComputeRotation();
+            Combat();
         }
 
         private void ComputeForwardMovement()
@@ -106,6 +111,15 @@ namespace RPGAdventure
                     m_TargetRotation,
                     m_RotationSpeed * Time.fixedDeltaTime);
                 transform.rotation = m_TargetRotation;
+            }
+        }
+    
+        private void Combat()
+        {
+            m_Animator.ResetTrigger(m_HashedMeleeAttack);
+            if (m_PlayerInput.IsAttacking)
+            {
+                m_Animator.SetTrigger(m_HashedMeleeAttack);
             }
         }
     }
