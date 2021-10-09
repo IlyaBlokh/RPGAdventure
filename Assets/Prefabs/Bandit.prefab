@@ -2360,6 +2360,7 @@ MonoBehaviour:
   m_PlayerScanner:
     DetectionRange: 10
     DetectionAngle: 90
+  AttackDistance: 1.1
 --- !u!114 &5736420700930012240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2387,7 +2388,7 @@ NavMeshAgent:
   m_Acceleration: 200
   avoidancePriority: 50
   m_AngularSpeed: 600
-  m_StoppingDistance: 1.1
+  m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

@@ -12,6 +12,8 @@ namespace RPGAdventure
         float TimeToReturnToSpotPos = 2.0f;
         [SerializeField]
         PlayerScanner m_PlayerScanner;
+        [SerializeField]
+        float AttackDistance = 1.1f;
 
         //Components
         private EnemyController m_EnemyController;
@@ -48,7 +50,7 @@ namespace RPGAdventure
             else
             {
 
-                if((m_MemorizedTarget.transform.position - transform.position).magnitude <= m_EnemyController.NavMeshAgent.stoppingDistance)
+                if((m_MemorizedTarget.transform.position - transform.position).magnitude <= AttackDistance)
                 {
                     m_EnemyController.DisableNavMeshAgent();
                     m_Animator.SetTrigger(m_HashedAttack);
