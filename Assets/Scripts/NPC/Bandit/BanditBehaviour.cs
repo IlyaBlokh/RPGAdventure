@@ -24,6 +24,7 @@ namespace RPGAdventure
         private PlayerController m_MemorizedTarget;
         private float m_TimeNoDetecting;
         private Vector3 m_toBase;
+        private Quaternion m_initialRotation;
 
         private readonly int m_HashedInPursuit = Animator.StringToHash("inPursuit");
         private readonly int m_HashedNearSpot = Animator.StringToHash("NearSpot");
@@ -35,6 +36,7 @@ namespace RPGAdventure
             m_EnemyController = GetComponent<EnemyController>();
             m_Animator = GetComponent<Animator>();
             m_SpotPosition = transform.position;
+            m_initialRotation = transform.rotation;
         }
 
         private void Update()
@@ -80,7 +82,12 @@ namespace RPGAdventure
 
             m_toBase = m_SpotPosition - transform.position;
             m_toBase.y = .0f;
-            m_Animator.SetBool(m_HashedNearSpot, Mathf.Approximately(m_toBase.magnitude, .0f));
+            var isOnSpot = Mathf.Approximately(m_toBase.magnitude, .0f);
+            m_Animator.SetBool(m_HashedNearSpot, isOnSpot);
+            if (isOnSpot)
+            {
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, m_initialRotation, 360 * Time.deltaTime);
+            }
         }
 
         private IEnumerator ReturnToSpotPosition()
