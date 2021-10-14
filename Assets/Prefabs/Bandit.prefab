@@ -2255,6 +2255,7 @@ GameObject:
   - component: {fileID: 8949339792170754615}
   - component: {fileID: 5736420700930012240}
   - component: {fileID: 1651231980}
+  - component: {fileID: 6930727367220174745}
   m_Layer: 0
   m_Name: Bandit
   m_TagString: Untagged
@@ -2360,7 +2361,7 @@ MonoBehaviour:
   m_PlayerScanner:
     DetectionRange: 10
     DetectionAngle: 90
-  AttackDistance: 1.1
+  AttackDistance: 1.4
 --- !u!114 &5736420700930012240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2396,6 +2397,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &6930727367220174745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6929509841265667465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68717390e895ad44db1e69e1e82f49dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
 --- !u!1 &6929511641289839865
 GameObject:
   m_ObjectHideFlags: 0
