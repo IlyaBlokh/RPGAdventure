@@ -23,6 +23,9 @@ namespace RPGAdventure
         [SerializeField]
         float Gravity = 10.0f;
 
+        [SerializeField]
+        MeleeWeapon MeleeWeapon;
+
 
         private static PlayerController s_Instance;
         //Components
@@ -120,6 +123,7 @@ namespace RPGAdventure
             if (m_PlayerInput.IsAttacking)
             {
                 m_Animator.SetTrigger(m_HashedMeleeAttack);
+                MeleeWeapon.Attack();
             }
         }
     }

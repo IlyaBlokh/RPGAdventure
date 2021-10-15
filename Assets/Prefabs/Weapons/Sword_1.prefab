@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7240467790482630401}
   - component: {fileID: 7240467790481499585}
   - component: {fileID: 5823240419116518496}
+  - component: {fileID: 4596547136509981915}
   m_Layer: 0
   m_Name: Sword_1
   m_TagString: Untagged
@@ -26,8 +27,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7240467790483438337}
-  m_LocalRotation: {x: -0.6754145, y: 0.12551591, z: -0.015406724, w: 0.7265147}
-  m_LocalPosition: {x: 0.247, y: 0.343, z: -2.206}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -95,3 +96,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 15
+--- !u!114 &4596547136509981915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7240467790483438337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29cc443efa0543b488c1b7f7c86430d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToFollow: {fileID: 0}

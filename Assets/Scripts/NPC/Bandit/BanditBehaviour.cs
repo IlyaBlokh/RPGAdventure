@@ -125,6 +125,12 @@ namespace RPGAdventure
                 m_RotatedForward,
                 m_PlayerScanner.DetectionAngle,
                 m_PlayerScanner.DetectionRange);
+            UnityEditor.Handles.DrawSolidArc(
+                transform.position,
+                Vector3.up,
+                m_RotatedForward,
+                360,
+                m_PlayerScanner.MeleeDetectionRange);
         }
 #endif
     }

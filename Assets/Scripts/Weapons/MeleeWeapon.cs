@@ -8,5 +8,10 @@ namespace RPGAdventure
     {
         [SerializeField]
         float Damage;
+
+        public void Attack()
+        {
+            Debug.Log("Melee weapon is swinging");
+        }
     }
 }
