@@ -47,6 +47,11 @@ namespace RPGAdventure
 
         private void Update()
         {
+            GuardPosition();
+        }
+
+        private void GuardPosition()
+        {
             var detectedTarget = m_PlayerScanner.Search(transform);
             bool hasDetectedTarget = detectedTarget != null;
 
@@ -62,19 +67,11 @@ namespace RPGAdventure
                 }
                 else
                 {
-                    StopPursuit();                   
+                    StopPursuit();
                 }
             }
 
             CheckOnSpotPosition();
-        }
-
-        private IEnumerator ReturnToSpotPosition()
-        {
-            yield return new WaitForSeconds(TimeToReturnToSpotPos);
-            m_EnemyController.SetDestination(m_SpotPosition);
-            m_Animator.SetBool(m_HashedIsAwared, false);
-            m_Animator.SetBool(m_HashedInPursuit, false);
         }
 
         private void AttackOrPursuit()
@@ -82,17 +79,27 @@ namespace RPGAdventure
             m_toTarget = m_FollowTarget.transform.position - transform.position;
             if (m_toTarget.magnitude <= AttackDistance)
             {
-                var targetRotation = Quaternion.LookRotation(m_toTarget);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 * Time.deltaTime);
-                m_EnemyController.DisableNavMeshAgent();
-                m_Animator.SetTrigger(m_HashedAttack);
+                Attack();
             }
             else
             {
-                m_EnemyController.SetDestination(m_FollowTarget.transform.position);
-                m_Animator.SetBool(m_HashedInPursuit, true);
-                m_Animator.SetBool(m_HashedIsAwared, false);
+                Pursuit();
             }
+        }
+
+        private void Attack()
+        {
+            var targetRotation = Quaternion.LookRotation(m_toTarget);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 * Time.deltaTime);
+            m_EnemyController.DisableNavMeshAgent();
+            m_Animator.SetTrigger(m_HashedAttack);
+        }
+
+        private void Pursuit()
+        {
+            m_EnemyController.SetDestination(m_FollowTarget.transform.position);
+            m_Animator.SetBool(m_HashedInPursuit, true);
+            m_Animator.SetBool(m_HashedIsAwared, false);
         }
 
         private void StopPursuit()
@@ -104,6 +111,14 @@ namespace RPGAdventure
                 m_Animator.SetBool(m_HashedIsAwared, true);
                 StartCoroutine(ReturnToSpotPosition());
             }
+        }
+
+        private IEnumerator ReturnToSpotPosition()
+        {
+            yield return new WaitForSeconds(TimeToReturnToSpotPos);
+            m_EnemyController.SetDestination(m_SpotPosition);
+            m_Animator.SetBool(m_HashedIsAwared, false);
+            m_Animator.SetBool(m_HashedInPursuit, false);
         }
 
         private void CheckOnSpotPosition()
