@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace RPGAdventure
 {
-    public class Damageable : MonoBehaviour
+    public class MeleeWeapon : MonoBehaviour
     {
         [SerializeField]
-        float maxHP;
+        float Damage;
     }
 }
