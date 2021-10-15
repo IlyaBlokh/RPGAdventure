@@ -24,6 +24,7 @@ namespace RPGAdventure
         private PlayerController m_FollowTarget;
         private float m_TimeNoDetecting;
         private Vector3 m_toBase;
+        private Vector3 m_toTarget;
         private Quaternion m_initialRotation;
 
         private bool HasFollowTarget
@@ -78,8 +79,11 @@ namespace RPGAdventure
 
         private void AttackOrPursuit()
         {
-            if ((m_FollowTarget.transform.position - transform.position).magnitude <= AttackDistance)
+            m_toTarget = m_FollowTarget.transform.position - transform.position;
+            if (m_toTarget.magnitude <= AttackDistance)
             {
+                var targetRotation = Quaternion.LookRotation(m_toTarget);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 * Time.deltaTime);
                 m_EnemyController.DisableNavMeshAgent();
                 m_Animator.SetTrigger(m_HashedAttack);
             }
