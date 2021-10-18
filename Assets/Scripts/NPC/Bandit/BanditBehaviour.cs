@@ -4,7 +4,7 @@ using System.Collections;
 
 namespace RPGAdventure
 {
-    public class BanditBehaviour : MonoBehaviour
+    public class BanditBehaviour : MonoBehaviour, IAttackAnimListener
     {
         [SerializeField]
         float TimeToStopPursuit = 2.0f;
@@ -113,6 +113,11 @@ namespace RPGAdventure
             }
         }
 
+        public void AE_Attack(int AttackStatus)
+        {
+            throw new System.NotImplementedException();
+        }
+
         private IEnumerator ReturnToSpotPosition()
         {
             yield return new WaitForSeconds(TimeToReturnToSpotPos);
@@ -151,6 +156,7 @@ namespace RPGAdventure
                 360,
                 m_PlayerScanner.MeleeDetectionRange);
         }
+
 #endif
     }
 }

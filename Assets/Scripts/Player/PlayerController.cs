@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace RPGAdventure
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour, IAttackAnimListener
     {
         public static PlayerController Instance
         {
