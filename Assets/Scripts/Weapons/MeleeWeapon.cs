@@ -22,6 +22,7 @@ namespace RPGAdventure
 
         private bool isAttacking = false;
         private Vector3[] originalAttackPointPosition;
+        private RaycastHit[] raycastHits = new RaycastHit[32];
 
         private void FixedUpdate()
         {
@@ -32,9 +33,25 @@ namespace RPGAdventure
                     AttackPoint ap = attackPoints[i];
                     Vector3 currentWorldPos = ap.root.position +
                         ap.root.TransformVector(attackPoints[i].offset);
-                    Vector3 attackVector = currentWorldPos - originalAttackPointPosition[i];
+                    Vector3 attackVector = (currentWorldPos - originalAttackPointPosition[i]).normalized;
                     Ray ray = new Ray(currentWorldPos, attackVector);
                     Debug.DrawRay(currentWorldPos, attackVector, Color.red, 4.0f);
+
+                    var hitCount = Physics.SphereCastNonAlloc(
+                        ray,
+                        ap.radius,
+                        raycastHits,
+                        attackVector.magnitude,
+                        ~0,
+                        QueryTriggerInteraction.Ignore);
+
+                    for (var j =0; j < hitCount; j++)
+                    {
+                        Collider collider = raycastHits[j].collider;
+                        Debug.Log("Hit!");
+                    }
+
+                    originalAttackPointPosition[i] = currentWorldPos;
                 }
             }
         }

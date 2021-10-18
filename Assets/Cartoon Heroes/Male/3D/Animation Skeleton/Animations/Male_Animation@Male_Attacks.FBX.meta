@@ -399,7 +399,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 1
         messageOptions: 0
-      - time: 0.620438
+      - time: 0.42303535
         functionName: AE_Attack
         data: 
         objectReferenceParameter: {instanceID: 0}
