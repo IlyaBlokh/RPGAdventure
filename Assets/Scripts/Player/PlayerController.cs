@@ -117,14 +117,19 @@ namespace RPGAdventure
             }
         }
     
+        public void AE_Attack (int AttackStatus)
+        {
+            MeleeWeapon.UpdateAttack(AttackStatus == 1);
+        }
+
         private void Combat()
         {
             m_Animator.ResetTrigger(m_HashedMeleeAttack);
             if (m_PlayerInput.IsAttacking)
             {
                 m_Animator.SetTrigger(m_HashedMeleeAttack);
-                MeleeWeapon.Attack();
             }
         }
+
     }
 }

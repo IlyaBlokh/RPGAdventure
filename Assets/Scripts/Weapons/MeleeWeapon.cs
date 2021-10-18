@@ -25,27 +25,33 @@ namespace RPGAdventure
 
         private void FixedUpdate()
         {
-            for (var i = 0; i < attackPoints.Length; i++)
+            if (isAttacking)
             {
-                AttackPoint ap = attackPoints[i];
-                Vector3 currentWorldPos = ap.root.position +
-                    ap.root.TransformVector(attackPoints[i].offset);
-                Vector3 attackVector = currentWorldPos - originalAttackPointPosition[i];
-                Ray ray = new Ray(currentWorldPos, attackVector);
-                Debug.DrawRay(currentWorldPos, attackVector, Color.red, 4.0f);
+                for (var i = 0; i < attackPoints.Length; i++)
+                {
+                    AttackPoint ap = attackPoints[i];
+                    Vector3 currentWorldPos = ap.root.position +
+                        ap.root.TransformVector(attackPoints[i].offset);
+                    Vector3 attackVector = currentWorldPos - originalAttackPointPosition[i];
+                    Ray ray = new Ray(currentWorldPos, attackVector);
+                    Debug.DrawRay(currentWorldPos, attackVector, Color.red, 4.0f);
+                }
             }
         }
 
-        public void Attack()
+        public void UpdateAttack(bool IsAttacking)
         {
-            isAttacking = true;
-            originalAttackPointPosition = new Vector3[attackPoints.Length];
-            for(var i = 0; i < attackPoints.Length; i++)
+            isAttacking = IsAttacking;
+            if (isAttacking)
             {
-                AttackPoint ap = attackPoints[i];
-                originalAttackPointPosition[i] = 
-                    ap.root.position +
-                    ap.root.TransformVector(attackPoints[i].offset);
+                originalAttackPointPosition = new Vector3[attackPoints.Length];
+                for (var i = 0; i < attackPoints.Length; i++)
+                {
+                    AttackPoint ap = attackPoints[i];
+                    originalAttackPointPosition[i] =
+                        ap.root.position +
+                        ap.root.TransformVector(attackPoints[i].offset);
+                }
             }
         }
 
