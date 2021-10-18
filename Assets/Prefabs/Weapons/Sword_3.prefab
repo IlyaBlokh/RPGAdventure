@@ -103,6 +103,15 @@ MonoBehaviour:
   - radius: 0.1
     offset: {x: -0.14, y: 0.05, z: 0.7}
     root: {fileID: 442552937986074976}
+  - radius: 0.1
+    offset: {x: -0.23, y: 0.05, z: 0.52}
+    root: {fileID: 442552937986074976}
+  - radius: 0.1
+    offset: {x: -0.26, y: 0.05, z: 0.34}
+    root: {fileID: 442552937986074976}
+  - radius: 0.1
+    offset: {x: -0.24, y: 0.05, z: 0.15}
+    root: {fileID: 442552937986074976}
 --- !u!114 &3676253311087188239
 MonoBehaviour:
   m_ObjectHideFlags: 0

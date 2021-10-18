@@ -34,8 +34,8 @@ namespace RPGAdventure
                     Vector3 currentWorldPos = ap.root.position +
                         ap.root.TransformVector(attackPoints[i].offset);
                     Vector3 attackVector = (currentWorldPos - originalAttackPointPosition[i]).normalized;
-                    Ray ray = new Ray(currentWorldPos, attackVector);
-                    Debug.DrawRay(currentWorldPos, attackVector, Color.red, 4.0f);
+                    Ray ray = new Ray(originalAttackPointPosition[i], attackVector);
+                    Debug.DrawRay(originalAttackPointPosition[i], attackVector, Color.red, 4.0f);
 
                     var hitCount = Physics.SphereCastNonAlloc(
                         ray,
