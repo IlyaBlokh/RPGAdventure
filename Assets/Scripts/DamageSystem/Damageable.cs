@@ -8,5 +8,10 @@ namespace RPGAdventure
     {
         [SerializeField]
         float maxHP;
+
+        public void ApplyDamage()
+        {
+            Debug.Log("Apply damage");
+        }
     }
 }

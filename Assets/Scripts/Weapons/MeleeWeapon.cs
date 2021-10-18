@@ -43,12 +43,11 @@ namespace RPGAdventure
                         raycastHits,
                         attackVector.magnitude,
                         ~0,
-                        QueryTriggerInteraction.Ignore);
+                        QueryTriggerInteraction.Ignore); 
 
                     for (var j =0; j < hitCount; j++)
                     {
-                        Collider collider = raycastHits[j].collider;
-                        Debug.Log("Hit!");
+                        CheckDamage(raycastHits[j].collider);
                     }
 
                     originalAttackPointPosition[i] = currentWorldPos;
@@ -69,6 +68,17 @@ namespace RPGAdventure
                         ap.root.position +
                         ap.root.TransformVector(attackPoints[i].offset);
                 }
+            }
+        }
+
+        private void CheckDamage(Collider other)
+        {
+            Damageable damageableComponent = other.GetComponent<Damageable>();
+            if (damageableComponent != null)
+            {
+                //TODO also check if damageable is not player or ally
+                //TODO do not count dublicated collisions
+                damageableComponent.ApplyDamage();
             }
         }
 
