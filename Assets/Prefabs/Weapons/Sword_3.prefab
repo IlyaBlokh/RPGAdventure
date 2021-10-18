@@ -112,6 +112,9 @@ MonoBehaviour:
   - radius: 0.1
     offset: {x: -0.24, y: 0.05, z: 0.15}
     root: {fileID: 442552937986074976}
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &3676253311087188239
 MonoBehaviour:
   m_ObjectHideFlags: 0

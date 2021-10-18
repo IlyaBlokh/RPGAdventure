@@ -20,6 +20,9 @@ namespace RPGAdventure
         [SerializeField]
         AttackPoint[] attackPoints = new AttackPoint[0];
 
+        [SerializeField]
+        LayerMask targetLayers;
+
         private bool isAttacking = false;
         private Vector3[] originalAttackPointPosition;
         private RaycastHit[] raycastHits = new RaycastHit[32];
@@ -73,10 +76,10 @@ namespace RPGAdventure
 
         private void CheckDamage(Collider other)
         {
+            if ((targetLayers.value & (1 << other.gameObject.layer)) == 0) return;
             Damageable damageableComponent = other.GetComponent<Damageable>();
             if (damageableComponent != null)
             {
-                //TODO also check if damageable is not player or ally
                 //TODO do not count dublicated collisions
                 damageableComponent.ApplyDamage();
             }
