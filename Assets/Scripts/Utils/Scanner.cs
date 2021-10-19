@@ -11,9 +11,9 @@ public class PlayerScanner
     [SerializeField]
     float MeleeDetectionRange = 2.0f;
 
-    public float ScannerDetectionRange { get => DetectionRange; set => DetectionRange = value; }
-    public float ScannerDetectionAngle { get => DetectionAngle; set => DetectionAngle = value; }
-    public float ScannerMeleeDetectionRange { get => MeleeDetectionRange; set => MeleeDetectionRange = value; }
+    public float ScannerDetectionRange { get => DetectionRange; }
+    public float ScannerDetectionAngle { get => DetectionAngle; }
+    public float ScannerMeleeDetectionRange { get => MeleeDetectionRange; }
 
     public PlayerController Search(Transform detector)
     {

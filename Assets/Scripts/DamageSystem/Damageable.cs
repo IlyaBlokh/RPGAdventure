@@ -12,9 +12,27 @@ namespace RPGAdventure
         [SerializeField][Range(0, 360f)]
         float hitAngle;
 
+        private float currentHP;
+
+        public float CurrentHP { get => currentHP; private set => currentHP = value; }
+
+        private void Awake()
+        {
+            CurrentHP = maxHP;
+        }
+
         public void ApplyDamage(DamageMessage data)
         {
-            Debug.Log("Apply damage:" + data);
+            if (currentHP <= 0) return;
+            Vector3 toDamageDealer = data.DamageSourcePosition - transform.position;
+            toDamageDealer.y = 0;
+            if (Vector3.Angle(toDamageDealer, transform.forward) > hitAngle / 2)
+            {
+                Debug.Log("not hit");
+            }else
+            {
+                Debug.Log("hit");
+            }
         }
 
 #if UNITY_EDITOR
