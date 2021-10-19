@@ -1565,6 +1565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 200
+  hitAngle: 360
 --- !u!1 &6781422704565756944
 GameObject:
   m_ObjectHideFlags: 0

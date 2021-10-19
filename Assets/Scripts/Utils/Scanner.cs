@@ -4,9 +4,12 @@ using RPGAdventure;
 [System.Serializable]
 public class PlayerScanner
 {
-    public float DetectionRange = 10.0f;
-    public float DetectionAngle = 90.0f;
-    public float MeleeDetectionRange = 2.0f;
+    [SerializeField]
+    float DetectionRange = 10.0f;
+    [SerializeField][Range(0, 360f)]
+    float DetectionAngle = 90.0f;
+    [SerializeField]
+    float MeleeDetectionRange = 2.0f;
 
     public PlayerController Search(Transform detector)
     {

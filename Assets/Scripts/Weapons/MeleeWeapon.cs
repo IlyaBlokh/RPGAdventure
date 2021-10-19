@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -81,6 +82,7 @@ namespace RPGAdventure
             if (damageableComponent != null)
             {
                 //TODO do not count dublicated collisions
+                Damageable.DamageMessage data;
                 damageableComponent.ApplyDamage();
             }
         }

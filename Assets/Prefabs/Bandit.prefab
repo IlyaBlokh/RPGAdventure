@@ -2412,6 +2412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 100
+  hitAngle: 360
 --- !u!136 &1247021235
 CapsuleCollider:
   m_ObjectHideFlags: 0
