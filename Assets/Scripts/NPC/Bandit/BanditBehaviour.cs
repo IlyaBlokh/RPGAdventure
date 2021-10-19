@@ -142,19 +142,19 @@ namespace RPGAdventure
         private void OnDrawGizmosSelected()
         {
             UnityEditor.Handles.color = new Color(0.8f, 0, 0, 0.4f);
-            Vector3 m_RotatedForward = Quaternion.Euler(0, -m_PlayerScanner.DetectionAngle / 2, 0) * transform.forward;
+            Vector3 m_RotatedForward = Quaternion.Euler(0, -m_PlayerScanner.ScannerDetectionAngle / 2, 0) * transform.forward;
             UnityEditor.Handles.DrawSolidArc(
                 transform.position,
                 Vector3.up,
                 m_RotatedForward,
-                m_PlayerScanner.DetectionAngle,
-                m_PlayerScanner.DetectionRange);
+                m_PlayerScanner.ScannerDetectionAngle,
+                m_PlayerScanner.ScannerDetectionRange);
             UnityEditor.Handles.DrawSolidArc(
                 transform.position,
                 Vector3.up,
                 m_RotatedForward,
                 360,
-                m_PlayerScanner.MeleeDetectionRange);
+                m_PlayerScanner.ScannerMeleeDetectionRange);
         }
 
 #endif

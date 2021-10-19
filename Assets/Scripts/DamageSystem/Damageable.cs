@@ -12,9 +12,9 @@ namespace RPGAdventure
         [SerializeField][Range(0, 360f)]
         float hitAngle;
 
-        public void ApplyDamage()
+        public void ApplyDamage(DamageMessage data)
         {
-            Debug.Log("Apply damage");
+            Debug.Log("Apply damage:" + data);
         }
 
 #if UNITY_EDITOR

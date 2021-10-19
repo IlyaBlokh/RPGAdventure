@@ -8,9 +8,9 @@ namespace RPGAdventure
     {
         public struct DamageMessage
         {
-            MonoBehaviour DamageDealer;
-            float DamageAmount;
-            Vector3 DamageSourcePosition;
+            public MonoBehaviour DamageDealer;
+            public float DamageAmount;
+            public Vector3 DamageSourcePosition;
         }
     }
 }

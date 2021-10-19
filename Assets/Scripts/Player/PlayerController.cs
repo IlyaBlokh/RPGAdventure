@@ -59,6 +59,7 @@ namespace RPGAdventure
             m_PlayerInput = GetComponent<PlayerInput>();
             m_Animator = GetComponent<Animator>();
             m_CameraController = Camera.main.GetComponent<CameraController>();
+            MeleeWeapon.Owner = gameObject;
             s_Instance = this;
         }
 

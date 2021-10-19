@@ -24,9 +24,12 @@ namespace RPGAdventure
         [SerializeField]
         LayerMask targetLayers;
 
+        private GameObject m_Owner;
         private bool isAttacking = false;
         private Vector3[] originalAttackPointPosition;
         private RaycastHit[] raycastHits = new RaycastHit[32];
+
+        public GameObject Owner { get => m_Owner; set => m_Owner = value; }
 
         private void FixedUpdate()
         {
@@ -83,7 +86,11 @@ namespace RPGAdventure
             {
                 //TODO do not count dublicated collisions
                 Damageable.DamageMessage data;
-                damageableComponent.ApplyDamage();
+                data.DamageDealer = this;
+                data.DamageAmount = Damage;
+                data.DamageSourcePosition = m_Owner.transform.position;
+                
+                damageableComponent.ApplyDamage(data);
             }
         }
 

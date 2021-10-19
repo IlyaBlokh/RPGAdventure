@@ -11,6 +11,10 @@ public class PlayerScanner
     [SerializeField]
     float MeleeDetectionRange = 2.0f;
 
+    public float ScannerDetectionRange { get => DetectionRange; set => DetectionRange = value; }
+    public float ScannerDetectionAngle { get => DetectionAngle; set => DetectionAngle = value; }
+    public float ScannerMeleeDetectionRange { get => MeleeDetectionRange; set => MeleeDetectionRange = value; }
+
     public PlayerController Search(Transform detector)
     {
         if (PlayerController.Instance == null)
@@ -22,12 +26,12 @@ public class PlayerScanner
         m_LookAtPlayer.y = 0;
         float m_DistanceToPlayer = m_LookAtPlayer.magnitude;
 
-        if (m_DistanceToPlayer <= MeleeDetectionRange)
+        if (m_DistanceToPlayer <= ScannerMeleeDetectionRange)
             return PlayerController.Instance;
 
-        if (m_DistanceToPlayer <= DetectionRange)
+        if (m_DistanceToPlayer <= ScannerDetectionRange)
         {
-            if (Vector3.Dot(detector.forward, m_LookAtPlayer.normalized) > Mathf.Cos(Mathf.Deg2Rad * DetectionAngle / 2))
+            if (Vector3.Dot(detector.forward, m_LookAtPlayer.normalized) > Mathf.Cos(Mathf.Deg2Rad * ScannerDetectionAngle / 2))
             {
                 return PlayerController.Instance;
             }
