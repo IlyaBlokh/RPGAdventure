@@ -2412,7 +2412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68717390e895ad44db1e69e1e82f49dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
+  maxHP: 25
   hitAngle: 360
   DamageMessageListeners:
   - {fileID: 8949339792170754615}
@@ -2444,6 +2444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RagdollPrefab: {fileID: 6929509841265667465, guid: f0f1cef1e3e5d5140b4ae0f610c0f6da, type: 3}
+  DeadVFX: {fileID: 7910377668373796728, guid: be9682a64d980ab4dab9ca4e8147a1bd, type: 3}
 --- !u!1 &6929511641289839865
 GameObject:
   m_ObjectHideFlags: 0
