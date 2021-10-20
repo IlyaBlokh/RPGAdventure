@@ -9,11 +9,11 @@ namespace RPGAdventure
         [SerializeField]
         Transform ToFollow;
 
-        //TODO fix problem with meleeweapon position at run animation
-        private void FixedUpdate()
+        private void Awake()
         {
             transform.position = ToFollow.position;
             transform.rotation = ToFollow.rotation;
+            transform.SetParent(ToFollow);
         }
     }
 }
