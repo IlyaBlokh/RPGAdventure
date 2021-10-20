@@ -2413,6 +2413,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   hitAngle: 360
+  DamageMessageListeners:
+  - {fileID: 8949339792170754615}
 --- !u!136 &1247021235
 CapsuleCollider:
   m_ObjectHideFlags: 0

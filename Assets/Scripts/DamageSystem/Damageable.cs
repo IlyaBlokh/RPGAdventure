@@ -12,6 +12,9 @@ namespace RPGAdventure
         [SerializeField][Range(0, 360f)]
         float hitAngle;
 
+        [SerializeField]
+        List<MonoBehaviour> DamageMessageListeners;
+
         private float currentHP;
 
         public float CurrentHP { get => currentHP; private set => currentHP = value; }
@@ -21,17 +24,19 @@ namespace RPGAdventure
             CurrentHP = maxHP;
         }
 
-        public void ApplyDamage(DamageMessage data)
+        public void ApplyDamage(DamageData data)
         {
             if (currentHP <= 0) return;
+            
             Vector3 toDamageDealer = data.DamageSourcePosition - transform.position;
             toDamageDealer.y = 0;
-            if (Vector3.Angle(toDamageDealer, transform.forward) > hitAngle / 2)
+            if (Vector3.Angle(toDamageDealer, transform.forward) > hitAngle / 2) return;
+
+            currentHP -= data.DamageAmount;
+            var messageType = currentHP <= 0 ? IDamageMessageReceiver.DamageMessageType.DEAD : IDamageMessageReceiver.DamageMessageType.DAMAGED;
+            foreach(var damageMessageListener in DamageMessageListeners)
             {
-                Debug.Log("not hit");
-            }else
-            {
-                Debug.Log("hit");
+                (damageMessageListener as IDamageMessageReceiver).OnDamageMessageReceive(messageType);
             }
         }
 

@@ -1566,6 +1566,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 200
   hitAngle: 360
+  DamageMessageListeners:
+  - {fileID: 8682198836124395831}
 --- !u!1 &6781422704565756944
 GameObject:
   m_ObjectHideFlags: 0

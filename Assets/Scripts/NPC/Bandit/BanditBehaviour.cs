@@ -4,7 +4,7 @@ using System.Collections;
 
 namespace RPGAdventure
 {
-    public class BanditBehaviour : MonoBehaviour, IAttackAnimListener
+    public class BanditBehaviour : MonoBehaviour, IAttackAnimListener, IDamageMessageReceiver
     {
         [SerializeField]
         float TimeToStopPursuit = 2.0f;
@@ -118,6 +118,11 @@ namespace RPGAdventure
             throw new System.NotImplementedException();
         }
 
+        public void OnDamageMessageReceive(IDamageMessageReceiver.DamageMessageType messageType)
+        {
+            Debug.Log(messageType);
+        }
+
         private IEnumerator ReturnToSpotPosition()
         {
             yield return new WaitForSeconds(TimeToReturnToSpotPos);
@@ -156,7 +161,6 @@ namespace RPGAdventure
                 360,
                 m_PlayerScanner.ScannerMeleeDetectionRange);
         }
-
 #endif
     }
 }

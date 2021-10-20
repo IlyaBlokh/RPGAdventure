@@ -6,7 +6,7 @@ namespace RPGAdventure
 {
     public partial class Damageable : MonoBehaviour
     {
-        public struct DamageMessage
+        public struct DamageData
         {
             public MonoBehaviour DamageDealer;
             public float DamageAmount;

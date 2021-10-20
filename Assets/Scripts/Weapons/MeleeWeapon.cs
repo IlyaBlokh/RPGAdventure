@@ -85,7 +85,7 @@ namespace RPGAdventure
             if (damageableComponent != null)
             {
                 //TODO do not count dublicated collisions
-                Damageable.DamageMessage data;
+                Damageable.DamageData data;
                 data.DamageDealer = this;
                 data.DamageAmount = Damage;
                 data.DamageSourcePosition = m_Owner.transform.position;
