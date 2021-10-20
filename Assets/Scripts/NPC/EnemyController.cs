@@ -15,18 +15,19 @@ namespace RPGAdventure
         private Animator m_Animator;
 
         public NavMeshAgent NavMeshAgent { get => m_NavMeshAgent; set => m_NavMeshAgent = value; }
+        public Animator Animator { get => m_Animator; private set => m_Animator = value; }
 
         private void Awake()
         {
             m_NavMeshAgent = GetComponent<NavMeshAgent>();
-            m_Animator = GetComponent<Animator>();
+            Animator = GetComponent<Animator>();
         }
 
         private void OnAnimatorMove()
         {
             if (m_NavMeshAgent.enabled)
             {
-                m_NavMeshAgent.speed = (m_Animator.deltaPosition / Time.fixedDeltaTime).magnitude;
+                m_NavMeshAgent.speed = (Animator.deltaPosition / Time.fixedDeltaTime).magnitude;
                 m_NavMeshAgent.speed *= SpeedModifyer;
             }
         }

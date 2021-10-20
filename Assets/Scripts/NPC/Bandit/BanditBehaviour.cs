@@ -17,7 +17,6 @@ namespace RPGAdventure
 
         //Components
         private EnemyController m_EnemyController;
-        private Animator m_Animator;
 
         //AI
         private Vector3 m_SpotPosition;
@@ -41,7 +40,6 @@ namespace RPGAdventure
         private void Awake()
         {
             m_EnemyController = GetComponent<EnemyController>();
-            m_Animator = GetComponent<Animator>();
             m_SpotPosition = transform.position;
             m_initialRotation = transform.rotation;
         }
@@ -93,14 +91,14 @@ namespace RPGAdventure
             var targetRotation = Quaternion.LookRotation(m_toTarget);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 * Time.deltaTime);
             m_EnemyController.DisableNavMeshAgent();
-            m_Animator.SetTrigger(m_HashedAttack);
+            m_EnemyController.Animator.SetTrigger(m_HashedAttack);
         }
 
         private void Pursuit()
         {
             m_EnemyController.SetDestination(m_FollowTarget.transform.position);
-            m_Animator.SetBool(m_HashedInPursuit, true);
-            m_Animator.SetBool(m_HashedIsAwared, false);
+            m_EnemyController.Animator.SetBool(m_HashedInPursuit, true);
+            m_EnemyController.Animator.SetBool(m_HashedIsAwared, false);
         }
 
         private void StopPursuit()
@@ -109,7 +107,7 @@ namespace RPGAdventure
             if (m_TimeNoDetecting > TimeToStopPursuit)
             {
                 m_FollowTarget = null;
-                m_Animator.SetBool(m_HashedIsAwared, true);
+                m_EnemyController.Animator.SetBool(m_HashedIsAwared, true);
                 StartCoroutine(ReturnToSpotPosition());
             }
         }
@@ -118,8 +116,8 @@ namespace RPGAdventure
         {
             yield return new WaitForSeconds(TimeToReturnToSpotPos);
             m_EnemyController.SetDestination(m_SpotPosition);
-            m_Animator.SetBool(m_HashedIsAwared, false);
-            m_Animator.SetBool(m_HashedInPursuit, false);
+            m_EnemyController.Animator.SetBool(m_HashedIsAwared, false);
+            m_EnemyController.Animator.SetBool(m_HashedInPursuit, false);
         }
 
         private void CheckOnSpotPosition()
@@ -127,7 +125,7 @@ namespace RPGAdventure
             m_toBase = m_SpotPosition - transform.position;
             m_toBase.y = .0f;
             var isOnSpot = Mathf.Approximately(m_toBase.magnitude, .0f);
-            m_Animator.SetBool(m_HashedNearSpot, isOnSpot);
+            m_EnemyController.Animator.SetBool(m_HashedNearSpot, isOnSpot);
             if (isOnSpot)
             {
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, m_initialRotation, 360 * Time.deltaTime);
@@ -155,7 +153,7 @@ namespace RPGAdventure
 
         private void OnDamageReceived()
         {
-            m_Animator.SetTrigger(m_HashedHurt);
+            m_EnemyController.Animator.SetTrigger(m_HashedHurt);
         }
 
 #if UNITY_EDITOR
