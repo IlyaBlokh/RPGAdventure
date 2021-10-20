@@ -36,6 +36,7 @@ namespace RPGAdventure
         private readonly int m_HashedNearSpot = Animator.StringToHash("NearSpot");
         private readonly int m_HashedIsAwared = Animator.StringToHash("isAwared");
         private readonly int m_HashedAttack = Animator.StringToHash("Attack");
+        private readonly int m_HashedHurt = Animator.StringToHash("Hurt");
 
         private void Awake()
         {
@@ -113,16 +114,6 @@ namespace RPGAdventure
             }
         }
 
-        public void AE_Attack(int AttackStatus)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnDamageMessageReceive(IDamageMessageReceiver.DamageMessageType messageType)
-        {
-            Debug.Log(messageType);
-        }
-
         private IEnumerator ReturnToSpotPosition()
         {
             yield return new WaitForSeconds(TimeToReturnToSpotPos);
@@ -141,6 +132,30 @@ namespace RPGAdventure
             {
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, m_initialRotation, 360 * Time.deltaTime);
             }
+        }
+
+        public void AE_Attack(int AttackStatus)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void OnDamageMessageReceive(IDamageMessageReceiver.DamageMessageType messageType)
+        {
+            switch (messageType)
+            {
+                case IDamageMessageReceiver.DamageMessageType.DAMAGED:
+                    OnDamageReceived();
+                    break;
+                case IDamageMessageReceiver.DamageMessageType.DEAD:
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void OnDamageReceived()
+        {
+            m_Animator.SetTrigger(m_HashedHurt);
         }
 
 #if UNITY_EDITOR
