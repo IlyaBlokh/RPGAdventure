@@ -36,6 +36,7 @@ namespace RPGAdventure
         private readonly int m_HashedIsAwared = Animator.StringToHash("isAwared");
         private readonly int m_HashedAttack = Animator.StringToHash("Attack");
         private readonly int m_HashedHurt = Animator.StringToHash("Hurt");
+        private readonly int m_HashedDead = Animator.StringToHash("Dead");
 
         private void Awake()
         {
@@ -145,6 +146,7 @@ namespace RPGAdventure
                     OnDamageReceived();
                     break;
                 case IDamageMessageReceiver.DamageMessageType.DEAD:
+                    OnDead();
                     break;
                 default:
                     break;
@@ -154,6 +156,11 @@ namespace RPGAdventure
         private void OnDamageReceived()
         {
             m_EnemyController.Animator.SetTrigger(m_HashedHurt);
+        }
+
+        private void OnDead()
+        {
+            m_EnemyController.Animator.SetTrigger(m_HashedDead);
         }
 
 #if UNITY_EDITOR
