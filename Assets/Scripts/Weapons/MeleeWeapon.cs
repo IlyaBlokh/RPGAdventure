@@ -84,7 +84,6 @@ namespace RPGAdventure
             Damageable damageableComponent = other.GetComponent<Damageable>();
             if (damageableComponent != null)
             {
-                //TODO do not count dublicated collisions
                 Damageable.DamageData data;
                 data.DamageDealer = this;
                 data.DamageAmount = Damage;

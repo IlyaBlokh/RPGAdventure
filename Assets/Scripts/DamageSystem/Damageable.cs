@@ -15,29 +15,48 @@ namespace RPGAdventure
         [SerializeField]
         List<MonoBehaviour> DamageMessageListeners;
 
-        private float currentHP;
+        [SerializeField]
+        float UnvulnerabilityTime = 0.25f;
 
-        public float CurrentHP { get => currentHP; private set => currentHP = value; }
+        private float m_currentHP;
+        private bool m_isVulnerable;
+
+        public float CurrentHP { get => m_currentHP; private set => m_currentHP = value; }
 
         private void Awake()
         {
             CurrentHP = maxHP;
+            m_isVulnerable = true;
         }
 
         public void ApplyDamage(DamageData data)
         {
-            if (currentHP <= 0) return;
+            if (!m_isVulnerable) return;
+
+            if (m_currentHP <= 0) return;
             
             Vector3 toDamageDealer = data.DamageSourcePosition - transform.position;
             toDamageDealer.y = 0;
-            if (Vector3.Angle(toDamageDealer, transform.forward) > hitAngle / 2) return;
+            if (Vector3.Angle(toDamageDealer, transform.forward) > hitAngle / 2) 
+                return;
 
-            currentHP -= data.DamageAmount;
-            var messageType = currentHP <= 0 ? IDamageMessageReceiver.DamageMessageType.DEAD : IDamageMessageReceiver.DamageMessageType.DAMAGED;
+            m_currentHP -= data.DamageAmount;
+            Debug.Log(m_currentHP);
+
+            var messageType = m_currentHP <= 0 ? IDamageMessageReceiver.DamageMessageType.DEAD : IDamageMessageReceiver.DamageMessageType.DAMAGED;
             foreach(var damageMessageListener in DamageMessageListeners)
             {
                 (damageMessageListener as IDamageMessageReceiver).OnDamageMessageReceive(messageType);
             }
+
+            StartCoroutine(SetUnvulnerability());
+        }
+
+        private IEnumerator SetUnvulnerability()
+        {
+            m_isVulnerable = false;
+            yield return new WaitForSeconds(UnvulnerabilityTime);
+            m_isVulnerable = true;
         }
 
 #if UNITY_EDITOR
