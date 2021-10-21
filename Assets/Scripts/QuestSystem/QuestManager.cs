@@ -20,9 +20,7 @@ namespace RPGAdventure
             using StreamReader reader = new StreamReader("Assets/DB/quests.json");
             string jsonStr = reader.ReadToEnd();
             var parsedQuests = JsonProcessor.JsonToArray<Quest>(jsonStr);
-            Quests = new Quest[parsedQuests.Length];
             Quests = parsedQuests;
-            Debug.Log(Quests);
        }
     }
 }
