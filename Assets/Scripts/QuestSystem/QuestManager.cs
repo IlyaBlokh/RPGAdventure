@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 namespace RPGAdventure
@@ -7,6 +8,21 @@ namespace RPGAdventure
     public class QuestManager : MonoBehaviour
     {
         [SerializeField]
-        List<Quest> Quests;
+        Quest[] Quests;
+
+        private void Awake()
+        {
+            UploadQuestsFromDB();
+        }
+
+       private void UploadQuestsFromDB()
+       {
+            using StreamReader reader = new StreamReader("Assets/DB/quests.json");
+            string jsonStr = reader.ReadToEnd();
+            var parsedQuests = JsonProcessor.JsonToArray<Quest>(jsonStr);
+            Quests = new Quest[parsedQuests.Length];
+            Quests = parsedQuests;
+            Debug.Log(Quests);
+       }
     }
 }

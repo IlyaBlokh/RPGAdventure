@@ -1,0 +1,31 @@
+[
+{
+  "uid":"q-1",
+  "owner":"npc-1",
+  "title":"Annoying bandits",
+  "description":"Defeat two bandits on the south of the camp",
+  "QuestType":0,
+  "experienceReward":10,
+  "goldReward":50,
+  "huntGoalAmount":2,
+  "huntGoalAllowedIds":["b-1"],
+  "gatherGoalAmount":null,
+  "gatherGoalAllowedIds":null,
+  "explorePoint":null,
+  "talkToId":null
+},{
+  "uid":"q-2",
+  "owner":"npc-1",
+  "title":"Defeat a leader",
+  "description":"Defeat bandit leader on the north of the camp",
+  "QuestType":0,
+  "experienceReward":20,
+  "goldReward":100,
+  "huntGoalAmount":1,
+  "huntGoalAllowedIds":["b-2"],
+  "gatherGoalAmount":null,
+  "gatherGoalAllowedIds":null,
+  "explorePoint":null,
+  "talkToId":null
+}  
+]
