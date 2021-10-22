@@ -8,7 +8,7 @@ namespace RPGAdventure
     public class QuestManager : MonoBehaviour
     {
         [SerializeField]
-        Quest[] Quests;
+        List<Quest> Quests;
 
         private void Awake()
         {
@@ -19,7 +19,18 @@ namespace RPGAdventure
        {
             using StreamReader reader = new StreamReader("Assets/DB/quests.json");
             string jsonStr = reader.ReadToEnd();
-            Quests = JsonProcessor.JsonToArray<Quest>(jsonStr);
+            Quests = JsonProcessor.JsonToList<Quest>(jsonStr);
        }
+    
+        public List<Quest> AssignQuests(string ownerUid)
+        {
+            List<Quest> ownerQuests = new List<Quest>();
+            foreach(var quest in Quests)
+            {
+                if (quest.owner.Equals(ownerUid))
+                    ownerQuests.Add(quest);
+            }
+            return ownerQuests;
+        }
     }
 }

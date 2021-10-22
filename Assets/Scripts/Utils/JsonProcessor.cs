@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class JsonProcessor
@@ -9,7 +10,7 @@ public class JsonProcessor
     /// <typeparam name="T">Serializable class</typeparam>
     private class Wrapper<T>
     {
-        public T[] array;
+        public List<T> array;
     }
 
     /// <summary>
@@ -18,7 +19,7 @@ public class JsonProcessor
     /// <typeparam name="T">Serializable class</typeparam>
     /// <param name="jsonStr">json string with array</param>
     /// <returns>array of T class instances</returns>
-    public static T[] JsonToArray<T>(string jsonStr)
+    public static List<T> JsonToList<T>(string jsonStr)
     {
         string arrayJsonStr = "{\"array\":" + jsonStr +"}";
         Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(arrayJsonStr);
