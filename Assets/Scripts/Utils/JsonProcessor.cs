@@ -4,7 +4,7 @@ using UnityEngine;
 public class JsonProcessor
 {
     /// <summary>
-    /// service class to allow JsonUtility.FromJson parse json {array:[...]} into an object
+    /// service class to allow JsonUtility.FromJson parse json {"array":[...]} into an object
     /// </summary>
     /// <typeparam name="T">Serializable class</typeparam>
     private class Wrapper<T>
