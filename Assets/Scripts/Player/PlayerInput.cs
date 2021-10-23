@@ -34,18 +34,20 @@ namespace RPGAdventure
             bool isPrimaryActionTriggered = Input.GetButtonDown("Fire1");
             bool issecondaryActionTriggered = Input.GetButtonDown("Fire2");
 
-            if (isPrimaryActionTriggered && !m_IsAttacking)
+            if (isPrimaryActionTriggered)
             {
-                StartCoroutine(AttackAndWait());
+                if (!m_IsAttacking)
+                    StartCoroutine(AttackAndWait());
             }
 
             if (issecondaryActionTriggered)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 bool hasHit = Physics.Raycast(ray, out RaycastHit hitInfo);
-                if (hasHit && hitInfo.collider.GetComponent<Clickable>())
+                var clickableObject = hitInfo.collider.GetComponent<Clickable>();
+                if (hasHit && clickableObject)
                 {
-                    Debug.Log(hitInfo.collider.name);
+                    clickableObject.HandleClick();
                 }
             }
         }
