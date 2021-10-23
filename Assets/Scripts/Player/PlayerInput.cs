@@ -8,47 +8,41 @@ namespace RPGAdventure
     {
         private Vector3 m_PlayerInput;
         private bool m_IsAttacking;
+        private bool m_IsInteracting;
 
-        public Vector3 MoveInput
-        {
-            get { return m_PlayerInput.normalized; }
-        }
+        public Vector3 MoveInput { get => m_PlayerInput.normalized; }
 
-        public bool IsAttacking
-        {
-            get { return m_IsAttacking; }
-        }
+        public bool IsAttacking { get => m_IsAttacking; }
 
-        public bool IsMoving
-        {
-            get { return !Mathf.Approximately(m_PlayerInput.magnitude, 0); }
-        }
+        public bool IsMoving{ get => !Mathf.Approximately(m_PlayerInput.magnitude, 0); }
+
+        public bool IsInteracking { get => m_IsInteracting; }
 
         void Update()
         {
-            m_PlayerInput.Set(
-                Input.GetAxis("Horizontal"),
-                0,
-                Input.GetAxis("Vertical"));
+            m_PlayerInput.Set(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
-            bool isPrimaryActionTriggered = Input.GetButtonDown("Fire1");
-            bool issecondaryActionTriggered = Input.GetButtonDown("Fire2");
+            if (Input.GetButtonDown("Fire1"))
+                HandlePrimaryAction();
 
-            if (isPrimaryActionTriggered)
+            if (Input.GetButtonDown("Fire2"))
+                HandleSecondaryAction();
+        }
+
+        private void HandlePrimaryAction()
+        {
+            if (!m_IsAttacking)
+                StartCoroutine(AttackAndWait());
+        }
+
+        private void HandleSecondaryAction()
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            bool hasHit = Physics.Raycast(ray, out RaycastHit hitInfo);
+            var clickableObject = hitInfo.collider.GetComponent<Clickable>();
+            if (hasHit && clickableObject)
             {
-                if (!m_IsAttacking)
-                    StartCoroutine(AttackAndWait());
-            }
-
-            if (issecondaryActionTriggered)
-            {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                bool hasHit = Physics.Raycast(ray, out RaycastHit hitInfo);
-                var clickableObject = hitInfo.collider.GetComponent<Clickable>();
-                if (hasHit && clickableObject)
-                {
-                    clickableObject.HandleClick();
-                }
+                m_IsInteracting = clickableObject.HandleClick();
             }
         }
 

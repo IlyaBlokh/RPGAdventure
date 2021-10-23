@@ -32,14 +32,21 @@ namespace RPGAdventure
             Cursor.SetCursor(null, m_Hotspot, cursorMode);
         }
 
-        public void HandleClick()
+        /// <summary>
+        /// Handles click action over the gameobject
+        /// </summary>
+        /// <returns>true if action is acceptable</returns>
+        public bool HandleClick()
         {
             var PlayerPosition = FindObjectOfType<PlayerController>().transform.position;
             var distanceToPlayer = Vector3.Distance(PlayerPosition, transform.position);
             if (distanceToPlayer <= minClickDistance)
             {
                 Debug.Log("Close enough to " + name);
+                return true;
             }
+
+            return false;
         }
     }
 }
