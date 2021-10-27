@@ -9,6 +9,8 @@ namespace RPGAdventure
         [SerializeField]
         List<Quest> Quests;
 
+        [SerializeField]
+        Dialog Dialog;
         private void Start()
         {
             var questManager = FindObjectOfType<QuestManager>();

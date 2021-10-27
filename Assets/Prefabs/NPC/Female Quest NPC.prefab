@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Quests: []
+  Dialog:
+    welcomeText: 
+    queries: []
 --- !u!1001 &4791243068434164818
 PrefabInstance:
   m_ObjectHideFlags: 0
