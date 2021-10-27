@@ -45,7 +45,6 @@ namespace RPGAdventure
                 m_IsInteracting = clickableObject.HandleClick();
             }
         }
-
         private IEnumerator AttackAndWait()
         {
             m_IsAttacking = true;
