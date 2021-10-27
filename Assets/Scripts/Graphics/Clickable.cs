@@ -40,13 +40,10 @@ namespace RPGAdventure
         {
             var PlayerPosition = FindObjectOfType<PlayerController>().transform.position;
             var distanceToPlayer = Vector3.Distance(PlayerPosition, transform.position);
-            if (distanceToPlayer <= minClickDistance)
-            {
-                Debug.Log("Close enough to " + name);
+            if (distanceToPlayer <= minClickDistance) 
                 return true;
-            }
-
-            return false;
+            else
+                return false;
         }
     }
 }
