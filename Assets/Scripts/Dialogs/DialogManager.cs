@@ -18,7 +18,7 @@ namespace RPGAdventure
         }
         private void Update()
         {
-            if (PlayerInput.Instance != null && PlayerInput.Instance.IsInteracking)
+            if (!DialogUI.activeSelf && PlayerInput.Instance != null && PlayerInput.Instance.IsInteracking )
             {
                 StartDialog();
             }
