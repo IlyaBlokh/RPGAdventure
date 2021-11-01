@@ -11,6 +11,8 @@ namespace RPGAdventure
         GameObject DialogUI;
         [SerializeField]
         Text DialogHeaderText;
+        [SerializeField]
+        Text DialogWelcomeText;
 
         private PlayerInput m_PlayerInput;
         private GameObject m_NPC;
@@ -44,9 +46,10 @@ namespace RPGAdventure
 
         private void StartDialog()
         {
-            DialogUI.SetActive(true);
             DialogHeaderText.text = m_NPC.name;
             m_ActiveDialog = m_NPC.GetComponent<QuestOwner>().Dialog;
+            DialogWelcomeText.text = m_ActiveDialog.welcomeText;
+            DialogUI.SetActive(true);
         }
 
         private void StopDialog()

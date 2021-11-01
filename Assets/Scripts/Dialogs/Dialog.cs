@@ -21,7 +21,7 @@ namespace RPGAdventure
 
             [TextArea(3, 15)]
             public string queryText;
-            public bool isAsked;
+            public bool shouldExitDialog;
             public DialogAnswer dialogAnswer;
         }
 
