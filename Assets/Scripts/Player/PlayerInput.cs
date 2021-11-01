@@ -11,7 +11,7 @@ namespace RPGAdventure
         private static PlayerInput s_Instance;
         private Vector3 m_PlayerInput;
         private bool m_IsAttacking;
-        private bool m_IsInteracting;
+        private Clickable m_ClickableObject;
 
         public Vector3 MoveInput { get => m_PlayerInput.normalized; }
 
@@ -19,7 +19,7 @@ namespace RPGAdventure
 
         public bool IsMoving{ get => !Mathf.Approximately(m_PlayerInput.magnitude, 0); }
 
-        public bool IsInteracking { get => m_IsInteracting; }
+        public Clickable GetClickableObject { get => m_ClickableObject; }
 
         private void Awake()
         {
@@ -62,9 +62,9 @@ namespace RPGAdventure
 
         private IEnumerator TriggerInteract(Clickable clickableObject)
         {
-            m_IsInteracting = clickableObject.HandleClick();
+            m_ClickableObject = clickableObject.CheckClickCondition();
             yield return new WaitForSeconds(0.03f);
-            m_IsInteracting = false;
+            m_ClickableObject = null;
         }
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Quests: []
-  Dialog:
+  dialog:
     welcomeText: 
     queries: []
 --- !u!1001 &4791243068434164818
@@ -29,6 +29,10 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: a81627797a5ea18428920402d5be3a17, type: 3}
     - target: {fileID: -6202682029926566898, guid: 3f1983baf8eec7d46841d59510ffc929, type: 3}
       propertyPath: minClickDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6202682029926566898, guid: 3f1983baf8eec7d46841d59510ffc929, type: 3}
+      propertyPath: maxInteractDistance
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2351981563046886092, guid: 3f1983baf8eec7d46841d59510ffc929, type: 3}

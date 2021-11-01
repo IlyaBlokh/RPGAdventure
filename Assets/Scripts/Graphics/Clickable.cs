@@ -15,6 +15,9 @@ namespace RPGAdventure
         [SerializeField]
         float minClickDistance;
 
+        [SerializeField]
+        float maxInteractDistance;
+
         private Vector2 m_Hotspot;
 
         private void Awake()
@@ -35,12 +38,22 @@ namespace RPGAdventure
         /// <summary>
         /// Handles click action over the gameobject
         /// </summary>
-        /// <returns>true if action is acceptable</returns>
-        public bool HandleClick()
+        /// <returns>Clickable object if action is acceptable, null otherwise</returns>
+        public Clickable CheckClickCondition()
         {
             var PlayerPosition = FindObjectOfType<PlayerController>().transform.position;
             var distanceToPlayer = Vector3.Distance(PlayerPosition, transform.position);
             if (distanceToPlayer <= minClickDistance) 
+                return this;
+            else
+                return null;
+        }
+
+        public bool CheckEndInteractCondition()
+        {
+            var PlayerPosition = FindObjectOfType<PlayerController>().transform.position;
+            var distanceToPlayer = Vector3.Distance(PlayerPosition, transform.position);
+            if (distanceToPlayer >= maxInteractDistance)
                 return true;
             else
                 return false;
