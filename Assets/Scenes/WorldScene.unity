@@ -147,7 +147,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16180745}
-  m_LocalRotation: {x: 0.19813146, y: 0.000000016865267, z: -0.0000000034091245, w: 0.9801755}
+  m_LocalRotation: {x: 0.19813146, y: -0.00000001686528, z: 0.0000000034091268, w: 0.9801755}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -752,6 +752,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &386391961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 386391962}
+  m_Layer: 5
+  m_Name: OptionsList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &386391962
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386391961}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1677031918}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &451261896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,7 +1432,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 735826403}
-  m_LocalRotation: {x: 0.16239585, y: 0.000000018981957, z: -0.0000000031240608, w: 0.9867257}
+  m_LocalRotation: {x: 0.16239585, y: -0.000000018981957, z: 0.0000000031240608, w: 0.9867257}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1840,7 +1875,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.19813149, y: 0.000000016865224, z: -0.0000000034089167, w: 0.98017544}
+  m_LocalRotation: {x: 0.19813149, y: -0.00000001686524, z: 0.0000000034089187, w: 0.98017544}
   m_LocalPosition: {x: 0, y: 6, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2475,6 +2510,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1893184434}
+  - {fileID: 386391962}
   m_Father: {fileID: 1102941021}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2738,7 +2774,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogUI: {fileID: 2007268690}
   DialogHeaderText: {fileID: 1520486321}
-  DialogWelcomeText: {fileID: 1893184435}
+  DialogAnswerText: {fileID: 1893184435}
+  QueryOptionsList: {fileID: 386391961}
+  QueryOptionPrefab: {fileID: 9182557472746935423, guid: 83f8ada0d393b1644b5b3aa8fd09d6d3, type: 3}
 --- !u!4 &1793750390
 Transform:
   m_ObjectHideFlags: 0
@@ -2860,7 +2898,7 @@ GameObject:
   - component: {fileID: 1893184436}
   - component: {fileID: 1893184435}
   m_Layer: 5
-  m_Name: WelcomeText
+  m_Name: AnswerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2912,13 +2950,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hello Stanger. Nice to see you!
+  m_Text: 
 --- !u!222 &1893184436
 CanvasRenderer:
   m_ObjectHideFlags: 0

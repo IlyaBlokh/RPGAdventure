@@ -61,6 +61,10 @@ PrefabInstance:
       propertyPath: dialog.queries.Array.data[2].dialogAnswer.answerText
       value: See you
       objectReference: {fileID: 0}
+    - target: {fileID: 3726056369890779937, guid: 8fe0b8a0ad152b14a991c6a26cc1b8f5, type: 3}
+      propertyPath: dialog.queries.Array.data[2].dialogAnswer.shouldForceExit
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7121860904621336088, guid: 8fe0b8a0ad152b14a991c6a26cc1b8f5, type: 3}
       propertyPath: m_Name
       value: Sarah

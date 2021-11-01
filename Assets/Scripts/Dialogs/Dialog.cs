@@ -15,13 +15,13 @@ namespace RPGAdventure
             {
                 [TextArea(3, 15)]
                 public string answerText;
-                public bool isForceExited;
+                public bool shouldForceExit;
                 public string questId;
             }
 
             [TextArea(3, 15)]
             public string queryText;
-            public bool shouldExitDialog;
+            public bool isAsked;
             public DialogAnswer dialogAnswer;
         }
 
