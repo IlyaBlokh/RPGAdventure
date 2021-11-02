@@ -27,6 +27,7 @@ namespace RPGAdventure
         private Dialog m_ActiveDialog;
         private float m_OptionTopPosition;
         private float m_TimerForDialogOptions;
+        private bool m_ForceDialogQuit;
 
         const float c_OptionIndend = 44.0f;
 
@@ -38,6 +39,7 @@ namespace RPGAdventure
         private void Start()
         {
             m_PlayerInput = PlayerInput.Instance;
+            m_ForceDialogQuit = false;
         }
 
         private void Update()
@@ -55,13 +57,21 @@ namespace RPGAdventure
                 StopDialog();
             }
 
+            //Timer is triggered
             if (m_TimerForDialogOptions > 0)
             {
                 m_TimerForDialogOptions += Time.deltaTime;
                 if (m_TimerForDialogOptions >= TimeToShowDialogOptions)
                 {
-                    m_TimerForDialogOptions = .0f;
-                    DisplayDialogOptions();
+                    if (m_ForceDialogQuit)
+                    {
+                        StopDialog();
+                    }
+                    else
+                    {
+                        m_TimerForDialogOptions = .0f;
+                        DisplayDialogOptions();
+                    }
                 }
             }
         }
@@ -129,6 +139,7 @@ namespace RPGAdventure
             EventTrigger eventTrigger = optionBtn.gameObject.AddComponent<EventTrigger>();
             var clickDownEvent = new EventTrigger.Entry { eventID = EventTriggerType.PointerDown };
             clickDownEvent.callback.AddListener((e) => {
+                m_ForceDialogQuit = query.dialogAnswer.shouldForceExit;
                 query.isAsked = true;
                 CleanupDialogOptionList();
                 DisplayAnswerText(query.dialogAnswer.answerText);
@@ -142,6 +153,7 @@ namespace RPGAdventure
             DialogUI.SetActive(false);
             m_NPC = null;
             m_ActiveDialog = null;
+            m_ForceDialogQuit = false;
             m_TimerForDialogOptions = .0f;
         }
     }
