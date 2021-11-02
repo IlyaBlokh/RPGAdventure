@@ -41,6 +41,10 @@ PrefabInstance:
       value: Goodbye!
       objectReference: {fileID: 0}
     - target: {fileID: 3726056369890779937, guid: 8fe0b8a0ad152b14a991c6a26cc1b8f5, type: 3}
+      propertyPath: dialog.queries.Array.data[2].shouldAlwaysAsk
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726056369890779937, guid: 8fe0b8a0ad152b14a991c6a26cc1b8f5, type: 3}
       propertyPath: dialog.queries.Array.data[2].shouldExitDialog
       value: 1
       objectReference: {fileID: 0}

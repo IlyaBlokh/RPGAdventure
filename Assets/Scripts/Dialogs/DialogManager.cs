@@ -100,7 +100,7 @@ namespace RPGAdventure
 
         private void InitDialogOptionsList()
         {
-            var queries = Array.FindAll(m_ActiveDialog.queries.ToArray(), query => !query.isAsked);
+            var queries = Array.FindAll(m_ActiveDialog.queries, query => !query.isAsked || query.shouldAlwaysAsk);
             foreach (var query in queries)
             {
                 InitOptionInstance(query);
@@ -114,7 +114,7 @@ namespace RPGAdventure
                 Destroy(child.gameObject);
         }
 
-        private void InitOptionInstance(Dialog.DialogQuery dialogOption)
+        private void InitOptionInstance(DialogQuery dialogOption)
         {
             m_OptionTopPosition += c_OptionIndend;
             var OptionButtonInstance = Instantiate(QueryOptionPrefab, QueryOptionsList.transform);
@@ -124,11 +124,16 @@ namespace RPGAdventure
             RegisterOptionClickHandler(OptionButtonInstance, dialogOption);
         }
 
-        private void RegisterOptionClickHandler(Button optionBtn, Dialog.DialogQuery query)
+        private void RegisterOptionClickHandler(Button optionBtn, DialogQuery query)
         {
             EventTrigger eventTrigger = optionBtn.gameObject.AddComponent<EventTrigger>();
             var clickDownEvent = new EventTrigger.Entry { eventID = EventTriggerType.PointerDown };
-            clickDownEvent.callback.AddListener((e) => { Debug.Log(query.queryText); });
+            clickDownEvent.callback.AddListener((e) => {
+                query.isAsked = true;
+                CleanupDialogOptionList();
+                DisplayAnswerText(query.dialogAnswer.answerText);
+                TriggerDisplayDialogOptions();
+            });
             eventTrigger.triggers.Add(clickDownEvent);
         }
 

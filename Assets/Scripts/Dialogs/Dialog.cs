@@ -4,30 +4,30 @@ using UnityEngine;
 
 namespace RPGAdventure
 {
+
+    [System.Serializable]
+    public class DialogAnswer
+    {
+        [TextArea(3, 15)]
+        public string answerText;
+        public bool shouldForceExit;
+        public string questId;
+    }
+
+    [System.Serializable]
+    public class DialogQuery
+    {
+        [TextArea(3, 15)]
+        public string queryText;
+        public bool isAsked;
+        public bool shouldAlwaysAsk;
+        public DialogAnswer dialogAnswer;
+    }
+
     [System.Serializable]
     public class Dialog {
-
-        [System.Serializable]
-        public struct DialogQuery
-        {
-            [System.Serializable]
-            public struct DialogAnswer
-            {
-                [TextArea(3, 15)]
-                public string answerText;
-                public bool shouldForceExit;
-                public string questId;
-            }
-
-            [TextArea(3, 15)]
-            public string queryText;
-            public bool isAsked;
-            public DialogAnswer dialogAnswer;
-        }
-
-
         [TextArea(3,15)]
         public string welcomeText;
-        public List<DialogQuery> queries;
+        public DialogQuery[] queries;
     }
 }
