@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace RPGAdventure
@@ -120,8 +121,16 @@ namespace RPGAdventure
             OptionButtonInstance.GetComponentInChildren<Text>().text = dialogOption.queryText;
             RectTransform btnRectTransform = OptionButtonInstance.GetComponent<RectTransform>();
             btnRectTransform.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, m_OptionTopPosition, btnRectTransform.rect.height);
+            RegisterOptionClickHandler(OptionButtonInstance, dialogOption);
         }
 
+        private void RegisterOptionClickHandler(Button optionBtn, Dialog.DialogQuery query)
+        {
+            EventTrigger eventTrigger = optionBtn.gameObject.AddComponent<EventTrigger>();
+            var clickDownEvent = new EventTrigger.Entry { eventID = EventTriggerType.PointerDown };
+            clickDownEvent.callback.AddListener((e) => { Debug.Log(query.queryText); });
+            eventTrigger.triggers.Add(clickDownEvent);
+        }
 
         private void StopDialog()
         {
