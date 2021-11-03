@@ -22,6 +22,7 @@ namespace RPGAdventure
         [SerializeField]
         float TimeToShowDialogOptions = 2.0f;
 
+        private QuestManager m_QuestManager;
         private PlayerInput m_PlayerInput;
         private GameObject m_NPC;
         private Dialog m_ActiveDialog;
@@ -38,6 +39,7 @@ namespace RPGAdventure
 
         private void Start()
         {
+            m_QuestManager = FindObjectOfType<QuestManager>();
             m_PlayerInput = PlayerInput.Instance;
             m_ForceDialogQuit = false;
         }
@@ -139,6 +141,10 @@ namespace RPGAdventure
             EventTrigger eventTrigger = optionBtn.gameObject.AddComponent<EventTrigger>();
             var clickDownEvent = new EventTrigger.Entry { eventID = EventTriggerType.PointerDown };
             clickDownEvent.callback.AddListener((e) => {
+                if (!String.IsNullOrEmpty(query.dialogAnswer.questId))
+                {
+                    m_PlayerInput.GetComponent<QuestLog>().AddQuest(m_QuestManager.GetQuest(query.dialogAnswer.questId));
+                }
                 m_ForceDialogQuit = query.dialogAnswer.shouldForceExit;
                 query.isAsked = true;
                 CleanupDialogOptionList();

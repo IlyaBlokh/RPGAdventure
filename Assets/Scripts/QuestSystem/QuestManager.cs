@@ -32,5 +32,15 @@ namespace RPGAdventure
             }
             return ownerQuests;
         }
+
+        public Quest GetQuest(string questId)
+        {
+            foreach (var quest in Quests)
+            {
+                if (quest.uid.Equals(questId))
+                    return quest;
+            }
+            return null;
+        }
     }
 }
