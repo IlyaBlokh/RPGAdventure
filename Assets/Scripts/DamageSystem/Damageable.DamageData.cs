@@ -8,6 +8,7 @@ namespace RPGAdventure
     {
         public struct DamageData
         {
+            public Damageable DamageReceiver;
             public MonoBehaviour DamageDealer;
             public float DamageAmount;
             public Vector3 DamageSourcePosition;

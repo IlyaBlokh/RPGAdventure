@@ -46,7 +46,7 @@ namespace RPGAdventure
             var messageType = m_currentHP <= 0 ? IDamageMessageReceiver.DamageMessageType.DEAD : IDamageMessageReceiver.DamageMessageType.DAMAGED;
             foreach(var damageMessageListener in DamageMessageListeners)
             {
-                (damageMessageListener as IDamageMessageReceiver).OnDamageMessageReceive(messageType);
+                (damageMessageListener as IDamageMessageReceiver).OnDamageMessageReceive(messageType, data);
             }
 
             StartCoroutine(SetUnvulnerability());

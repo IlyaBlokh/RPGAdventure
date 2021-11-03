@@ -85,6 +85,7 @@ namespace RPGAdventure
             if (damageableComponent != null)
             {
                 Damageable.DamageData data;
+                data.DamageReceiver = damageableComponent;
                 data.DamageDealer = this;
                 data.DamageAmount = Damage;
                 data.DamageSourcePosition = m_Owner.transform.position;

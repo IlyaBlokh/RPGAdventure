@@ -43,17 +43,18 @@ namespace RPGAdventure
             return null;
         }
 
-        public void OnDamageMessageReceive(IDamageMessageReceiver.DamageMessageType messageType)
+        public void OnDamageMessageReceive(IDamageMessageReceiver.DamageMessageType messageType, Damageable.DamageData damageData)
         {
             if (messageType == IDamageMessageReceiver.DamageMessageType.DEAD)
             {
-                CheckForHuntQuestCompetion();
+                CheckForHuntQuestCompetion(damageData);
             }
         }
 
-        private void CheckForHuntQuestCompetion()
+        private void CheckForHuntQuestCompetion(Damageable.DamageData damageData)
         {
-            Debug.Log("Check if some HUNT quest is done");
+            Debug.Log(damageData.DamageReceiver);
+            Debug.Log(damageData.DamageDealer);
         }
     }
 }

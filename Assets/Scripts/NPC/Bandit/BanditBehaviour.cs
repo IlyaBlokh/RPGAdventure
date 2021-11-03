@@ -138,7 +138,7 @@ namespace RPGAdventure
             throw new System.NotImplementedException();
         }
 
-        public void OnDamageMessageReceive(IDamageMessageReceiver.DamageMessageType messageType)
+        public void OnDamageMessageReceive(IDamageMessageReceiver.DamageMessageType messageType, Damageable.DamageData damageData)
         {
             switch (messageType)
             {

@@ -12,6 +12,6 @@ namespace RPGAdventure
             DEAD
         }
 
-        void OnDamageMessageReceive(DamageMessageType messageType);
+        void OnDamageMessageReceive(DamageMessageType messageType, Damageable.DamageData damageData);
     }
 }
