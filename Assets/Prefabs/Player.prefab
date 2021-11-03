@@ -1582,6 +1582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6258cce9351e34f80dbdd33599df24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AcceptedQuests: []
 --- !u!1 &6781422704565756944
 GameObject:
   m_ObjectHideFlags: 0
