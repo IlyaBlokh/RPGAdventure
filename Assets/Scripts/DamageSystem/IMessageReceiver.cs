@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace RPGAdventure
 {
-    public interface IDamageMessageReceiver
+    public interface IMessageReceiver
     {
-        enum DamageMessageType
+        enum MessageType
         {
             DAMAGED,
             DEAD
         }
 
-        void OnDamageMessageReceive(DamageMessageType messageType, Damageable.DamageData damageData);
+        void OnMessageReceive(MessageType messageType, object messageData);
     }
 }

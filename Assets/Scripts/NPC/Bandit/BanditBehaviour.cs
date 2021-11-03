@@ -4,7 +4,7 @@ using System.Collections;
 
 namespace RPGAdventure
 {
-    public class BanditBehaviour : MonoBehaviour, IAttackAnimListener, IDamageMessageReceiver
+    public class BanditBehaviour : MonoBehaviour, IAttackAnimListener, IMessageReceiver
     {
         [SerializeField]
         float TimeToStopPursuit = 2.0f;
@@ -138,14 +138,14 @@ namespace RPGAdventure
             throw new System.NotImplementedException();
         }
 
-        public void OnDamageMessageReceive(IDamageMessageReceiver.DamageMessageType messageType, Damageable.DamageData damageData)
+        public void OnMessageReceive(IMessageReceiver.MessageType messageType, object damageData)
         {
             switch (messageType)
             {
-                case IDamageMessageReceiver.DamageMessageType.DAMAGED:
+                case IMessageReceiver.MessageType.DAMAGED:
                     OnDamageReceived();
                     break;
-                case IDamageMessageReceiver.DamageMessageType.DEAD:
+                case IMessageReceiver.MessageType.DEAD:
                     OnDead();
                     break;
                 default:

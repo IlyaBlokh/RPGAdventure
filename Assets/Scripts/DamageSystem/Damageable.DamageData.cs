@@ -10,8 +10,8 @@ namespace RPGAdventure
         {
             public Damageable DamageReceiver;
             public MonoBehaviour DamageDealer;
+            public GameObject DamageSender;
             public float DamageAmount;
-            public Vector3 DamageSourcePosition;
         }
     }
 }

@@ -36,17 +36,17 @@ namespace RPGAdventure
 
             if (m_currentHP <= 0) return;
             
-            Vector3 toDamageDealer = data.DamageSourcePosition - transform.position;
+            Vector3 toDamageDealer = data.DamageSender.transform.position - transform.position;
             toDamageDealer.y = 0;
             if (Vector3.Angle(toDamageDealer, transform.forward) > hitAngle / 2) 
                 return;
 
             m_currentHP -= data.DamageAmount;
 
-            var messageType = m_currentHP <= 0 ? IDamageMessageReceiver.DamageMessageType.DEAD : IDamageMessageReceiver.DamageMessageType.DAMAGED;
+            var messageType = m_currentHP <= 0 ? IMessageReceiver.MessageType.DEAD : IMessageReceiver.MessageType.DAMAGED;
             foreach(var damageMessageListener in DamageMessageListeners)
             {
-                (damageMessageListener as IDamageMessageReceiver).OnDamageMessageReceive(messageType, data);
+                (damageMessageListener as IMessageReceiver).OnMessageReceive(messageType, data);
             }
 
             StartCoroutine(SetUnvulnerability());

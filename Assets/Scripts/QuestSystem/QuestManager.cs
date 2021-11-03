@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace RPGAdventure
 {
-    public class QuestManager : MonoBehaviour, IDamageMessageReceiver
+    public class QuestManager : MonoBehaviour, IMessageReceiver
     {
         [SerializeField]
         List<Quest> Quests;
@@ -43,18 +43,18 @@ namespace RPGAdventure
             return null;
         }
 
-        public void OnDamageMessageReceive(IDamageMessageReceiver.DamageMessageType messageType, Damageable.DamageData damageData)
+        public void OnMessageReceive(IMessageReceiver.MessageType messageType, object damageData)
         {
-            if (messageType == IDamageMessageReceiver.DamageMessageType.DEAD)
+            if (messageType == IMessageReceiver.MessageType.DEAD)
             {
-                CheckForHuntQuestCompetion(damageData);
+                CheckForHuntQuestCompetion((Damageable.DamageData)damageData);
             }
         }
 
         private void CheckForHuntQuestCompetion(Damageable.DamageData damageData)
         {
             Debug.Log(damageData.DamageReceiver);
-            Debug.Log(damageData.DamageDealer);
+            Debug.Log(damageData.DamageSender);
         }
     }
 }
