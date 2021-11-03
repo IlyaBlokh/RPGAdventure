@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace RPGAdventure
 {
-    public class QuestManager : MonoBehaviour
+    public class QuestManager : MonoBehaviour, IDamageMessageReceiver
     {
         [SerializeField]
         List<Quest> Quests;
@@ -41,6 +41,19 @@ namespace RPGAdventure
                     return quest;
             }
             return null;
+        }
+
+        public void OnDamageMessageReceive(IDamageMessageReceiver.DamageMessageType messageType)
+        {
+            if (messageType == IDamageMessageReceiver.DamageMessageType.DEAD)
+            {
+                CheckForHuntQuestCompetion();
+            }
+        }
+
+        private void CheckForHuntQuestCompetion()
+        {
+            Debug.Log("Check if some HUNT quest is done");
         }
     }
 }

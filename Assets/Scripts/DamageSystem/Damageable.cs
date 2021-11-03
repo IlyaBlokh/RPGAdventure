@@ -27,6 +27,7 @@ namespace RPGAdventure
         {
             CurrentHP = maxHP;
             m_isVulnerable = true;
+            DamageMessageListeners.Add(FindObjectOfType<QuestManager>());
         }
 
         public void ApplyDamage(DamageData data)
