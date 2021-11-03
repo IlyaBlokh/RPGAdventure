@@ -14,29 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Quests: []
   dialog:
-    welcomeText: Hello Strager! What are you doing here?
-    queries:
-    - queryText: I'm looking for a job
-      isAsked: 0
-      shouldAlwaysAsk: 0
-      dialogAnswer:
-        answerText: Kill two bandits on the north from the camp!
-        shouldForceExit: 0
-        questId: q-1
-    - queryText: Just passing by
-      isAsked: 0
-      shouldAlwaysAsk: 0
-      dialogAnswer:
-        answerText: Have a nice day
-        shouldForceExit: 0
-        questId: 
-    - queryText: Good bye
-      isAsked: 0
-      shouldAlwaysAsk: 1
-      dialogAnswer:
-        answerText: Bye!
-        shouldForceExit: 1
-        questId: 
+    welcomeText: 
+    queries: []
 --- !u!1001 &4791243068434164818
 PrefabInstance:
   m_ObjectHideFlags: 0
