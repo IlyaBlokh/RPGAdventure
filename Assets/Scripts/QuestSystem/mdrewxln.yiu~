@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -46,6 +45,10 @@ namespace RPGAdventure
 
         public void OnMessageReceive(IMessageReceiver.MessageType messageType, object messageData)
         {
+            var questLog = damageData.DamageSender.GetComponent<QuestLog>();
+            if (questLog == null) return;
+
+
             if (messageType == IMessageReceiver.MessageType.DEAD)
             {
                 CheckForHuntQuestCompetion((Damageable.DamageData)messageData);
@@ -54,24 +57,18 @@ namespace RPGAdventure
 
         private void CheckForHuntQuestCompetion(Damageable.DamageData damageData)
         {
-            var questLog = damageData.DamageSender.GetComponent<QuestLog>();
-            if (questLog == null) return;
 
-            foreach (var quest in questLog.Quests)
+
+            foreach(var quest in questLog.Quests)
             {
-                if (quest.status == QuestStatus.ACTIVE &&
-                    quest.type == QuestType.HUNT &&
-                    Array.Exists(quest.huntGoalAllowedIds, (allowedId) => allowedId.Equals(damageData.DamageReceiver.GetComponent<UniqueID>().Uid)))
-                {
-                    quest.huntGoalAmount--;
-                    if (quest.huntGoalAmount == 0)
-                    {
-                        quest.status = QuestStatus.COMPLETED;
-                        Debug.Log("quest " + quest.uid + " is completed");
-                    }
-                }
+                if (quest.status == QuestStatus.ACTIVE)
+                    CheckQuestCompletion(quest, damageData);
             }
         }
 
+        private void CheckQuestCompletion(Quest quest, Damageable.DamageData damageData)
+        {
+            if (quest.type == QuestType.HUNT)
+        }
     }
 }

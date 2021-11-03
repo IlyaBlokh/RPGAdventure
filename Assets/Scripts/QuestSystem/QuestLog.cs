@@ -38,11 +38,13 @@ namespace RPGAdventure
     public class QuestLog : MonoBehaviour
     {
         [SerializeField]
-        List<AcceptedQuest> Quests = new List<AcceptedQuest>();
+        List<AcceptedQuest> AcceptedQuests = new List<AcceptedQuest>();
+
+        public List<AcceptedQuest> Quests { get => AcceptedQuests; }
 
         public void AddQuest(Quest quest)
         {
-            Quests.Add(new AcceptedQuest(quest));
+            AcceptedQuests.Add(new AcceptedQuest(quest));
         }
     }
 }
