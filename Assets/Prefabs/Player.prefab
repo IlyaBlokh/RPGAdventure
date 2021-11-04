@@ -1417,6 +1417,7 @@ GameObject:
   - component: {fileID: -5284788568716796893}
   - component: {fileID: 8965270943736439038}
   - component: {fileID: -5482758076035187369}
+  - component: {fileID: -4931663889395807234}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1583,6 +1584,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AcceptedQuests: []
+--- !u!114 &-4931663889395807234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6781415423198019732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b610a6678f659419ffd4a3b722a013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLevel: 1
+  experience: 0
+  maxLevel: 60
+  availableLevels: 
 --- !u!1 &6781422704565756944
 GameObject:
   m_ObjectHideFlags: 0
