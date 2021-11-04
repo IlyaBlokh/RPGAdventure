@@ -13,6 +13,12 @@ namespace RPGAdventure
         float hitAngle;
 
         [SerializeField]
+        int experienceForKill;
+
+        [SerializeField]
+        LayerMask layerToInformPlayer;
+
+        [SerializeField]
         List<MonoBehaviour> DamageMessageListeners;
 
         [SerializeField]
@@ -22,13 +28,17 @@ namespace RPGAdventure
         private bool m_isVulnerable;
 
         public float CurrentHP { get => m_currentHP; private set => m_currentHP = value; }
+        public int ExperienceForKill { get => experienceForKill; set => experienceForKill = value; }
 
         private void Awake()
         {
             CurrentHP = maxHP;
             m_isVulnerable = true;
-            DamageMessageListeners.Add(FindObjectOfType<QuestManager>());
-            DamageMessageListeners.Add(FindObjectOfType<PlayerStats>());
+            if ((layerToInformPlayer.value & (1 << gameObject.layer)) != 0)
+            {
+                DamageMessageListeners.Add(FindObjectOfType<QuestManager>());
+                DamageMessageListeners.Add(FindObjectOfType<PlayerStats>());
+            }
         }
 
         public void ApplyDamage(DamageData data)

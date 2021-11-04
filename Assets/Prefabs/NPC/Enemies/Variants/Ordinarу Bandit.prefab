@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Ordinar\u0443 Bandit"
       objectReference: {fileID: 0}
+    - target: {fileID: 6930727367220174745, guid: c08383f595b01af42abc8d0cfcf4ac8c, type: 3}
+      propertyPath: experienceForKill
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6935255213721786977, guid: c08383f595b01af42abc8d0cfcf4ac8c, type: 3}
       propertyPath: m_RootOrder
       value: 0

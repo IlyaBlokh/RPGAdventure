@@ -2414,6 +2414,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 25
   hitAngle: 360
+  experienceForKill: 0
+  layerToInformPlayer:
+    serializedVersion: 2
+    m_Bits: 64
   DamageMessageListeners:
   - {fileID: 8949339792170754615}
   UnvulnerabilityTime: 0.5
