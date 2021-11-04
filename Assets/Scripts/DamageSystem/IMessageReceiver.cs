@@ -9,7 +9,8 @@ namespace RPGAdventure
         enum MessageType
         {
             DAMAGED,
-            DEAD
+            DEAD,
+            QUEST_COMPLETE
         }
 
         void OnMessageReceive(MessageType messageType, object messageData);

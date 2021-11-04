@@ -11,9 +11,12 @@ namespace RPGAdventure
         [SerializeField]
         List<Quest> Quests;
 
+        private PlayerStats m_PlayerStats;
+
         private void Awake()
         {
             UploadQuestsFromDB();
+            m_PlayerStats = FindObjectOfType<PlayerStats>();
         }
 
        private void UploadQuestsFromDB()
@@ -67,6 +70,7 @@ namespace RPGAdventure
                     if (quest.huntGoalAmount == 0)
                     {
                         quest.status = QuestStatus.COMPLETED;
+                        m_PlayerStats.OnMessageReceive(IMessageReceiver.MessageType.QUEST_COMPLETE, quest);
                         Debug.Log("quest " + quest.uid + " is completed");
                     }
                 }

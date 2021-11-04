@@ -27,14 +27,21 @@ namespace RPGAdventure
 
         public void OnMessageReceive(IMessageReceiver.MessageType messageType, object messageData)
         {
-            if (messageType == IMessageReceiver.MessageType.DEAD)
+            var exp = 0;
+            switch (messageType)
             {
-                int exp = ((Damageable.DamageData)messageData).DamageReceiver.ExperienceForKill;
-                GainExperience(exp);
+                case IMessageReceiver.MessageType.DEAD:
+                    exp = ((Damageable.DamageData)messageData).DamageReceiver.ExperienceForKill;
+                    break;
+                case IMessageReceiver.MessageType.QUEST_COMPLETE:
+                    exp = ((AcceptedQuest)messageData).experienceReward;
+                    break;
+                default: break;
             }
+            GainExperience(exp);
         }
 
-        private void GainExperience(int exp)
+        public void GainExperience(int exp)
         {
             experience += exp;
             if (currentLevel == maxLevel) return;
