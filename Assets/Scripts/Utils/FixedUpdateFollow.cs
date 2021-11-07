@@ -11,9 +11,17 @@ namespace RPGAdventure
 
         private void Awake()
         {
-            transform.position = ToFollow.position;
-            transform.rotation = ToFollow.rotation;
-            transform.SetParent(ToFollow);
+            if (ToFollow != null)
+            {
+                FollowParent(ToFollow);
+            }
+        }
+
+        public void FollowParent(Transform toFollow)
+        {
+            transform.position = toFollow.position;
+            transform.rotation = toFollow.rotation;
+            transform.SetParent(toFollow);
         }
     }
 }
