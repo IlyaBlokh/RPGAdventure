@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8002221566124463660}
   - component: {fileID: 5599094245896958472}
   - component: {fileID: 3450349056921083040}
+  - component: {fileID: -2666326540573714764}
+  - component: {fileID: -929036939443761225}
   m_Layer: 0
   m_Name: Sword_4
   m_TagString: Untagged
@@ -96,6 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 30
+  attackPoints: []
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &3450349056921083040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,3 +115,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ToFollow: {fileID: 0}
+--- !u!114 &-2666326540573714764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8002221566126655724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5485c9d74acba4482be9f154a65e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allowedOwnerLayers:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!136 &-929036939443761225
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8002221566126655724}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 1.61
+  m_Direction: 2
+  m_Center: {x: -0.15771249, y: 0.037242915, z: 0.36092532}
