@@ -131,6 +131,9 @@ MonoBehaviour:
   allowedOwnerLayers:
     serializedVersion: 2
     m_Bits: 8
+  onItemPickup:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!136 &-929036939443761225
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -19,14 +19,13 @@ namespace RPGAdventure {
 
         public void AddItem(GameObject item)
         {
-            if (inventory.Count == size) return;
-            inventory.Add(item.GetComponent<UniqueID>(), item);
-            Debug.Log(item.name);
-        }
-
-        public bool HasItem(UniqueID id)
-        {
-            return inventory.ContainsKey(id);
+            //We don't allow to have 2 identic items
+            if (!inventory.ContainsKey(item.GetComponent<UniqueID>()))
+            {
+                if (inventory.Count == size) return;
+                inventory.Add(item.GetComponent<UniqueID>(), item);
+                Debug.Log(item.name);
+            }
         }
     }
 }
