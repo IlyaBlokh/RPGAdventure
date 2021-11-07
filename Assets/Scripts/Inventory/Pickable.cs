@@ -17,7 +17,7 @@ namespace RPGAdventure
         {
             Inventory[] inventories = FindObjectsOfType<Inventory>();
             foreach(var inventory in inventories)
-                onItemPickup.AddListener(inventory.AddItem);
+                onItemPickup.AddListener(inventory.OnItemPickup);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -25,7 +25,6 @@ namespace RPGAdventure
             if ((allowedOwnerLayers.value & 1 << other.gameObject.layer) != 0)
             {
                 onItemPickup.Invoke(gameObject);
-                Destroy(gameObject);
             }
         }
     }

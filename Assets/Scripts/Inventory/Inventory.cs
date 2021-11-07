@@ -10,22 +10,28 @@ namespace RPGAdventure {
         int size;
 
         [SerializeField]
-        Dictionary<UniqueID, GameObject> inventory;
+        Dictionary<string, GameObject> inventory;
 
         private void Awake()
         {
-            inventory = new Dictionary<UniqueID, GameObject>();
+            inventory = new Dictionary<string, GameObject>();
         }
 
-        public void AddItem(GameObject item)
+        public void OnItemPickup(GameObject item)
         {
             //We don't allow to have 2 identic items
-            if (!inventory.ContainsKey(item.GetComponent<UniqueID>()))
+            if (!inventory.ContainsKey(item.GetComponent<UniqueID>().Uid) &&
+                inventory.Count < size)
             {
-                if (inventory.Count == size) return;
-                inventory.Add(item.GetComponent<UniqueID>(), item);
-                Debug.Log(item.name);
+                AddItem(item);
             }
+        }
+
+        private void AddItem(GameObject item)
+        {
+            inventory.Add(item.GetComponent<UniqueID>().Uid, item);
+            Destroy(item);
+            Debug.Log(item.GetComponent<UniqueID>().Uid);
         }
     }
 }
