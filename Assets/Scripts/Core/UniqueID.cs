@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace RPGAdventure
 {
+    [System.Serializable]
     public class UniqueID : MonoBehaviour
     {
         [SerializeField]

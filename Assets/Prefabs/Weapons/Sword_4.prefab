@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3450349056921083040}
   - component: {fileID: -2666326540573714764}
   - component: {fileID: -929036939443761225}
+  - component: {fileID: -5815657606631768604}
   m_Layer: 0
   m_Name: Sword_4
   m_TagString: Untagged
@@ -144,3 +145,16 @@ CapsuleCollider:
   m_Height: 1.61
   m_Direction: 2
   m_Center: {x: -0.15771249, y: 0.037242915, z: 0.36092532}
+--- !u!114 &-5815657606631768604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8002221566126655724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e58792a7cf25fa4f9f37e2fcdbeaec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_uid: c0a907b9-250c-49cb-a4d6-2e1da1214aa0

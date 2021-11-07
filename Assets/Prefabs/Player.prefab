@@ -1418,6 +1418,7 @@ GameObject:
   - component: {fileID: 8965270943736439038}
   - component: {fileID: -5482758076035187369}
   - component: {fileID: -4931663889395807234}
+  - component: {fileID: -5384849018937376211}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -1604,6 +1605,19 @@ MonoBehaviour:
   experience: 0
   maxLevel: 60
   availableLevels: 
+--- !u!114 &-5384849018937376211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6781415423198019732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315e2201f18a524a9a8455b1b3475cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 4
 --- !u!1 &6781422704565756944
 GameObject:
   m_ObjectHideFlags: 0
