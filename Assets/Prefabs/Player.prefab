@@ -1421,7 +1421,7 @@ GameObject:
   - component: {fileID: -5384849018937376211}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1618,6 +1618,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 4
+  inventory: []
+  onSlotTaken:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6781422704565756944
 GameObject:
   m_ObjectHideFlags: 0
