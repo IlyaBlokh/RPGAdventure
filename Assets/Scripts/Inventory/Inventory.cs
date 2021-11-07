@@ -12,6 +12,8 @@ namespace RPGAdventure {
         [SerializeField]
         Dictionary<string, GameObject> inventory;
 
+        public int Size { get => size; set => size = value; }
+
         private void Awake()
         {
             inventory = new Dictionary<string, GameObject>();
@@ -32,6 +34,9 @@ namespace RPGAdventure {
             inventory.Add(item.GetComponent<UniqueID>().Uid, item);
             Destroy(item);
             Debug.Log(item.GetComponent<UniqueID>().Uid);
+
+            //TODO: if melee weapon -> take into hands if empty
+            //TODO: disable player attack if disarmed
         }
     }
 }
