@@ -39,10 +39,6 @@ namespace RPGAdventure {
         public void OnItemPickup(GameObject item)
         {
             //We don't allow to have 2 identic items
-            Debug.Log("volume:" + currentVolume);
-            Debug.Log("try to pick up:" + item.GetComponent<UniqueID>().Uid);
-            for (int i = 0; i < currentVolume; i++)
-                Debug.Log("inventory slot " + i + " is " + inventory[i].Item);
             if (!ContainsItem(item.GetComponent<UniqueID>().Uid) &&
                 currentVolume < size)
             {
@@ -59,15 +55,21 @@ namespace RPGAdventure {
 
         private void AddItem(GameObject item)
         {
-            inventory[currentVolume].Item = item;
+            Debug.Log("adding item to inventory " + item.name);
+            inventory[currentVolume].ItemId = item.GetComponent<UniqueID>();
             onSlotTaken.Invoke(currentVolume, item.name);
-            //TODO removing item by destroy empties inventory. need other solution!
-            //Destroy(item);
+            Destroy(item);
             currentVolume++;
-            for (int i = 0; i < currentVolume; i++)
-                Debug.Log("inventory slot " + i + " has id " + inventory[i].ItemId);
+
             //TODO: if melee weapon -> take into hands if empty
+            GameObject weaponToGet = FindObjectOfType<InventoryManager>().GetWeaponOut(inventory[currentVolume-1].ItemId);
+            DrawWeapon(weaponToGet);
             //TODO: disable player attack if disarmed
+        }
+
+        private void DrawWeapon(GameObject weapon)
+        {
+/*            Instantiate(weapon, transform);*/
         }
     }
 }
