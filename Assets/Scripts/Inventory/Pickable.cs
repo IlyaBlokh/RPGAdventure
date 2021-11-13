@@ -5,8 +5,10 @@ using UnityEngine.Events;
 
 namespace RPGAdventure
 {
+    [RequireComponent(typeof(UniqueID))]
     public class Pickable : MonoBehaviour
     {
+
         [SerializeField]
         LayerMask allowedOwnerLayers;
 

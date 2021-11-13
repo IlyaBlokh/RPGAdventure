@@ -7,12 +7,19 @@ namespace RPGAdventure
     public class InventorySlotHandler : MonoBehaviour
     {
         public readonly int Index;
-        private UniqueID itemID;
-        public UniqueID ItemId { get => itemID; set => itemID = value; }
+        private string itemID;
+
+        public string ItemID { get => itemID; set => itemID = value; }
 
         public InventorySlotHandler(int index)
         {
             Index = index;
+            itemID = "";
+        }
+
+        public bool ContainsItemInSlot(string iID)
+        {
+            return itemID == iID;
         }
     }
 }

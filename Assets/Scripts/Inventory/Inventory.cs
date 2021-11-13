@@ -48,21 +48,19 @@ namespace RPGAdventure {
 
         private bool ContainsItem(string itemId)
         {
-            for (int i = 0; i < currentVolume; i++)
-                if (inventory[i].ItemId.Equals(itemId)) return true;
-            return false;
+            var slot = inventory.Find(slot => slot.ContainsItemInSlot(itemId));
+            return !string.IsNullOrEmpty(slot?.ItemID);
         }
 
         private void AddItem(GameObject item)
         {
-            Debug.Log("adding item to inventory " + item.name);
-            inventory[currentVolume].ItemId = item.GetComponent<UniqueID>();
+            inventory[currentVolume].ItemID = item.GetComponent<UniqueID>().Uid;
             onSlotTaken.Invoke(currentVolume, item.name);
             Destroy(item);
             currentVolume++;
 
             //TODO: if melee weapon -> take into hands if empty
-            GameObject weaponToGet = FindObjectOfType<InventoryManager>().GetWeaponOut(inventory[currentVolume-1].ItemId);
+            GameObject weaponToGet = FindObjectOfType<InventoryManager>().GetWeaponOut(inventory[currentVolume-1].ItemID);
             DrawWeapon(weaponToGet);
             //TODO: disable player attack if disarmed
         }
