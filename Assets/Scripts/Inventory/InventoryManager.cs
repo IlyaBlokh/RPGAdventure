@@ -9,14 +9,19 @@ namespace RPGAdventure
         [SerializeField]
         GameObject[] WeaponList;
 
-        public GameObject GetWeaponOut(string weaponID)
+        public GameObject GetItem(string itemID)
         {
-/*            foreach (var weapon in WeaponList)
+            foreach (var weapon in WeaponList)
             {
-                if (weapon.GetComponent<UniqueID>().Uid == weaponID.Uid)
+                if (weapon.GetComponent<UniqueID>().Uid == itemID)
                     return weapon;
-            }*/
+            }
             return null;
+        }
+
+        public Inventory GetPlayerInventory()
+        {
+            return PlayerController.Instance.GetComponent<Inventory>();
         }
     }
 }

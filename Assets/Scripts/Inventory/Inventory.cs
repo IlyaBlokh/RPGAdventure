@@ -18,6 +18,7 @@ namespace RPGAdventure {
 
         private int currentVolume = 0;
         private InventoryUIManager m_UIManager;
+        private InventoryManager m_InventoryManager;
 
         public int Size { get => size; set => size = value; }
 
@@ -31,6 +32,7 @@ namespace RPGAdventure {
 
             if (tag == "Player")
             {
+                m_InventoryManager = FindObjectOfType<InventoryManager>();
                 m_UIManager = FindObjectOfType<InventoryUIManager>();
                 onSlotTaken.AddListener(m_UIManager.onSlotTaken);
             }
@@ -60,9 +62,19 @@ namespace RPGAdventure {
             currentVolume++;
 
             //TODO: if melee weapon -> take into hands if empty
-            GameObject weaponToGet = FindObjectOfType<InventoryManager>().GetWeaponOut(inventory[currentVolume-1].ItemID);
-            DrawWeapon(weaponToGet);
+           /* GameObject weaponToGet = FindObjectOfType<InventoryManager>().GetWeaponOut(inventory[currentVolume-1].ItemID);
+            DrawWeapon(weaponToGet);*/
             //TODO: disable player attack if disarmed
+        }
+
+        public void OnInventorySlotPick(int index)
+        {
+            var itemID = inventory[index].ItemID;
+            if (!string.IsNullOrEmpty(itemID))
+            {
+                var item = m_InventoryManager.GetItem(itemID);
+                Debug.Log("item found: " + item.name);
+            }
         }
 
         private void DrawWeapon(GameObject weapon)

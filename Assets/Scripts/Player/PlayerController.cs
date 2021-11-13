@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace RPGAdventure
 {
+    [RequireComponent(typeof(Inventory))]
     public class PlayerController : MonoBehaviour, IAttackAnimListener
     {
         public static PlayerController Instance
@@ -121,7 +122,7 @@ namespace RPGAdventure
     
         public void AE_Attack (int AttackStatus)
         {
-            MeleeWeapon.UpdateAttack(AttackStatus == 1);
+            MeleeWeapon?.UpdateAttack(AttackStatus == 1);
         }
 
         private void Combat()
