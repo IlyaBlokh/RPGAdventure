@@ -60,11 +60,6 @@ namespace RPGAdventure {
             onSlotTaken.Invoke(currentVolume, item.name);
             Destroy(item);
             currentVolume++;
-
-            //TODO: if melee weapon -> take into hands if empty
-           /* GameObject weaponToGet = FindObjectOfType<InventoryManager>().GetWeaponOut(inventory[currentVolume-1].ItemID);
-            DrawWeapon(weaponToGet);*/
-            //TODO: disable player attack if disarmed
         }
 
         public void OnInventorySlotPick(int index)
@@ -73,13 +68,8 @@ namespace RPGAdventure {
             if (!string.IsNullOrEmpty(itemID))
             {
                 var item = m_InventoryManager.GetItem(itemID);
-                Debug.Log("item found: " + item.name);
+                PlayerController.Instance.EquipItem(item);
             }
-        }
-
-        private void DrawWeapon(GameObject weapon)
-        {
-/*            Instantiate(weapon, transform);*/
         }
     }
 }

@@ -1525,6 +1525,7 @@ MonoBehaviour:
   MaxRotationSpeed: 1200
   Gravity: 10
   MeleeWeapon: {fileID: 0}
+  PrimaryAttackHand: {fileID: 6776540207008350510}
 --- !u!143 &2483567010061508714
 CharacterController:
   m_ObjectHideFlags: 0

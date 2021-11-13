@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace RPGAdventure
 {
+    [RequireComponent(typeof(FixedUpdateFollow))]
     public class MeleeWeapon : MonoBehaviour
     {
         [System.Serializable]

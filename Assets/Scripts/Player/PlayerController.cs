@@ -27,6 +27,8 @@ namespace RPGAdventure
         [SerializeField]
         MeleeWeapon MeleeWeapon;
 
+        [SerializeField]
+        Transform PrimaryAttackHand;
 
         private static PlayerController s_Instance;
         //Components
@@ -134,5 +136,17 @@ namespace RPGAdventure
             }
         }
 
+        public void EquipItem(GameObject itemToEquip)
+        {
+            //TODO: disable player attack if disarmed
+            //TODO: remove previous item
+            var item = Instantiate(itemToEquip);
+            var weapon = item.GetComponent<MeleeWeapon>();
+            if (weapon)
+            {
+                weapon.Owner = gameObject;
+                weapon.GetComponent<FixedUpdateFollow>().FollowParent(PrimaryAttackHand);
+            }
+        }
     }
 }

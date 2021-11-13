@@ -7,16 +7,11 @@ namespace RPGAdventure
     public class InventoryManager : MonoBehaviour
     {
         [SerializeField]
-        GameObject[] WeaponList;
+        List<GameObject> WeaponList = new List<GameObject>();
 
         public GameObject GetItem(string itemID)
         {
-            foreach (var weapon in WeaponList)
-            {
-                if (weapon.GetComponent<UniqueID>().Uid == itemID)
-                    return weapon;
-            }
-            return null;
+            return WeaponList.Find(weapon => weapon.GetComponent<UniqueID>().Uid == itemID);
         }
 
         public Inventory GetPlayerInventory()
