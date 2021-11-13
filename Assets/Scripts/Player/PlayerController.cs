@@ -138,14 +138,16 @@ namespace RPGAdventure
 
         public void EquipItem(GameObject itemToEquip)
         {
+            if (itemToEquip.name == MeleeWeapon?.gameObject.name) return;
+            Destroy(MeleeWeapon?.gameObject);
             //TODO: disable player attack if disarmed
             //TODO: remove previous item
             var item = Instantiate(itemToEquip);
-            var weapon = item.GetComponent<MeleeWeapon>();
-            if (weapon)
+            MeleeWeapon = item.GetComponent<MeleeWeapon>();
+            if (MeleeWeapon)
             {
-                weapon.Owner = gameObject;
-                weapon.GetComponent<FixedUpdateFollow>().FollowParent(PrimaryAttackHand);
+                MeleeWeapon.Owner = gameObject;
+                MeleeWeapon.GetComponent<FixedUpdateFollow>().FollowParent(PrimaryAttackHand);
             }
         }
     }
