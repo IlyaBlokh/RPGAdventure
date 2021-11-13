@@ -99,10 +99,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 15
-  attackPoints: []
+  attackPoints:
+  - radius: 0.1
+    offset: {x: -0.23, y: 0.09, z: 0.8}
+    root: {fileID: 7240467790483400481}
+  - radius: 0.1
+    offset: {x: -0.18, y: 0.07, z: 0.6}
+    root: {fileID: 7240467790483400481}
+  - radius: 0.1
+    offset: {x: -0.14, y: 0.05, z: 0.4}
+    root: {fileID: 7240467790483400481}
   targetLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!114 &4596547136509981915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,6 +154,9 @@ MonoBehaviour:
   allowedOwnerLayers:
     serializedVersion: 2
     m_Bits: 8
+  onItemPickup:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &-4090098729777294276
 MonoBehaviour:
   m_ObjectHideFlags: 0
