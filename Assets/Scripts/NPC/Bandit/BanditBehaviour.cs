@@ -139,7 +139,8 @@ namespace RPGAdventure
 
         public void AE_Attack(int AttackStatus)
         {
-            MeleeWeapon?.UpdateAttack(AttackStatus == 1);
+            if (MeleeWeapon == null) Debug.Log("NULL");
+            MeleeWeapon.UpdateAttack(AttackStatus == 1);
         }
 
         public void OnMessageReceive(IMessageReceiver.MessageType messageType, object messageData)

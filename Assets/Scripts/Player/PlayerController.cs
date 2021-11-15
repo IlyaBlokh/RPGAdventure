@@ -5,7 +5,7 @@ using UnityEngine;
 namespace RPGAdventure
 {
     [RequireComponent(typeof(Inventory))]
-    public class PlayerController : MonoBehaviour, IAttackAnimListener
+    public class PlayerController : MonoBehaviour, IAttackAnimListener, IMessageReceiver
     {
         public static PlayerController Instance
         {
@@ -133,6 +133,21 @@ namespace RPGAdventure
             if (m_PlayerInput.IsAttacking)
             {
                 m_Animator.SetTrigger(m_HashedMeleeAttack);
+            }
+        }
+
+        public void OnMessageReceive(IMessageReceiver.MessageType messageType, object messageData)
+        {
+            switch (messageType)
+            {
+                case IMessageReceiver.MessageType.DAMAGED:
+                    Debug.Log("Player HP = " + ((Damageable.DamageData)messageData).DamageReceiver.CurrentHP);
+                    break;
+                case IMessageReceiver.MessageType.DEAD:
+                    //Die
+                    break;
+                default:
+                    break;
             }
         }
 
