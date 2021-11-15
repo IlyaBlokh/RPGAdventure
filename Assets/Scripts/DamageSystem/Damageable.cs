@@ -53,6 +53,7 @@ namespace RPGAdventure
                 return;
 
             m_currentHP -= data.DamageAmount;
+            Debug.Log("current " + gameObject.name + " hp = " + m_currentHP);
 
             var messageType = m_currentHP <= 0 ? IMessageReceiver.MessageType.DEAD : IMessageReceiver.MessageType.DAMAGED;
             foreach(var damageMessageListener in DamageMessageListeners)

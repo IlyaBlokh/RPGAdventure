@@ -16,6 +16,9 @@ namespace RPGAdventure
         float AttackDistance = 1.1f;
 
         //Components
+        [SerializeField]
+        MeleeWeapon MeleeWeapon;
+
         private EnemyController m_EnemyController;
 
         //AI
@@ -43,6 +46,7 @@ namespace RPGAdventure
             m_EnemyController = GetComponent<EnemyController>();
             m_SpotPosition = transform.position;
             m_initialRotation = transform.rotation;
+            MeleeWeapon.Owner = gameObject;
         }
 
         private void Update()
@@ -135,7 +139,7 @@ namespace RPGAdventure
 
         public void AE_Attack(int AttackStatus)
         {
-            throw new System.NotImplementedException();
+            MeleeWeapon?.UpdateAttack(AttackStatus == 1);
         }
 
         public void OnMessageReceive(IMessageReceiver.MessageType messageType, object messageData)
