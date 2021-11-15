@@ -44,9 +44,9 @@ namespace RPGAdventure {
             }
         }
 
-        public void onSlotTaken(int index, string itemName)
+        public void onSlotTaken(int index, Sprite icon)
         {
-            m_slots[index].GetComponentInChildren<Text>().text = itemName;
+            m_slots[index].GetComponentInChildren<Image>().sprite = icon;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace RPGAdventure {
         List<InventorySlotHandler> inventory;
 
         [SerializeField]
-        UnityEvent<int, string> onSlotTaken;
+        UnityEvent<int, Sprite> onSlotTaken;
 
         private int currentVolume = 0;
         private InventoryUIManager m_UIManager;
@@ -56,8 +56,9 @@ namespace RPGAdventure {
 
         private void AddItem(GameObject item)
         {
-            inventory[currentVolume].ItemID = item.GetComponent<UniqueID>().Uid;
-            onSlotTaken.Invoke(currentVolume, item.name);
+            var uid = item.GetComponent<UniqueID>().Uid;
+            inventory[currentVolume].ItemID = uid;
+            onSlotTaken.Invoke(currentVolume, m_InventoryManager.GetWeaponIcon(uid));
             Destroy(item);
             currentVolume++;
         }
