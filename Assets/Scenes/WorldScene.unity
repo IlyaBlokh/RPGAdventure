@@ -147,7 +147,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16180745}
-  m_LocalRotation: {x: 0.19813146, y: -0.00000001686528, z: 0.0000000034091268, w: 0.9801755}
+  m_LocalRotation: {x: 0.19813146, y: 0.000000016865267, z: -0.0000000034091245, w: 0.9801755}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -533,6 +533,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 105855047}
     m_Modifications:
+    - target: {fileID: 152689062718564625, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 152689062718564625, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330205831312673750, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330205831312673750, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 599515948347955476, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 599515948347955476, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4596379213329411223, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
       propertyPath: m_Name
       value: "Ordinar\u0443 Bandit 2"
@@ -579,6 +603,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4602106151517789055, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187001979631775111, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187001979631775111, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6192850508243930959, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6192850508243930959, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360566794452038895, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360566794452038895, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8685931562920566106, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8685931562920566106, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1051,6 +1107,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 105855047}
     m_Modifications:
+    - target: {fileID: 514523289204263390, guid: 04d7e83136a87e44c804d862025621ed, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 514523289204263390, guid: 04d7e83136a87e44c804d862025621ed, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 857721137516124956, guid: 04d7e83136a87e44c804d862025621ed, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 857721137516124956, guid: 04d7e83136a87e44c804d862025621ed, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 967263762831964635, guid: 04d7e83136a87e44c804d862025621ed, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 967263762831964635, guid: 04d7e83136a87e44c804d862025621ed, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3508281611877747637, guid: 04d7e83136a87e44c804d862025621ed, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1098,6 +1178,38 @@ PrefabInstance:
     - target: {fileID: 3511543451577793629, guid: 04d7e83136a87e44c804d862025621ed, type: 3}
       propertyPath: m_Name
       value: Bandit Leader
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522179939534610309, guid: 04d7e83136a87e44c804d862025621ed, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522179939534610309, guid: 04d7e83136a87e44c804d862025621ed, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534363680330399053, guid: 04d7e83136a87e44c804d862025621ed, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534363680330399053, guid: 04d7e83136a87e44c804d862025621ed, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7590782128539886629, guid: 04d7e83136a87e44c804d862025621ed, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7590782128539886629, guid: 04d7e83136a87e44c804d862025621ed, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8644866314204237200, guid: 04d7e83136a87e44c804d862025621ed, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8644866314204237200, guid: 04d7e83136a87e44c804d862025621ed, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04d7e83136a87e44c804d862025621ed, type: 3}
@@ -2103,7 +2215,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.19813149, y: -0.00000001686524, z: 0.0000000034089187, w: 0.98017544}
+  m_LocalRotation: {x: 0.19813149, y: 0.000000016865224, z: -0.0000000034089167, w: 0.98017544}
   m_LocalPosition: {x: 0, y: 6, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2864,6 +2976,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 105855047}
     m_Modifications:
+    - target: {fileID: 152689062718564625, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 152689062718564625, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4596379213329411223, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
       propertyPath: m_Name
       value: "Ordinar\u0443 Bandit 1"
@@ -2912,12 +3032,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6187001979631775111, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187001979631775111, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6192850508243930959, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6192850508243930959, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360566794452038895, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360566794452038895, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
 --- !u!4 &1856194056 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4602106151517789055, guid: 4200fd7ac9ec9f24a80b777f971ede13, type: 3}
   m_PrefabInstance: {fileID: 1856194055}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1871097165 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6998252222024878168, guid: cc3080fab59cf6e45873862f6eb88e12, type: 3}
+  m_PrefabInstance: {fileID: 7038222951461800585}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1886650078
 PrefabInstance:
@@ -3923,6 +4072,10 @@ PrefabInstance:
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 545619344}
+    - target: {fileID: -4624802666502537874, guid: 0501fba4e7a82c0448c5e2bb863a142b, type: 3}
+      propertyPath: HealthUIPrefab
+      value: 
+      objectReference: {fileID: 1871097165}
     - target: {fileID: 6776612964433118344, guid: 0501fba4e7a82c0448c5e2bb863a142b, type: 3}
       propertyPath: m_RootOrder
       value: 3

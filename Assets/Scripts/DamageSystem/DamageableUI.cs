@@ -8,17 +8,30 @@ namespace RPGAdventure
     public class DamageableUI : MonoBehaviour
     {
         [SerializeField]
-        Slider HealthBar;
+        GameObject HealthUIPrefab;
+
+        private Slider m_HealthBar;
+
+        public GameObject HealthUI { get => HealthUIPrefab; }
+
+        private void Awake()
+        {
+            m_HealthBar = HealthUI.GetComponentInChildren<Slider>();
+        }
 
         public void SetMaxHP(float value)
         {
-            HealthBar.maxValue = value;
-            SetHP(value);
+            if (HealthUI)
+            {
+                m_HealthBar.maxValue = value;
+                SetHP(value);
+            }
         }
 
         public void SetHP(float value)
         {
-            HealthBar.value = value;
+            if (HealthUI)
+                m_HealthBar.value = value;
         }
     }
 }

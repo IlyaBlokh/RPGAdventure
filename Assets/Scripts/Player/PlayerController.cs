@@ -141,7 +141,7 @@ namespace RPGAdventure
             switch (messageType)
             {
                 case IMessageReceiver.MessageType.DAMAGED:
-                    Debug.Log("Player HP = " + ((Damageable.DamageData)messageData).DamageReceiver.CurrentHP);
+                    //Debug.Log("Player HP = " + ((Damageable.DamageData)messageData).DamageReceiver.CurrentHP);
                     break;
                 case IMessageReceiver.MessageType.DEAD:
                     //Die

@@ -12,6 +12,13 @@ namespace RPGAdventure {
         GameObject DeadVFX;
         public void ReplaceWithRagdoll()
         {
+            var UI = GetComponent<DamageableUI>().HealthUI;
+            if (UI)
+            {
+                UI.transform.parent = null;
+                Destroy(UI);
+            }
+
             GameObject ragdoll = Instantiate(RagdollPrefab, transform.position, transform.rotation);
             CopyTransform(transform, ragdoll.transform);
 
