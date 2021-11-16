@@ -52,6 +52,7 @@ namespace RPGAdventure
 
         //Combat
         private readonly int m_HashedMeleeAttack= Animator.StringToHash("MeleeAttack");
+        private readonly int m_HashedDeath = Animator.StringToHash("Death");
 
 
         const float k_Acceleration = 20.0f;
@@ -141,10 +142,9 @@ namespace RPGAdventure
             switch (messageType)
             {
                 case IMessageReceiver.MessageType.DAMAGED:
-                    //Debug.Log("Player HP = " + ((Damageable.DamageData)messageData).DamageReceiver.CurrentHP);
                     break;
                 case IMessageReceiver.MessageType.DEAD:
-                    //Die
+                    m_Animator.SetTrigger(m_HashedDeath);
                     break;
                 default:
                     break;

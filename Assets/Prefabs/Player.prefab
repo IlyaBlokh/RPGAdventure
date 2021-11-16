@@ -1569,7 +1569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68717390e895ad44db1e69e1e82f49dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 200
+  maxHP: 50
   hitAngle: 360
   experienceForKill: 0
   layerToInformPlayer:
@@ -1591,7 +1591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7930a71081b42884a8d96495fafff6f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthBar: {fileID: 0}
+  HealthUIPrefab: {fileID: 0}
 --- !u!114 &-5482758076035187369
 MonoBehaviour:
   m_ObjectHideFlags: 0
