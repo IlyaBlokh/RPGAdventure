@@ -71,11 +71,18 @@ namespace RPGAdventure {
 
         public void OnInventorySlotPick(int index)
         {
-            var itemID = inventory[index].ItemID;
-            if (!string.IsNullOrEmpty(itemID))
+            if (tag == "Player")
             {
-                var item = m_InventoryManager.GetItem(itemID);
-                PlayerController.Instance.EquipItem(item);
+                var isInputBlocked = FindObjectOfType<PlayerInput>().IsPlayerControllerInputBlocked;
+                if (!isInputBlocked)
+                {
+                    var itemID = inventory[index].ItemID;
+                    if (!string.IsNullOrEmpty(itemID))
+                    {
+                        var item = m_InventoryManager.GetItem(itemID);
+                        PlayerController.Instance.EquipItem(item);
+                    }
+                }
             }
         }
     }

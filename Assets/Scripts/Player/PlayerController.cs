@@ -54,6 +54,12 @@ namespace RPGAdventure
         private readonly int m_HashedMeleeAttack= Animator.StringToHash("MeleeAttack");
         private readonly int m_HashedDeath = Animator.StringToHash("Death");
 
+        //Animation
+        private AnimatorStateInfo m_CurrentAnimatorState;
+        private AnimatorStateInfo m_NextAnimatorState;
+        private bool m_IsAnimatorTransitioning;
+        private readonly int m_HashedBlockInput = Animator.StringToHash("BlockInput");
+
 
         const float k_Acceleration = 20.0f;
         const float k_Deceleration = 40.0f;
@@ -70,6 +76,8 @@ namespace RPGAdventure
 
         private void FixedUpdate()
         {
+            CacheAnimatorState();
+            UpdateInputBlocking();
             ComputeForwardMovement();
             ComputeVerticalMovement();
             ComputeRotation();
@@ -96,6 +104,20 @@ namespace RPGAdventure
             m_MovementDirection = m_Animator.deltaPosition;
             m_MovementDirection += Vector3.up * m_VerticalSpeed * Time.fixedDeltaTime;
             m_CharController.Move(m_MovementDirection);
+        }
+
+        private void CacheAnimatorState()
+        {
+            m_CurrentAnimatorState = m_Animator.GetCurrentAnimatorStateInfo(0);
+            m_NextAnimatorState = m_Animator.GetNextAnimatorStateInfo(0);
+            m_IsAnimatorTransitioning = m_Animator.IsInTransition(0);
+        }
+
+        private void UpdateInputBlocking()
+        {
+            m_PlayerInput.IsPlayerControllerInputBlocked = 
+                m_CurrentAnimatorState.tagHash == m_HashedBlockInput && !m_IsAnimatorTransitioning ||
+                m_NextAnimatorState.tagHash == m_HashedBlockInput;
         }
 
         private void ComputeRotation()

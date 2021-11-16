@@ -11,6 +11,7 @@ namespace RPGAdventure
         private static PlayerInput s_Instance;
         private Vector3 m_PlayerInput;
         private bool m_IsAttacking;
+        private bool m_IsPlayerControllerInputBlocked;
         private Clickable m_ClickableObject;
 
         public Vector3 MoveInput { get => m_PlayerInput.normalized; }
@@ -20,6 +21,7 @@ namespace RPGAdventure
         public bool IsMoving{ get => !Mathf.Approximately(m_PlayerInput.magnitude, 0); }
 
         public Clickable GetClickableObject { get => m_ClickableObject; }
+        public bool IsPlayerControllerInputBlocked { get => m_IsPlayerControllerInputBlocked; set => m_IsPlayerControllerInputBlocked = value; }
 
         private void Awake()
         {
@@ -28,13 +30,16 @@ namespace RPGAdventure
 
         void Update()
         {
-            m_PlayerInput.Set(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            if (!IsPlayerControllerInputBlocked)
+            {
+                m_PlayerInput.Set(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
-            if (Input.GetButtonDown("Fire1"))
-                HandlePrimaryAction();
+                if (Input.GetButtonDown("Fire1"))
+                    HandlePrimaryAction();
 
-            if (Input.GetButtonDown("Fire2"))
-                HandleSecondaryAction();
+                if (Input.GetButtonDown("Fire2"))
+                    HandleSecondaryAction();
+            }
         }
 
         private void HandlePrimaryAction()
