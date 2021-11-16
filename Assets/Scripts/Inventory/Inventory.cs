@@ -42,6 +42,7 @@ namespace RPGAdventure {
         {
             //We don't allow to have 2 identic items
             if (!ContainsItem(item.GetComponent<UniqueID>().Uid) &&
+                HasNoOwner(item) &&
                 currentVolume < size)
             {
                 AddItem(item);
@@ -52,6 +53,11 @@ namespace RPGAdventure {
         {
             var slot = inventory.Find(slot => slot.ContainsItemInSlot(itemId));
             return !string.IsNullOrEmpty(slot?.ItemID);
+        }
+
+        private bool HasNoOwner(GameObject item)
+        {
+            return item.GetComponent<MeleeWeapon>()?.Owner == null;
         }
 
         private void AddItem(GameObject item)
