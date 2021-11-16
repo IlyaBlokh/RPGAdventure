@@ -1416,6 +1416,7 @@ GameObject:
   - component: {fileID: 2483567010061508714}
   - component: {fileID: -5284788568716796893}
   - component: {fileID: 8965270943736439038}
+  - component: {fileID: -4624802666502537874}
   - component: {fileID: -5482758076035187369}
   - component: {fileID: -4931663889395807234}
   - component: {fileID: -5384849018937376211}
@@ -1577,6 +1578,20 @@ MonoBehaviour:
   DamageMessageListeners:
   - {fileID: 8682198836124395831}
   UnvulnerabilityTime: 0.5
+  DamageableUI: {fileID: 0}
+--- !u!114 &-4624802666502537874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6781415423198019732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7930a71081b42884a8d96495fafff6f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthBar: {fileID: 0}
 --- !u!114 &-5482758076035187369
 MonoBehaviour:
   m_ObjectHideFlags: 0

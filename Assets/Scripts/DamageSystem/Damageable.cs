@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace RPGAdventure
 {
@@ -24,11 +25,15 @@ namespace RPGAdventure
         [SerializeField]
         float UnvulnerabilityTime = 0.25f;
 
+        [SerializeField]
+        DamageableUI DamageableUI;
+
         private float m_currentHP;
         private bool m_isVulnerable;
 
-        public float CurrentHP { get => m_currentHP; private set => m_currentHP = value; }
         public int ExperienceForKill { get => experienceForKill; set => experienceForKill = value; }
+        public float MaxHP { get => maxHP; set => maxHP = value; }
+        public float CurrentHP { get => m_currentHP; private set => m_currentHP = value; }
 
         private void Awake()
         {
@@ -39,6 +44,8 @@ namespace RPGAdventure
                 DamageMessageListeners.Add(FindObjectOfType<QuestManager>());
                 DamageMessageListeners.Add(FindObjectOfType<PlayerStats>());
             }
+            DamageableUI = GetComponent<DamageableUI>();
+            DamageableUI?.SetMaxHP(maxHP);
         }
 
         public void ApplyDamage(DamageData data)
@@ -53,7 +60,7 @@ namespace RPGAdventure
                 return;
 
             m_currentHP -= data.DamageAmount;
-            Debug.Log("current " + gameObject.name + " hp = " + m_currentHP);
+            DamageableUI?.SetHP(m_currentHP);
 
             var messageType = m_currentHP <= 0 ? IMessageReceiver.MessageType.DEAD : IMessageReceiver.MessageType.DAMAGED;
             foreach(var damageMessageListener in DamageMessageListeners)
@@ -70,6 +77,7 @@ namespace RPGAdventure
             yield return new WaitForSeconds(UnvulnerabilityTime);
             m_isVulnerable = true;
         }
+
 
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
