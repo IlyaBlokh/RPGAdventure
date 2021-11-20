@@ -51,7 +51,10 @@ namespace RPGAdventure
 
         private void Update()
         {
-            GuardPosition();
+            if (PlayerController.Instance.IsRespawning)
+                StopPursuit(true);
+            else
+                GuardPosition();
         }
 
         private void GuardPosition()
@@ -71,7 +74,7 @@ namespace RPGAdventure
                 }
                 else
                 {
-                    StopPursuit();
+                    StopPursuit(false);
                 }
             }
 
@@ -106,13 +109,18 @@ namespace RPGAdventure
             m_EnemyController.Animator.SetBool(m_HashedIsAwared, false);
         }
 
-        private void StopPursuit()
+        private void StopPursuit(bool stopImmediately)
         {
             m_TimeNoDetecting += Time.deltaTime;
-            if (m_TimeNoDetecting > TimeToStopPursuit)
-            {
+            if (stopImmediately || m_TimeNoDetecting > TimeToStopPursuit)
+            {                
                 m_FollowTarget = null;
                 m_EnemyController.Animator.SetBool(m_HashedIsAwared, true);
+                if (stopImmediately)
+                {
+                    m_EnemyController.Animator.SetBool(m_HashedIsAwared, false);
+                    m_EnemyController.Animator.SetBool(m_HashedInPursuit, false);
+                }
                 StartCoroutine(ReturnToSpotPosition());
             }
         }

@@ -37,14 +37,19 @@ namespace RPGAdventure
 
         private void Awake()
         {
-            CurrentHP = maxHP;
+            DamageableUI = GetComponent<DamageableUI>();
             m_isVulnerable = true;
             if ((layerToInformPlayer.value & (1 << gameObject.layer)) != 0)
             {
                 DamageMessageListeners.Add(FindObjectOfType<QuestManager>());
                 DamageMessageListeners.Add(FindObjectOfType<PlayerStats>());
             }
-            DamageableUI = GetComponent<DamageableUI>();
+            ResetHealth();
+        }
+
+        public void ResetHealth()
+        {
+            CurrentHP = maxHP;
             DamageableUI?.SetMaxHP(maxHP);
         }
 
@@ -53,7 +58,7 @@ namespace RPGAdventure
             if (!m_isVulnerable) return;
 
             if (m_currentHP <= 0) return;
-            
+
             Vector3 toDamageDealer = data.DamageSender.transform.position - transform.position;
             toDamageDealer.y = 0;
             if (Vector3.Angle(toDamageDealer, transform.forward) > hitAngle / 2) 

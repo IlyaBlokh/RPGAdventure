@@ -12,6 +12,8 @@ namespace RPGAdventure
             get { return s_Instance; }
         }
 
+        public bool IsRespawning { get => b_IsRespawning; set => b_IsRespawning = value; }
+
         [SerializeField]
         float MaxMovementSpeed = 12.0f;
 
@@ -25,6 +27,9 @@ namespace RPGAdventure
         float Gravity = 10.0f;
 
         [SerializeField]
+        Vector3 SpawnPosition;
+
+        [SerializeField]
         MeleeWeapon MeleeWeapon;
 
         [SerializeField]
@@ -36,6 +41,7 @@ namespace RPGAdventure
         private CameraController m_CameraController;
         private PlayerInput m_PlayerInput;
         private Animator m_Animator;
+        private Damageable m_Damageable;
 
         //Movement
         private float m_DesiredForwardSpeed;
@@ -43,6 +49,7 @@ namespace RPGAdventure
         private float m_VerticalSpeed = .0f;
         private readonly int m_HashedForwardSpeed = Animator.StringToHash("ForwardSpeed");
         private Vector3 m_MovementDirection;
+        private bool b_IsRespawning = false;
 
         //Rotation
         private Quaternion m_MovementRotation;
@@ -68,6 +75,7 @@ namespace RPGAdventure
             m_CharController = GetComponent<CharacterController>();
             m_PlayerInput = GetComponent<PlayerInput>();
             m_Animator = GetComponent<Animator>();
+            m_Damageable = GetComponent<Damageable>();
             m_CameraController = Camera.main.GetComponent<CameraController>();
             if (MeleeWeapon != null)
                 MeleeWeapon.Owner = gameObject;
@@ -101,6 +109,7 @@ namespace RPGAdventure
 
         private void OnAnimatorMove()
         {
+            if (b_IsRespawning) return;
             m_MovementDirection = m_Animator.deltaPosition;
             m_MovementDirection += Vector3.up * m_VerticalSpeed * Time.fixedDeltaTime;
             m_CharController.Move(m_MovementDirection);
@@ -157,6 +166,17 @@ namespace RPGAdventure
             {
                 m_Animator.SetTrigger(m_HashedMeleeAttack);
             }
+        }
+
+        public void Respawn()
+        {
+            transform.position = SpawnPosition;
+        }
+
+        public void EndRespawn()
+        {
+            b_IsRespawning = false;
+            m_Damageable.ResetHealth();
         }
 
         public void OnMessageReceive(IMessageReceiver.MessageType messageType, object messageData)
