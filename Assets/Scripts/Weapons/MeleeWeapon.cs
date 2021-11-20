@@ -25,6 +25,9 @@ namespace RPGAdventure
         [SerializeField]
         LayerMask targetLayers;
 
+        [SerializeField]
+        RandomAudioPlayer SwingAudioPlayer;
+
         private GameObject m_Owner;
         private bool isAttacking = false;
         private Vector3[] originalAttackPointPosition;
@@ -68,6 +71,7 @@ namespace RPGAdventure
             isAttacking = IsAttacking;
             if (isAttacking)
             {
+                SwingAudioPlayer.PlayRandomClip();
                 originalAttackPointPosition = new Vector3[attackPoints.Length];
                 for (var i = 0; i < attackPoints.Length; i++)
                 {
