@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace RPGAdventure
 {
@@ -44,8 +45,18 @@ namespace RPGAdventure
 
         private void HandlePrimaryAction()
         {
-            if (!m_IsAttacking)
+            if (!m_IsAttacking && !IsClickOverUI())
                 StartCoroutine(TriggerAttack());
+        }
+
+        private bool IsClickOverUI()
+        {
+            var data = new PointerEventData(EventSystem.current) { 
+                position = Input.mousePosition
+            };
+            var results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(data, results);
+            return results.Count > 0;
         }
 
         private void HandleSecondaryAction()
