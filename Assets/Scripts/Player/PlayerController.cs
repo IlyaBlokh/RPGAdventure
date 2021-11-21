@@ -82,6 +82,7 @@ namespace RPGAdventure
             m_CameraController = Camera.main.GetComponent<CameraController>();
             if (MeleeWeapon != null)
                 MeleeWeapon.Owner = gameObject;
+            SpawnPosition = transform.position;
             s_Instance = this;
         }
 
