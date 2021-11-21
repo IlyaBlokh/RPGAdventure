@@ -35,6 +35,9 @@ namespace RPGAdventure
         [SerializeField]
         Transform PrimaryAttackHand;
 
+        [SerializeField]
+        RandomAudioPlayer FootfallAudioPlayer;
+
         private static PlayerController s_Instance;
         //Components
         private CharacterController m_CharController;
@@ -157,6 +160,12 @@ namespace RPGAdventure
         public void AE_Attack (int AttackStatus)
         {
             MeleeWeapon?.UpdateAttack(AttackStatus == 1);
+        }
+
+        public void AE_Footfall()
+        {
+            Debug.Log("Footfall");
+            FootfallAudioPlayer.PlayRandomClip();
         }
 
         private void Combat()
