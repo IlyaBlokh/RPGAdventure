@@ -27,6 +27,8 @@ namespace RPGAdventure
 
         [SerializeField]
         RandomAudioPlayer SwingAudioPlayer;
+        [SerializeField]
+        RandomAudioPlayer ImpactAudioPlayer;
 
         private GameObject m_Owner;
         private bool isAttacking = false;
@@ -94,7 +96,8 @@ namespace RPGAdventure
                 data.DamageDealer = this;
                 data.DamageAmount = Damage;
                 data.DamageSender = m_Owner;
-                
+
+                ImpactAudioPlayer.PlayRandomClip();
                 damageableComponent.ApplyDamage(data);
             }
         }

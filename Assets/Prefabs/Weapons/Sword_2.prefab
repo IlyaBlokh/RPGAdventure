@@ -111,6 +111,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   SwingAudioPlayer: {fileID: 4964166712951142315}
+  ImpactAudioPlayer: {fileID: 5211466338757765381}
 --- !u!114 &2848769938356546746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,6 +235,17 @@ Transform:
 --- !u!114 &4964166712951142315 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3749906305553395704, guid: 46a0f57a0b7b59e4a8d8ba20538f4bc5, type: 3}
+  m_PrefabInstance: {fileID: 8137464358164011091}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f8167aaca58dfb44a223d76a8603ed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5211466338757765381 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4088368778483298646, guid: 46a0f57a0b7b59e4a8d8ba20538f4bc5, type: 3}
   m_PrefabInstance: {fileID: 8137464358164011091}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
