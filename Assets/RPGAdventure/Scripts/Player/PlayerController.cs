@@ -165,7 +165,6 @@ namespace RPGAdventure
 
         public void AE_Footfall()
         {
-            Debug.Log("Footfall");
             FootfallAudioPlayer.PlayRandomClip();
         }
 
