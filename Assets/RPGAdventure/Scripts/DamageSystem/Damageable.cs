@@ -36,14 +36,19 @@ namespace RPGAdventure
         public float CurrentHP { get => m_currentHP; private set => m_currentHP = value; }
 
         private void Awake()
-        {
-            DamageableUI = GetComponent<DamageableUI>();
+        {   
             m_isVulnerable = true;
             if ((layerToInformPlayer.value & (1 << gameObject.layer)) != 0)
             {
                 DamageMessageListeners.Add(FindObjectOfType<QuestManager>());
                 DamageMessageListeners.Add(FindObjectOfType<PlayerStats>());
             }
+
+        }
+
+        void Start()
+        {
+            DamageableUI = GetComponent<DamageableUI>();
             ResetHealth();
         }
 
