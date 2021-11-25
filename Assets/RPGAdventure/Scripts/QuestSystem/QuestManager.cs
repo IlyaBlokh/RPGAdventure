@@ -21,9 +21,8 @@ namespace RPGAdventure
 
        private void UploadQuestsFromDB()
        {
-            using StreamReader reader = new StreamReader("Assets/RPGAdventure/DB/quests.json");
-            string jsonStr = reader.ReadToEnd();
-            Quests = JsonProcessor.JsonToList<Quest>(jsonStr);
+            var questsTextFile = Resources.Load<TextAsset>("DB/quests").text;
+            Quests = JsonProcessor.JsonToList<Quest>(questsTextFile);
        }
     
         public List<Quest> AssignQuests(string ownerUid)
