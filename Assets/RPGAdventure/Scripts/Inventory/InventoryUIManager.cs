@@ -19,7 +19,7 @@ namespace RPGAdventure {
         private List<Button> m_slots = new List<Button>();
 
         private float m_SlotLeftPosition = .0f;
-        private void Awake()
+        private void Start()
         {
             onInventorySlotPick.AddListener(FindObjectOfType<InventoryManager>().GetPlayerInventory().OnInventorySlotPick);
             InitInventoryUI();        
