@@ -131,6 +131,7 @@ namespace RPGAdventure
             m_OptionTopPosition += c_OptionIndend;
             var OptionButtonInstance = Instantiate(QueryOptionPrefab, QueryOptionsList.transform);
             OptionButtonInstance.GetComponentInChildren<Text>().text = dialogOption.queryText;
+            OptionButtonInstance.GetComponentInChildren<Text>().tag = "option_text";
             RectTransform btnRectTransform = OptionButtonInstance.GetComponent<RectTransform>();
             btnRectTransform.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, m_OptionTopPosition, btnRectTransform.rect.height);
             RegisterOptionClickHandler(OptionButtonInstance, dialogOption);

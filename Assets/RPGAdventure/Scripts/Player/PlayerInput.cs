@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace RPGAdventure
 {
@@ -14,6 +15,7 @@ namespace RPGAdventure
         private bool m_IsAttacking;
         private bool m_IsPlayerControllerInputBlocked;
         private Clickable m_ClickableObject;
+        private GameObject m_LastTextUnderPointer;
 
         public Vector3 MoveInput { get => m_PlayerInput.normalized; }
 
@@ -40,24 +42,65 @@ namespace RPGAdventure
 
                 if (Input.GetButtonDown("Fire2"))
                     HandleSecondaryAction();
+
+                if (m_LastTextUnderPointer != null)
+                {
+                    if (EventSystem.current.IsPointerOverGameObject())
+                    {
+                        var UIObject = GetUIObjectUnderPointer();
+                        if (!AreTextsEqual(UIObject, m_LastTextUnderPointer))
+                        {
+                            SetUITextColor(new Color(.19f, .19f, .19f));
+                        }
+                    }
+                    else
+                    {
+                        SetUITextColor(new Color(.19f, .19f, .19f));
+                    }
+                }
+
+                if (EventSystem.current.IsPointerOverGameObject())
+                {
+                    var UIObject = GetUIObjectUnderPointer();
+                    if (UIObject.tag == "option_text")
+                    {
+                        m_LastTextUnderPointer = UIObject;
+                        SetUITextColor(Color.yellow);
+                    }
+                }
             }
+        }
+
+        private bool AreTextsEqual(GameObject UIObject1, GameObject UIObject2)
+        {
+            var text1 = UIObject1.GetComponent<Text>();
+            var text2 = UIObject2.GetComponent<Text>();
+            if (text1 == null || text2 == null) return false;
+            return text1.text.Equals(text2.text);
+        }
+
+        private void SetUITextColor(Color color)
+        {
+            m_LastTextUnderPointer.GetComponent<Text>().color = color;
         }
 
         private void HandlePrimaryAction()
         {
-            if (!m_IsAttacking && !IsClickOverUI())
+            if (!m_IsAttacking && GetUIObjectUnderPointer() == null)
                 StartCoroutine(TriggerAttack());
         }
 
-        private bool IsClickOverUI()
+        private GameObject GetUIObjectUnderPointer()
         {
-            var data = new PointerEventData(EventSystem.current) { 
+            var data = new PointerEventData(EventSystem.current)
+            {
                 position = Input.mousePosition
             };
             var results = new List<RaycastResult>();
             EventSystem.current.RaycastAll(data, results);
-            return results.Count > 0;
+            return results.Count > 0 ? results[0].gameObject : null;
         }
+
 
         private void HandleSecondaryAction()
         {
