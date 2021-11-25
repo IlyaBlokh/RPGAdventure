@@ -19,10 +19,12 @@ namespace RPGAdventure
         float maxInteractDistance;
 
         private Vector2 m_Hotspot;
+        private GameManager m_GameManager;
 
         private void Awake()
         {
-            m_Hotspot = new Vector2(CursorImage.width / 2, CursorImage.height / 2);
+            m_GameManager = FindObjectOfType<GameManager>();
+            m_Hotspot = new Vector2(0, 0);
         }
 
         private void OnMouseEnter()
@@ -32,7 +34,7 @@ namespace RPGAdventure
 
         private void OnMouseExit()
         {
-            Cursor.SetCursor(null, m_Hotspot, cursorMode);
+            m_GameManager.SetCursor();
         }
 
         /// <summary>
