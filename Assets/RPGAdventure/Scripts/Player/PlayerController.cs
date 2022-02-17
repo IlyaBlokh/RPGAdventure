@@ -85,6 +85,7 @@ namespace RPGAdventure
             SpawnPosition = transform.position;
             s_Instance = this;
         }
+        
 
         private void FixedUpdate()
         {
@@ -103,6 +104,7 @@ namespace RPGAdventure
                 m_ForwardSpeed, 
                 m_DesiredForwardSpeed, 
                 (m_PlayerInput.IsMoving? k_Acceleration : k_Deceleration) * Time.fixedDeltaTime);
+            transform.Translate(Vector3.forward * m_ForwardSpeed * Time.fixedDeltaTime);
             m_Animator.SetFloat(m_HashedForwardSpeed, m_ForwardSpeed);
         }
 
@@ -111,13 +113,13 @@ namespace RPGAdventure
             m_VerticalSpeed = -Gravity;
         }
 
-        private void OnAnimatorMove()
+/*        private void OnAnimatorMove()
         {
             if (b_IsRespawning) return;
             m_MovementDirection = m_Animator.deltaPosition;
             m_MovementDirection += Vector3.up * m_VerticalSpeed * Time.fixedDeltaTime;
             m_CharController.Move(m_MovementDirection);
-        }
+        }*/
 
         private void CacheAnimatorState()
         {
@@ -165,7 +167,7 @@ namespace RPGAdventure
 
         public void AE_Footfall()
         {
-            FootfallAudioPlayer.PlayRandomClip();
+            FootfallAudioPlayer?.PlayRandomClip();
         }
 
         private void Combat()
