@@ -2,7 +2,7 @@
 
 3rd-person RPG on Unity
 
-[![Gameplay](http://img.youtube.com/vi/xlgOMDI-S48/0.jpg)](http://www.youtube.com/watch?v=xlgOMDI-S48 "Unity RPG Game")
+[![Gameplay](http://img.youtube.com/vi/to-q1sMI0_w/0.jpg)](https://youtu.be/to-q1sMI0_w "Unity RPG Game")
 
 *Click to watch video*
 
