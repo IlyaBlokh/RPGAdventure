@@ -14,4 +14,4 @@ This is a classic 3-rd person RPG game with essential game mechanics:
 - quests
 - dialogs with NPC
 - experience and level up
-- nice enviroment and SFX
+- nice environment and SFX
