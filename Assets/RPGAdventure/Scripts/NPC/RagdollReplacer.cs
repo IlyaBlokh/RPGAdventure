@@ -15,7 +15,7 @@ namespace RPGAdventure {
             var UI = GetComponent<DamageableUI>().HealthUI;
             if (UI)
             {
-                UI.transform.parent = null;
+                UI.transform.SetParent(null);
                 Destroy(UI);
             }
 

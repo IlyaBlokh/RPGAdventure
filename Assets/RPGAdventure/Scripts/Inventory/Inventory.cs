@@ -11,7 +11,7 @@ namespace RPGAdventure {
         int size;
 
         [SerializeField]
-        List<InventorySlotHandler> inventory;
+        List<InventorySlotHandler> inventory = new List<InventorySlotHandler>();
 
         [SerializeField]
         UnityEvent<int, Sprite> onSlotTaken;
@@ -24,7 +24,6 @@ namespace RPGAdventure {
 
         private void Awake()
         {
-            inventory = new List<InventorySlotHandler>();
             for (int i = 0; i < size; i++)
             {
                 inventory.Add(new InventorySlotHandler(i));

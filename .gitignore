@@ -16,6 +16,7 @@
 [Bb]uild/
 [Bb]uilds/
 [Ll]ogs/
+[Rr]ecordings/
 
 #ignore all imported assets except the game project file
 [Aa]ssets/
