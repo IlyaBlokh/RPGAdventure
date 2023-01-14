@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Core
 {
-  public class GameStateMachine : IInitializable
+  public sealed class GameStateMachine : IInitializable
   {
     private readonly GameStateFactory stateFactory;
     private Dictionary<Type, IState> states;
@@ -18,7 +18,6 @@ namespace Core
 
     public void Initialize()
     {
-      Debug.Log("gsm initialized");
       states = new Dictionary<Type, IState>
       {
         [typeof(BootstrapState)] = stateFactory.Create<BootstrapState>(),
