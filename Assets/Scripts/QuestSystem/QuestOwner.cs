@@ -7,18 +7,15 @@ namespace QuestSystem
 {
     public class QuestOwner : MonoBehaviour
     {
-        [SerializeField]
-        List<Quest> Quests;
+        [SerializeField] private List<Quest> Quests;
+        [SerializeField] private Dialog dialog;
 
-        [SerializeField]
-        Dialog dialog;
-
-        public Dialog Dialog { get => dialog; set => dialog = value; }
+        public Dialog Dialog => dialog;
 
         private void Start()
         {
             var questManager = FindObjectOfType<QuestManager>();
-            var uid = GetComponent<UniqueID>().Uid;
+            string uid = GetComponent<UniqueID>().Uid;
             if (questManager != null && uid != null)
                 Quests = questManager.AssignQuests(uid);
         }

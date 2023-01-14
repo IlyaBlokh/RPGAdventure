@@ -553,7 +553,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 2674
+  controlID: 3492
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -613,7 +613,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: e016ffff0c8bffff22faffff14fbffff16f50000
+      m_ExpandedIDs: caabfeffd8abfeffe016ffff0c8bffff22faffff14fbfffffadb00003cee000028f4000016f50000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -704,21 +704,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Camera
+    - Assets/Prefabs/UI
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefabs/Camera
+  - Assets/Prefabs/UI
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Projects\RPG Adventure
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 10710600
-    m_LastClickedID: 422160
+    m_SelectedIDs: 1a710600
+    m_LastClickedID: 422170
     m_ExpandedIDs: 000000003e58000040580000425800004458000046580000485800004a5800004c5800004e58000050580000525800005458000056580000585800005a5800005c5800005e58000060580000625800006458000066580000685800006a5800006c5800006e5800000659000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -747,7 +747,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000003e58000040580000425800004458000046580000485800004a5800004c5800004e58000050580000525800005458000056580000585800005a5800005c5800005e58000060580000625800006458000066580000685800006a5800006c5800006e58000000ca9a3b
+    m_ExpandedIDs: 000000003e58000040580000425800004458000046580000485800004a5800004c5800004e58000050580000525800005458000056580000585800005a5800005c5800005e58000060580000625800006458000066580000685800006a5800006c5800006e5800000659000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -778,18 +778,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Cameras
-      m_OriginalName: Cameras
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 241600
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:

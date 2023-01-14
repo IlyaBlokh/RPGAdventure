@@ -4,9 +4,9 @@ namespace DamageSystem
     {
         enum MessageType
         {
-            DAMAGED,
-            DEAD,
-            QUEST_COMPLETE
+            Damaged,
+            Dead,
+            QuestComplete
         }
 
         void OnMessageReceive(MessageType messageType, object messageData);

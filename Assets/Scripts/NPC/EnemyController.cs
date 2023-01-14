@@ -5,40 +5,36 @@ namespace NPC
 {
     public class EnemyController : MonoBehaviour
     {
-        [SerializeField]
-        float SpeedModifyer = 0.7f;
+        [SerializeField] private float SpeedModifyer = 0.7f;
 
         //Components
-        private NavMeshAgent m_NavMeshAgent;
-        private Animator m_Animator;
-
-        public NavMeshAgent NavMeshAgent { get => m_NavMeshAgent; set => m_NavMeshAgent = value; }
-        public Animator Animator { get => m_Animator; private set => m_Animator = value; }
+        private NavMeshAgent navMeshAgent;
+        public Animator Animator { get; private set; }
 
         private void Awake()
         {
-            m_NavMeshAgent = GetComponent<NavMeshAgent>();
+            navMeshAgent = GetComponent<NavMeshAgent>();
             Animator = GetComponent<Animator>();
         }
 
         private void OnAnimatorMove()
         {
-            if (m_NavMeshAgent.enabled)
+            if (navMeshAgent.enabled)
             {
-                m_NavMeshAgent.speed = (Animator.deltaPosition / Time.fixedDeltaTime).magnitude;
-                m_NavMeshAgent.speed *= SpeedModifyer;
+                navMeshAgent.speed = (Animator.deltaPosition / Time.fixedDeltaTime).magnitude;
+                navMeshAgent.speed *= SpeedModifyer;
             }
         }
 
         public bool SetDestination(Vector3 destination)
         {
-            if (!m_NavMeshAgent.enabled) m_NavMeshAgent.enabled = true;
-            return m_NavMeshAgent.SetDestination(destination);
+            if (!navMeshAgent.enabled) navMeshAgent.enabled = true;
+            return navMeshAgent.SetDestination(destination);
         }
 
         public void DisableNavMeshAgent()
         {
-            m_NavMeshAgent.enabled = false;
+            navMeshAgent.enabled = false;
         }
     }
 }

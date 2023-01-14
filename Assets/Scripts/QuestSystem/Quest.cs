@@ -2,14 +2,6 @@
 
 namespace QuestSystem
 {
-    public enum QuestType
-    {
-        HUNT,
-        GATHER,
-        EXPLORE,
-        TALK
-    }
-
     [System.Serializable]
     public class Quest
     {

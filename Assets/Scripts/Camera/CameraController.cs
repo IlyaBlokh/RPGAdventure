@@ -7,6 +7,5 @@ namespace Camera
     {
         [SerializeField] CinemachineFreeLook freeLookCamera;
         public CinemachineFreeLook FreeLookCamera => freeLookCamera;
-        
     }
 }

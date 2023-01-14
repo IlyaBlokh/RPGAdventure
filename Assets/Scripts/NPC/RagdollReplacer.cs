@@ -4,18 +4,15 @@ using UnityEngine;
 namespace NPC {
     public class RagdollReplacer : MonoBehaviour
     {
-        [SerializeField]
-        GameObject RagdollPrefab;
-
-        [SerializeField]
-        GameObject DeadVFX;
+        [SerializeField] private GameObject RagdollPrefab;
+        [SerializeField] private GameObject DeadVFX;
         public void ReplaceWithRagdoll()
         {
-            var UI = GetComponent<DamageableUI>().HealthUI;
-            if (UI)
+            GameObject healthUI = GetComponent<DamageableUI>().HealthUI;
+            if (healthUI)
             {
-                UI.transform.SetParent(null);
-                Destroy(UI);
+                healthUI.transform.SetParent(null);
+                Destroy(healthUI);
             }
 
             GameObject ragdoll = Instantiate(RagdollPrefab, transform.position, transform.rotation);
@@ -28,14 +25,12 @@ namespace NPC {
             Destroy(gameObject);
         }
 
-        public void CopyTransform(Transform original, Transform ragdoll)
+        private void CopyTransform(Transform original, Transform ragdoll)
         {
             ragdoll.position = original.position;
             ragdoll.rotation = original.rotation;
-            for (var i = 0; i < original.childCount; i++)
-            {
+            for (var i = 0; i < original.childCount; i++) 
                 CopyTransform(original.GetChild(i), ragdoll.GetChild(i));
-            }
         }
     }
 }

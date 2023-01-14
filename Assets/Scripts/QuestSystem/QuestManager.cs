@@ -10,27 +10,26 @@ namespace QuestSystem
 {
     public class QuestManager : MonoBehaviour, IMessageReceiver
     {
-        [SerializeField]
-        List<Quest> Quests;
+        [SerializeField] private List<Quest> Quests;
 
-        private PlayerStats m_PlayerStats;
+        private PlayerStats playerStats;
 
         private void Awake()
         {
             UploadQuestsFromDB();
-            m_PlayerStats = FindObjectOfType<PlayerStats>();
+            playerStats = FindObjectOfType<PlayerStats>();
         }
 
        private void UploadQuestsFromDB()
        {
-            var questsTextFile = Resources.Load<TextAsset>("DB/quests").text;
+            string questsTextFile = Resources.Load<TextAsset>("DB/quests").text;
             Quests = JsonProcessor.JsonToList<Quest>(questsTextFile);
        }
     
         public List<Quest> AssignQuests(string ownerUid)
         {
             List<Quest> ownerQuests = new List<Quest>();
-            foreach(var quest in Quests)
+            foreach (Quest quest in Quests)
             {
                 if (quest.owner.Equals(ownerUid))
                     ownerQuests.Add(quest);
@@ -40,7 +39,7 @@ namespace QuestSystem
 
         public Quest GetQuest(string questId)
         {
-            foreach (var quest in Quests)
+            foreach (Quest quest in Quests)
             {
                 if (quest.uid.Equals(questId))
                     return quest;
@@ -50,10 +49,8 @@ namespace QuestSystem
 
         public void OnMessageReceive(IMessageReceiver.MessageType messageType, object messageData)
         {
-            if (messageType == IMessageReceiver.MessageType.DEAD)
-            {
+            if (messageType == IMessageReceiver.MessageType.Dead) 
                 CheckForHuntQuestCompetion((Damageable.DamageData)messageData);
-            }
         }
 
         private void CheckForHuntQuestCompetion(Damageable.DamageData damageData)
@@ -61,7 +58,7 @@ namespace QuestSystem
             var questLog = damageData.DamageSender.GetComponent<QuestLog>();
             if (questLog == null) return;
 
-            foreach (var quest in questLog.Quests)
+            foreach (AcceptedQuest quest in questLog.Quests)
             {
                 if (quest.status == QuestStatus.ACTIVE &&
                     quest.type == QuestType.HUNT &&
@@ -71,7 +68,7 @@ namespace QuestSystem
                     if (quest.huntGoalAmount == 0)
                     {
                         quest.status = QuestStatus.COMPLETED;
-                        m_PlayerStats.OnMessageReceive(IMessageReceiver.MessageType.QUEST_COMPLETE, quest);
+                        playerStats.OnMessageReceive(IMessageReceiver.MessageType.QuestComplete, quest);
                         Debug.Log("quest " + quest.uid + " is completed");
                     }
                 }

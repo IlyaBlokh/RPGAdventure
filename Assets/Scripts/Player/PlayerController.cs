@@ -11,83 +11,63 @@ namespace Player
     [RequireComponent(typeof(Inventory.Inventory))]
     public class PlayerController : MonoBehaviour, IAttackAnimListener, IMessageReceiver
     {
-        public static PlayerController Instance
-        {
-            get { return s_Instance; }
-        }
+        public static PlayerController Instance { get; private set; }
 
-        public bool IsRespawning { get => b_IsRespawning; set => b_IsRespawning = value; }
+        public bool IsRespawning { get; set; }
 
-        [SerializeField]
-        float MaxMovementSpeed = 12.0f;
+        [SerializeField] private float MaxMovementSpeed = 12.0f;
+        [SerializeField] private float MinRotationSpeed = 400.0f;
+        [SerializeField] private float MaxRotationSpeed = 1200.0f;
+        [SerializeField] private float Gravity = 10.0f;
+        [SerializeField] private Vector3 SpawnPosition;
+        [SerializeField] private MeleeWeapon MeleeWeapon;
+        [SerializeField] private Transform PrimaryAttackHand;
+        [SerializeField] private RandomAudioPlayer FootfallAudioPlayer;
 
-        [SerializeField]
-        float MinRotationSpeed = 400.0f;
-
-        [SerializeField]
-        float MaxRotationSpeed = 1200.0f;
-
-        [SerializeField]
-        float Gravity = 10.0f;
-
-        [SerializeField]
-        Vector3 SpawnPosition;
-
-        [SerializeField]
-        MeleeWeapon MeleeWeapon;
-
-        [SerializeField]
-        Transform PrimaryAttackHand;
-
-        [SerializeField]
-        RandomAudioPlayer FootfallAudioPlayer;
-
-        private static PlayerController s_Instance;
         //Components
-        private CharacterController m_CharController;
-        private CameraController m_CameraController;
-        private PlayerInput m_PlayerInput;
-        private Animator m_Animator;
-        private Damageable m_Damageable;
+        private CharacterController charController;
+        private CameraController cameraController;
+        private PlayerInput playerInput;
+        private Animator animator;
+        private Damageable damageable;
 
         //Movement
-        private float m_DesiredForwardSpeed;
-        private float m_ForwardSpeed = .0f;
-        private float m_VerticalSpeed = .0f;
-        private readonly int m_HashedForwardSpeed = Animator.StringToHash("ForwardSpeed");
-        private Vector3 m_MovementDirection;
-        private bool b_IsRespawning = false;
+        private float desiredForwardSpeed;
+        private float forwardSpeed = .0f;
+        private float verticalSpeed = .0f;
+        private readonly int hashedForwardSpeed = Animator.StringToHash("ForwardSpeed");
+        private Vector3 movementDirection;
 
         //Rotation
-        private Quaternion m_MovementRotation;
-        private Vector3 m_CameraDirection;
-        private Quaternion m_TargetRotation;
-        private float m_RotationSpeed;
+        private Quaternion movementRotation;
+        private Vector3 cameraDirection;
+        private Quaternion targetRotation;
+        private float rotationSpeed;
 
         //Combat
-        private readonly int m_HashedMeleeAttack= Animator.StringToHash("MeleeAttack");
-        private readonly int m_HashedDeath = Animator.StringToHash("Death");
+        private readonly int hashedMeleeAttack= Animator.StringToHash("MeleeAttack");
+        private readonly int hashedDeath = Animator.StringToHash("Death");
 
         //Animation
-        private AnimatorStateInfo m_CurrentAnimatorState;
-        private AnimatorStateInfo m_NextAnimatorState;
-        private bool m_IsAnimatorTransitioning;
-        private readonly int m_HashedBlockInput = Animator.StringToHash("BlockInput");
+        private AnimatorStateInfo currentAnimatorState;
+        private AnimatorStateInfo nextAnimatorState;
+        private bool isAnimatorTransitioning;
+        private readonly int hashedBlockInput = Animator.StringToHash("BlockInput");
 
 
-        const float k_Acceleration = 20.0f;
-        const float k_Deceleration = 40.0f;
+        private const float Acceleration = 20.0f;
+        private const float Deceleration = 40.0f;
         private void Awake()
         {
-            m_CharController = GetComponent<CharacterController>();
-            m_PlayerInput = GetComponent<PlayerInput>();
-            m_Animator = GetComponent<Animator>();
-            m_Damageable = GetComponent<Damageable>();
-            m_CameraController = UnityEngine.Camera.main.GetComponent<CameraController>();
+            charController = GetComponent<CharacterController>();
+            playerInput = GetComponent<PlayerInput>();
+            animator = GetComponent<Animator>();
+            damageable = GetComponent<Damageable>();
+            cameraController = UnityEngine.Camera.main.GetComponent<CameraController>();
             if (MeleeWeapon != null)
                 MeleeWeapon.Owner = gameObject;
             SpawnPosition = transform.position;
-            s_Instance = this;
+            Instance = this;
         }
 
         private void FixedUpdate()
@@ -102,69 +82,70 @@ namespace Player
 
         private void ComputeForwardMovement()
         {
-            m_DesiredForwardSpeed = m_PlayerInput.MoveInput.magnitude * MaxMovementSpeed;
-            m_ForwardSpeed = Mathf.MoveTowards(
-                m_ForwardSpeed, 
-                m_DesiredForwardSpeed, 
-                (m_PlayerInput.IsMoving? k_Acceleration : k_Deceleration) * Time.fixedDeltaTime);
-            m_Animator.SetFloat(m_HashedForwardSpeed, m_ForwardSpeed);
+            desiredForwardSpeed = playerInput.MoveInput.magnitude * MaxMovementSpeed;
+            forwardSpeed = Mathf.MoveTowards(
+                forwardSpeed, 
+                desiredForwardSpeed, 
+                (playerInput.IsMoving? Acceleration : Deceleration) * Time.fixedDeltaTime);
+            animator.SetFloat(hashedForwardSpeed, forwardSpeed);
         }
 
         private void ComputeVerticalMovement()
         {
-            m_VerticalSpeed = -Gravity;
+            verticalSpeed = -Gravity;
         }
 
         private void OnAnimatorMove()
         {
-            if (b_IsRespawning) return;
-            m_MovementDirection = m_Animator.deltaPosition;
-            m_MovementDirection += Vector3.up * m_VerticalSpeed * Time.fixedDeltaTime;
-            m_CharController.Move(m_MovementDirection);
+            if (IsRespawning) return;
+            movementDirection = animator.deltaPosition;
+            movementDirection += Vector3.up * verticalSpeed * Time.fixedDeltaTime;
+            charController.Move(movementDirection);
         }
 
         private void CacheAnimatorState()
         {
-            m_CurrentAnimatorState = m_Animator.GetCurrentAnimatorStateInfo(0);
-            m_NextAnimatorState = m_Animator.GetNextAnimatorStateInfo(0);
-            m_IsAnimatorTransitioning = m_Animator.IsInTransition(0);
+            currentAnimatorState = animator.GetCurrentAnimatorStateInfo(0);
+            nextAnimatorState = animator.GetNextAnimatorStateInfo(0);
+            isAnimatorTransitioning = animator.IsInTransition(0);
         }
 
         private void UpdateInputBlocking()
         {
-            m_PlayerInput.IsPlayerControllerInputBlocked = 
-                m_CurrentAnimatorState.tagHash == m_HashedBlockInput && !m_IsAnimatorTransitioning ||
-                m_NextAnimatorState.tagHash == m_HashedBlockInput;
+            playerInput.IsPlayerControllerInputBlocked = 
+                currentAnimatorState.tagHash == hashedBlockInput && !isAnimatorTransitioning ||
+                nextAnimatorState.tagHash == hashedBlockInput;
         }
 
         private void ComputeRotation()
         {
-            m_MovementRotation = Quaternion.FromToRotation(Vector3.forward, m_PlayerInput.MoveInput);
+            movementRotation = Quaternion.FromToRotation(Vector3.forward, playerInput.MoveInput);
 
-            if (Mathf.Approximately(Vector3.Dot(Vector3.forward, m_PlayerInput.MoveInput), -1))
+            if (Mathf.Approximately(Vector3.Dot(Vector3.forward, playerInput.MoveInput), -1))
             {
-                m_TargetRotation = Quaternion.LookRotation(-m_CameraDirection);
+                targetRotation = Quaternion.LookRotation(-cameraDirection);
             }
             else
             {
-                m_CameraDirection = Quaternion.Euler(0, m_CameraController.FreeLookCamera.m_XAxis.Value, 0) * Vector3.forward;
-                m_TargetRotation = Quaternion.LookRotation(m_MovementRotation * m_CameraDirection);
+                cameraDirection = Quaternion.Euler(0, cameraController.FreeLookCamera.m_XAxis.Value, 0) * Vector3.forward;
+                targetRotation = Quaternion.LookRotation(movementRotation * cameraDirection);
             }
 
-            if (m_PlayerInput.IsMoving)
+            if (playerInput.IsMoving)
             {
-                m_RotationSpeed = Mathf.Lerp(MaxRotationSpeed, MinRotationSpeed , m_ForwardSpeed / m_DesiredForwardSpeed);
-                m_TargetRotation = Quaternion.RotateTowards(
+                rotationSpeed = Mathf.Lerp(MaxRotationSpeed, MinRotationSpeed , forwardSpeed / desiredForwardSpeed);
+                targetRotation = Quaternion.RotateTowards(
                     transform.rotation,
-                    m_TargetRotation,
-                    m_RotationSpeed * Time.fixedDeltaTime);
-                transform.rotation = m_TargetRotation;
+                    targetRotation,
+                    rotationSpeed * Time.fixedDeltaTime);
+                transform.rotation = targetRotation;
             }
         }
     
         public void AE_Attack (int AttackStatus)
         {
-            MeleeWeapon?.UpdateAttack(AttackStatus == 1);
+            if (MeleeWeapon != null)
+                MeleeWeapon.UpdateAttack(AttackStatus == 1);
         }
 
         public void AE_Footfall()
@@ -174,11 +155,9 @@ namespace Player
 
         private void Combat()
         {
-            m_Animator.ResetTrigger(m_HashedMeleeAttack);
-            if (m_PlayerInput.IsAttacking)
-            {
-                m_Animator.SetTrigger(m_HashedMeleeAttack);
-            }
+            animator.ResetTrigger(hashedMeleeAttack);
+            if (playerInput.IsAttacking) 
+                animator.SetTrigger(hashedMeleeAttack);
         }
 
         public void Respawn()
@@ -188,31 +167,28 @@ namespace Player
 
         public void EndRespawn()
         {
-            b_IsRespawning = false;
-            m_Damageable.ResetHealth();
+            IsRespawning = false;
+            damageable.ResetHealth();
         }
 
         public void OnMessageReceive(IMessageReceiver.MessageType messageType, object messageData)
         {
             switch (messageType)
             {
-                case IMessageReceiver.MessageType.DAMAGED:
-                    break;
-                case IMessageReceiver.MessageType.DEAD:
-                    m_Animator.SetTrigger(m_HashedDeath);
-                    break;
-                default:
+                case IMessageReceiver.MessageType.Dead:
+                    animator.SetTrigger(hashedDeath);
                     break;
             }
         }
 
         public void EquipItem(GameObject itemToEquip)
         {
-            if (itemToEquip.name == MeleeWeapon?.gameObject.name) return;
-            Destroy(MeleeWeapon?.gameObject);
+            if (MeleeWeapon == null) return;
+            if (itemToEquip.name == MeleeWeapon.gameObject.name) return;
+            Destroy(MeleeWeapon.gameObject);
             //TODO: disable player attack if disarmed
             //TODO: remove previous item
-            var item = Instantiate(itemToEquip);
+            GameObject item = Instantiate(itemToEquip);
             MeleeWeapon = item.GetComponent<MeleeWeapon>();
             if (MeleeWeapon)
             {

@@ -9,33 +9,26 @@ namespace Inventory {
     
     public class Inventory : MonoBehaviour
     {
-        [SerializeField]
-        int size;
+        [SerializeField] private int size;
+        [SerializeField] private List<InventorySlotHandler> inventory = new();
+        [SerializeField] private UnityEvent<int, Sprite> onSlotTaken;
 
-        [SerializeField]
-        List<InventorySlotHandler> inventory = new List<InventorySlotHandler>();
+        private int currentVolume;
+        private InventoryUIManager interfaceManager;
+        private InventoryManager inventoryManager;
 
-        [SerializeField]
-        UnityEvent<int, Sprite> onSlotTaken;
-
-        private int currentVolume = 0;
-        private InventoryUIManager m_UIManager;
-        private InventoryManager m_InventoryManager;
-
-        public int Size { get => size; set => size = value; }
+        public int Size => size;
 
         private void Awake()
         {
-            for (int i = 0; i < size; i++)
-            {
+            for (int i = 0; i < size; i++) 
                 inventory.Add(new InventorySlotHandler(i));
-            }
 
-            if (tag == "Player")
+            if (CompareTag("Player"))
             {
-                m_InventoryManager = FindObjectOfType<InventoryManager>();
-                m_UIManager = FindObjectOfType<InventoryUIManager>();
-                onSlotTaken.AddListener(m_UIManager.onSlotTaken);
+                inventoryManager = FindObjectOfType<InventoryManager>();
+                interfaceManager = FindObjectOfType<InventoryUIManager>();
+                onSlotTaken.AddListener(interfaceManager.OnSlotTaken);
             }
         }
 
@@ -44,45 +37,41 @@ namespace Inventory {
             //We don't allow to have 2 identic items
             if (!ContainsItem(item.GetComponent<UniqueID>().Uid) &&
                 HasNoOwner(item) &&
-                currentVolume < size)
-            {
+                currentVolume < size) 
                 AddItem(item);
-            }
         }
 
         private bool ContainsItem(string itemId)
         {
-            var slot = inventory.Find(slot => slot.ContainsItemInSlot(itemId));
-            return !string.IsNullOrEmpty(slot?.ItemID);
+            InventorySlotHandler slot = inventory.Find(slot => slot.ContainsItemInSlot(itemId));
+            if (slot == null) return false;
+            return !string.IsNullOrEmpty(slot.ItemID);
         }
 
-        private bool HasNoOwner(GameObject item)
-        {
-            return item.GetComponent<MeleeWeapon>()?.Owner == null;
-        }
+        private bool HasNoOwner(GameObject item) => 
+            item.GetComponent<MeleeWeapon>()?.Owner == null;
 
         private void AddItem(GameObject item)
         {
-            var uid = item.GetComponent<UniqueID>().Uid;
+            string uid = item.GetComponent<UniqueID>().Uid;
             inventory[currentVolume].ItemID = uid;
-            onSlotTaken.Invoke(currentVolume, m_InventoryManager.GetWeaponIcon(uid));
+            onSlotTaken.Invoke(currentVolume, inventoryManager.GetWeaponIcon(uid));
             Destroy(item);
             currentVolume++;
         }
 
         public void OnInventorySlotPick(int index)
         {
-            if (tag == "Player")
+            if (CompareTag("Player"))
             {
-                var isInputBlocked = FindObjectOfType<PlayerInput>().IsPlayerControllerInputBlocked;
-                if (!isInputBlocked)
+                bool isInputBlocked = FindObjectOfType<PlayerInput>().IsPlayerControllerInputBlocked;
+                if (isInputBlocked) 
+                    return;
+                string itemID = inventory[index].ItemID;
+                if (!string.IsNullOrEmpty(itemID))
                 {
-                    var itemID = inventory[index].ItemID;
-                    if (!string.IsNullOrEmpty(itemID))
-                    {
-                        var item = m_InventoryManager.GetItem(itemID);
-                        PlayerController.Instance.EquipItem(item);
-                    }
+                    GameObject item = inventoryManager.GetItem(itemID);
+                    PlayerController.Instance.EquipItem(item);
                 }
             }
         }

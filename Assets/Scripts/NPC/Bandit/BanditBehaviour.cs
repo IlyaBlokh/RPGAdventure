@@ -10,46 +10,38 @@ namespace NPC.Bandit
 {
     public class BanditBehaviour : MonoBehaviour, IAttackAnimListener, IMessageReceiver
     {
-        [SerializeField]
-        float TimeToStopPursuit = 2.0f;
-        [SerializeField]
-        float TimeToReturnToSpotPos = 2.0f;
-        [SerializeField]
-        PlayerScanner m_PlayerScanner;
-        [SerializeField]
-        float AttackDistance = 1.1f;
+        [SerializeField] private float TimeToStopPursuit = 2.0f;
+        [SerializeField] private float TimeToReturnToSpotPos = 2.0f;
+        [SerializeField] private PlayerScanner m_PlayerScanner;
+        [SerializeField] private float AttackDistance = 1.1f;
 
         //Components
-        [SerializeField]
-        MeleeWeapon MeleeWeapon;
+        [SerializeField] private MeleeWeapon MeleeWeapon;
 
-        private EnemyController m_EnemyController;
+        private EnemyController enemyController;
 
         //AI
-        private Vector3 m_SpotPosition;
-        private PlayerController m_FollowTarget;
-        private float m_TimeNoDetecting;
-        private Vector3 m_toBase;
-        private Vector3 m_toTarget;
-        private Quaternion m_initialRotation;
+        private Vector3 spotPosition;
+        private PlayerController followTarget;
+        private float timeNoDetecting;
+        private Vector3 toBase;
+        private Vector3 toTarget;
+        private Quaternion initialRotation;
 
-        private bool HasFollowTarget
-        {
-            get { return m_FollowTarget != null; }
-        }
+        private bool HasFollowTarget => followTarget != null;
 
-        private readonly int m_HashedInPursuit = Animator.StringToHash("inPursuit");
-        private readonly int m_HashedNearSpot = Animator.StringToHash("NearSpot");
-        private readonly int m_HashedIsAwared = Animator.StringToHash("isAwared");
-        private readonly int m_HashedAttack = Animator.StringToHash("Attack");
-        private readonly int m_HashedHurt = Animator.StringToHash("Hurt");
-        private readonly int m_HashedDead = Animator.StringToHash("Dead");
+        private readonly int hashedInPursuit = Animator.StringToHash("inPursuit");
+        private readonly int hashedNearSpot = Animator.StringToHash("NearSpot");
+        private readonly int hashedIsAwared = Animator.StringToHash("isAwared");
+        private readonly int hashedAttack = Animator.StringToHash("Attack");
+        private readonly int hashedHurt = Animator.StringToHash("Hurt");
+        private readonly int hashedDead = Animator.StringToHash("Dead");
 
         private void Awake()
         {
-            m_EnemyController = GetComponent<EnemyController>();
-            m_SpotPosition = transform.position;
-            m_initialRotation = transform.rotation;
+            enemyController = GetComponent<EnemyController>();
+            spotPosition = transform.position;
+            initialRotation = transform.rotation;
             MeleeWeapon.Owner = gameObject;
         }
 
@@ -63,23 +55,19 @@ namespace NPC.Bandit
 
         private void GuardPosition()
         {
-            var detectedTarget = m_PlayerScanner.Search(transform);
+            PlayerController detectedTarget = m_PlayerScanner.Search(transform);
             bool hasDetectedTarget = detectedTarget != null;
 
-            if (hasDetectedTarget) m_FollowTarget = detectedTarget;
+            if (hasDetectedTarget) followTarget = detectedTarget;
 
             if (HasFollowTarget)
             {
                 AttackOrPursuit();
 
                 if (hasDetectedTarget)
-                {
-                    m_TimeNoDetecting = .0f;
-                }
+                    timeNoDetecting = .0f;
                 else
-                {
                     StopPursuit(false);
-                }
             }
 
             CheckOnSpotPosition();
@@ -87,43 +75,39 @@ namespace NPC.Bandit
 
         private void AttackOrPursuit()
         {
-            m_toTarget = m_FollowTarget.transform.position - transform.position;
-            if (m_toTarget.magnitude <= AttackDistance)
-            {
+            toTarget = followTarget.transform.position - transform.position;
+            if (toTarget.magnitude <= AttackDistance)
                 Attack();
-            }
             else
-            {
                 Pursuit();
-            }
         }
 
         private void Attack()
         {
-            var targetRotation = Quaternion.LookRotation(m_toTarget);
+            Quaternion targetRotation = Quaternion.LookRotation(toTarget);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 * Time.deltaTime);
-            m_EnemyController.DisableNavMeshAgent();
-            m_EnemyController.Animator.SetTrigger(m_HashedAttack);
+            enemyController.DisableNavMeshAgent();
+            enemyController.Animator.SetTrigger(hashedAttack);
         }
 
         private void Pursuit()
         {
-            m_EnemyController.SetDestination(m_FollowTarget.transform.position);
-            m_EnemyController.Animator.SetBool(m_HashedInPursuit, true);
-            m_EnemyController.Animator.SetBool(m_HashedIsAwared, false);
+            enemyController.SetDestination(followTarget.transform.position);
+            enemyController.Animator.SetBool(hashedInPursuit, true);
+            enemyController.Animator.SetBool(hashedIsAwared, false);
         }
 
         private void StopPursuit(bool stopImmediately)
         {
-            m_TimeNoDetecting += Time.deltaTime;
-            if (stopImmediately || m_TimeNoDetecting > TimeToStopPursuit)
+            timeNoDetecting += Time.deltaTime;
+            if (stopImmediately || timeNoDetecting > TimeToStopPursuit)
             {                
-                m_FollowTarget = null;
-                m_EnemyController.Animator.SetBool(m_HashedIsAwared, true);
+                followTarget = null;
+                enemyController.Animator.SetBool(hashedIsAwared, true);
                 if (stopImmediately)
                 {
-                    m_EnemyController.Animator.SetBool(m_HashedIsAwared, false);
-                    m_EnemyController.Animator.SetBool(m_HashedInPursuit, false);
+                    enemyController.Animator.SetBool(hashedIsAwared, false);
+                    enemyController.Animator.SetBool(hashedInPursuit, false);
                 }
                 StartCoroutine(ReturnToSpotPosition());
             }
@@ -132,69 +116,63 @@ namespace NPC.Bandit
         private IEnumerator ReturnToSpotPosition()
         {
             yield return new WaitForSeconds(TimeToReturnToSpotPos);
-            m_EnemyController.SetDestination(m_SpotPosition);
-            m_EnemyController.Animator.SetBool(m_HashedIsAwared, false);
-            m_EnemyController.Animator.SetBool(m_HashedInPursuit, false);
+            enemyController.SetDestination(spotPosition);
+            enemyController.Animator.SetBool(hashedIsAwared, false);
+            enemyController.Animator.SetBool(hashedInPursuit, false);
         }
 
         private void CheckOnSpotPosition()
         {
-            m_toBase = m_SpotPosition - transform.position;
-            m_toBase.y = .0f;
-            var isOnSpot = Mathf.Approximately(m_toBase.magnitude, .0f);
-            m_EnemyController.Animator.SetBool(m_HashedNearSpot, isOnSpot);
-            if (isOnSpot)
-            {
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, m_initialRotation, 360 * Time.deltaTime);
-            }
+            toBase = spotPosition - transform.position;
+            toBase.y = .0f;
+            bool isOnSpot = Mathf.Approximately(toBase.magnitude, .0f);
+            enemyController.Animator.SetBool(hashedNearSpot, isOnSpot);
+            if (isOnSpot) 
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, initialRotation, 360 * Time.deltaTime);
         }
 
-        public void AE_Attack(int AttackStatus)
+        public void AE_Attack(int attackStatus)
         {
-            if (MeleeWeapon == null) Debug.Log("NULL");
-            MeleeWeapon.UpdateAttack(AttackStatus == 1);
+            if (MeleeWeapon == null) 
+                Debug.LogError ("MeleeWeapon NULL");
+            else
+                MeleeWeapon.UpdateAttack(attackStatus == 1);
         }
 
         public void OnMessageReceive(IMessageReceiver.MessageType messageType, object messageData)
         {
             switch (messageType)
             {
-                case IMessageReceiver.MessageType.DAMAGED:
+                case IMessageReceiver.MessageType.Damaged:
                     OnDamageReceived();
                     break;
-                case IMessageReceiver.MessageType.DEAD:
+                case IMessageReceiver.MessageType.Dead:
                     OnDead();
-                    break;
-                default:
                     break;
             }
         }
 
-        private void OnDamageReceived()
-        {
-            m_EnemyController.Animator.SetTrigger(m_HashedHurt);
-        }
+        private void OnDamageReceived() => 
+            enemyController.Animator.SetTrigger(hashedHurt);
 
-        private void OnDead()
-        {
-            m_EnemyController.Animator.SetTrigger(m_HashedDead);
-        }
+        private void OnDead() => 
+            enemyController.Animator.SetTrigger(hashedDead);
 
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
             UnityEditor.Handles.color = new Color(0.8f, 0, 0, 0.4f);
-            Vector3 m_RotatedForward = Quaternion.Euler(0, -m_PlayerScanner.ScannerDetectionAngle / 2, 0) * transform.forward;
+            Vector3 rotatedForward = Quaternion.Euler(0, -m_PlayerScanner.ScannerDetectionAngle / 2, 0) * transform.forward;
             UnityEditor.Handles.DrawSolidArc(
                 transform.position,
                 Vector3.up,
-                m_RotatedForward,
+                rotatedForward,
                 m_PlayerScanner.ScannerDetectionAngle,
                 m_PlayerScanner.ScannerDetectionRange);
             UnityEditor.Handles.DrawSolidArc(
                 transform.position,
                 Vector3.up,
-                m_RotatedForward,
+                rotatedForward,
                 360,
                 m_PlayerScanner.ScannerMeleeDetectionRange);
         }

@@ -4,15 +4,12 @@ namespace Utils
 {
     public class FixedUpdateFollow : MonoBehaviour
     {
-        [SerializeField]
-        Transform ToFollow;
+        [SerializeField] private Transform ToFollow;
 
         private void Awake()
         {
-            if (ToFollow != null)
-            {
+            if (ToFollow != null) 
                 FollowParent(ToFollow);
-            }
         }
 
         public void FollowParent(Transform toFollow)

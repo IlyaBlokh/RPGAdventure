@@ -10,28 +10,22 @@ namespace Dialogs
 {
     public class DialogManager : MonoBehaviour
     {
-        [SerializeField]
-        GameObject DialogUI;
-        [SerializeField]
-        Text DialogHeaderText;
-        [SerializeField]
-        Text DialogAnswerText;
-        [SerializeField]
-        GameObject QueryOptionsList;
-        [SerializeField]
-        Button QueryOptionPrefab;
-        [SerializeField]
-        float TimeToShowDialogOptions = 2.0f;
+        [SerializeField] private GameObject DialogUI;
+        [SerializeField] private Text DialogHeaderText;
+        [SerializeField] private Text DialogAnswerText;
+        [SerializeField] private GameObject QueryOptionsList;
+        [SerializeField] private Button QueryOptionPrefab;
+        [SerializeField] private float TimeToShowDialogOptions = 2.0f;
 
-        private QuestManager m_QuestManager;
-        private PlayerInput m_PlayerInput;
-        private GameObject m_NPC;
-        private Dialog m_ActiveDialog;
-        private float m_OptionTopPosition;
-        private float m_TimerForDialogOptions;
-        private bool m_ForceDialogQuit;
+        private QuestManager questManager;
+        private PlayerInput playerInput;
+        private GameObject npc;
+        private Dialog activeDialog;
+        private float optionTopPosition;
+        private float timerForDialogOptions;
+        private bool forceDialogQuit;
 
-        const float c_OptionIndend = 44.0f;
+        private const float OptionIndend = 44.0f;
 
         private void Awake()
         {
@@ -40,39 +34,39 @@ namespace Dialogs
 
         private void Start()
         {
-            m_QuestManager = FindObjectOfType<QuestManager>();
-            m_PlayerInput = PlayerInput.Instance;
-            m_ForceDialogQuit = false;
+            questManager = FindObjectOfType<QuestManager>();
+            playerInput = PlayerInput.Instance;
+            forceDialogQuit = false;
         }
 
         private void Update()
         {
             if (!DialogUI.activeSelf && 
-                m_PlayerInput.GetClickableObject)
+                playerInput.GetClickableObject)
             {
-                m_NPC = m_PlayerInput.GetClickableObject.gameObject;
+                npc = playerInput.GetClickableObject.gameObject;
                 StartDialog();
             }
 
             if (DialogUI.activeSelf &&
-                m_NPC.GetComponent<Clickable>().CheckEndInteractCondition())
+                npc.GetComponent<Clickable>().CheckEndInteractCondition())
             {
                 StopDialog();
             }
 
             //Timer is triggered
-            if (m_TimerForDialogOptions > 0)
+            if (timerForDialogOptions > 0)
             {
-                m_TimerForDialogOptions += Time.deltaTime;
-                if (m_TimerForDialogOptions >= TimeToShowDialogOptions)
+                timerForDialogOptions += Time.deltaTime;
+                if (timerForDialogOptions >= TimeToShowDialogOptions)
                 {
-                    if (m_ForceDialogQuit)
+                    if (forceDialogQuit)
                     {
                         StopDialog();
                     }
                     else
                     {
-                        m_TimerForDialogOptions = .0f;
+                        timerForDialogOptions = .0f;
                         DisplayDialogOptions();
                     }
                 }
@@ -81,11 +75,11 @@ namespace Dialogs
 
         private void StartDialog()
         {
-            DialogHeaderText.text = m_NPC.name;
-            m_ActiveDialog = m_NPC.GetComponent<QuestOwner>().Dialog;
+            DialogHeaderText.text = npc.name;
+            activeDialog = npc.GetComponent<QuestOwner>().Dialog;
             DialogUI.SetActive(true);
             CleanupDialogOptionList();
-            DisplayAnswerText(m_ActiveDialog.welcomeText);
+            DisplayAnswerText(activeDialog.welcomeText);
             TriggerDisplayDialogOptions();
         }
 
@@ -97,7 +91,7 @@ namespace Dialogs
 
         private void TriggerDisplayDialogOptions()
         {
-            m_TimerForDialogOptions = 0.001f;
+            timerForDialogOptions = 0.001f;
         }
 
         private void DisplayDialogOptions()
@@ -113,8 +107,8 @@ namespace Dialogs
 
         private void InitDialogOptionsList()
         {
-            var queries = Array.FindAll(m_ActiveDialog.queries, query => !query.isAsked || query.shouldAlwaysAsk);
-            foreach (var query in queries)
+            DialogQuery[] queries = Array.FindAll(activeDialog.queries, query => !query.isAsked || query.shouldAlwaysAsk);
+            foreach (DialogQuery query in queries)
             {
                 InitOptionInstance(query);
             }
@@ -122,19 +116,19 @@ namespace Dialogs
 
         private void CleanupDialogOptionList()
         {
-            m_OptionTopPosition = .0f;
+            optionTopPosition = .0f;
             foreach (Transform child in QueryOptionsList.transform)
                 Destroy(child.gameObject);
         }
 
         private void InitOptionInstance(DialogQuery dialogOption)
         {
-            m_OptionTopPosition += c_OptionIndend;
-            var OptionButtonInstance = Instantiate(QueryOptionPrefab, QueryOptionsList.transform);
+            optionTopPosition += OptionIndend;
+            Button OptionButtonInstance = Instantiate(QueryOptionPrefab, QueryOptionsList.transform);
             OptionButtonInstance.GetComponentInChildren<Text>().text = dialogOption.queryText;
             OptionButtonInstance.GetComponentInChildren<Text>().tag = "option_text";
             RectTransform btnRectTransform = OptionButtonInstance.GetComponent<RectTransform>();
-            btnRectTransform.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, m_OptionTopPosition, btnRectTransform.rect.height);
+            btnRectTransform.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, optionTopPosition, btnRectTransform.rect.height);
             RegisterOptionClickHandler(OptionButtonInstance, dialogOption);
         }
 
@@ -143,11 +137,11 @@ namespace Dialogs
             EventTrigger eventTrigger = optionBtn.gameObject.AddComponent<EventTrigger>();
             var clickDownEvent = new EventTrigger.Entry { eventID = EventTriggerType.PointerDown };
             clickDownEvent.callback.AddListener((e) => {
-                if (!String.IsNullOrEmpty(query.dialogAnswer.questId))
+                if (!string.IsNullOrEmpty(query.dialogAnswer.questId))
                 {
-                    m_PlayerInput.GetComponent<QuestLog>().AddQuest(m_QuestManager.GetQuest(query.dialogAnswer.questId));
+                    playerInput.GetComponent<QuestLog>().AddQuest(questManager.GetQuest(query.dialogAnswer.questId));
                 }
-                m_ForceDialogQuit = query.dialogAnswer.shouldForceExit;
+                forceDialogQuit = query.dialogAnswer.shouldForceExit;
                 query.isAsked = true;
                 CleanupDialogOptionList();
                 DisplayAnswerText(query.dialogAnswer.answerText);
@@ -159,10 +153,10 @@ namespace Dialogs
         private void StopDialog()
         {
             DialogUI.SetActive(false);
-            m_NPC = null;
-            m_ActiveDialog = null;
-            m_ForceDialogQuit = false;
-            m_TimerForDialogOptions = .0f;
+            npc = null;
+            activeDialog = null;
+            forceDialogQuit = false;
+            timerForDialogOptions = .0f;
         }
     }
 }

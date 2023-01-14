@@ -1,3 +1,4 @@
+using System;
 using Audio;
 using DamageSystem;
 using UnityEngine;
@@ -8,63 +9,51 @@ namespace Weapons
     [RequireComponent(typeof(FixedUpdateFollow))]
     public class MeleeWeapon : MonoBehaviour
     {
-        [System.Serializable]
-        public class AttackPoint
+        [Serializable]
+        private class AttackPoint
         {
             public float radius;
             public Vector3 offset;
             public Transform root;
         }
 
-        [SerializeField]
-        float Damage;
+        [SerializeField] private float Damage;
+        [SerializeField] private AttackPoint[] attackPoints = Array.Empty<AttackPoint>();
+        [SerializeField] private LayerMask targetLayers;
+        [SerializeField] private RandomAudioPlayer SwingAudioPlayer;
+        [SerializeField] private RandomAudioPlayer ImpactAudioPlayer;
 
-        [SerializeField]
-        AttackPoint[] attackPoints = new AttackPoint[0];
-
-        [SerializeField]
-        LayerMask targetLayers;
-
-        [SerializeField]
-        RandomAudioPlayer SwingAudioPlayer;
-        [SerializeField]
-        RandomAudioPlayer ImpactAudioPlayer;
-
-        private GameObject m_Owner;
-        private bool isAttacking = false;
+        private GameObject owner;
+        private bool isAttacking;
         private Vector3[] originalAttackPointPosition;
-        private RaycastHit[] raycastHits = new RaycastHit[32];
+        private readonly RaycastHit[] raycastHits = new RaycastHit[32];
 
-        public GameObject Owner { get => m_Owner; set => m_Owner = value; }
+        public GameObject Owner { get => owner; set => owner = value; }
 
         private void FixedUpdate()
         {
-            if (isAttacking)
+            if (!isAttacking) return;
+            for (var i = 0; i < attackPoints.Length; i++)
             {
-                for (var i = 0; i < attackPoints.Length; i++)
-                {
-                    AttackPoint ap = attackPoints[i];
-                    Vector3 currentWorldPos = ap.root.position +
-                        ap.root.TransformVector(attackPoints[i].offset);
-                    Vector3 attackVector = (currentWorldPos - originalAttackPointPosition[i]).normalized;
-                    Ray ray = new Ray(originalAttackPointPosition[i], attackVector);
-                    Debug.DrawRay(originalAttackPointPosition[i], attackVector, Color.red, 4.0f);
+                AttackPoint ap = attackPoints[i];
+                Vector3 currentWorldPos = ap.root.position +
+                                          ap.root.TransformVector(attackPoints[i].offset);
+                Vector3 attackVector = (currentWorldPos - originalAttackPointPosition[i]).normalized;
+                Ray ray = new Ray(originalAttackPointPosition[i], attackVector);
+                Debug.DrawRay(originalAttackPointPosition[i], attackVector, Color.red, 4.0f);
 
-                    var hitCount = Physics.SphereCastNonAlloc(
-                        ray,
-                        ap.radius,
-                        raycastHits,
-                        attackVector.magnitude,
-                        ~0,
-                        QueryTriggerInteraction.Ignore); 
+                int hitCount = Physics.SphereCastNonAlloc(
+                    ray,
+                    ap.radius,
+                    raycastHits,
+                    attackVector.magnitude,
+                    ~0,
+                    QueryTriggerInteraction.Ignore); 
 
-                    for (var j =0; j < hitCount; j++)
-                    {
-                        CheckDamage(raycastHits[j].collider);
-                    }
+                for (var j =0; j < hitCount; j++) 
+                    CheckDamage(raycastHits[j].collider);
 
-                    originalAttackPointPosition[i] = currentWorldPos;
-                }
+                originalAttackPointPosition[i] = currentWorldPos;
             }
         }
 
@@ -95,7 +84,7 @@ namespace Weapons
                 data.DamageReceiver = damageableComponent;
                 data.DamageDealer = this;
                 data.DamageAmount = Damage;
-                data.DamageSender = m_Owner;
+                data.DamageSender = owner;
 
                 ImpactAudioPlayer.PlayRandomClip();
                 damageableComponent.ApplyDamage(data);
@@ -108,7 +97,7 @@ namespace Weapons
             Gizmos.color = new Color(.0f, 0.7f, .0f, 0.4f);
             foreach(AttackPoint attackPoint in attackPoints)
             {
-                var worldOffset = attackPoint.root.TransformVector(attackPoint.offset);
+                Vector3 worldOffset = attackPoint.root.TransformVector(attackPoint.offset);
                 Gizmos.DrawSphere(
                     transform.position + worldOffset,
                     attackPoint.radius);

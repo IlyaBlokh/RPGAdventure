@@ -4,9 +4,8 @@ namespace Inventory
 {
     public class ItemSpawner : MonoBehaviour
     {
-        [SerializeField]
-        GameObject itemToSpawn;
-        void Start()
+        [SerializeField] private GameObject itemToSpawn;
+        private void Start()
         {
             Instantiate(itemToSpawn, transform.position, Quaternion.identity);
         }

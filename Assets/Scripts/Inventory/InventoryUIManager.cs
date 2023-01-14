@@ -7,18 +7,12 @@ using UnityEngine.UI;
 namespace Inventory {
     public class InventoryUIManager : MonoBehaviour
     {
-        [SerializeField]
-        Button InventorySlot;
-
-        [SerializeField]
-        RectTransform InventoryPanel;
-
-        [SerializeField]
-        UnityEvent<int> onInventorySlotPick;
-
-        private List<Button> m_slots = new List<Button>();
-
-        private float m_SlotLeftPosition = .0f;
+        [SerializeField] private Button InventorySlot;
+        [SerializeField] private RectTransform InventoryPanel;
+        [SerializeField] private UnityEvent<int> onInventorySlotPick;
+        
+        private List<Button> slots = new();
+        private float slotLeftPosition;
         private void Start()
         {
             onInventorySlotPick.AddListener(FindObjectOfType<InventoryManager>().GetPlayerInventory().OnInventorySlotPick);
@@ -27,26 +21,26 @@ namespace Inventory {
 
         private void InitInventoryUI()
         {
-            var playerInventorySize = FindObjectOfType<PlayerController>().GetComponent<Inventory>().Size;
-            var slotWidth = InventoryPanel.rect.width / playerInventorySize;
+            int playerInventorySize = FindObjectOfType<PlayerController>().GetComponent<Inventory>().Size;
+            float slotWidth = InventoryPanel.rect.width / playerInventorySize;
             for (int i = 0; i < playerInventorySize; i++)
             {
-                var SlotInstance = Instantiate(InventorySlot, InventoryPanel.transform);
+                Button SlotInstance = Instantiate(InventorySlot, InventoryPanel.transform);
                 RectTransform btnRectTransform = SlotInstance.GetComponent<RectTransform>();
-                btnRectTransform.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, m_SlotLeftPosition, slotWidth);
+                btnRectTransform.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, slotLeftPosition, slotWidth);
                 btnRectTransform.GetComponent<Button>().onClick.AddListener(() =>
                 {
-                    var index = m_slots.FindIndex(slot => slot == SlotInstance);
+                    int index = slots.FindIndex(slot => slot == SlotInstance);
                     onInventorySlotPick.Invoke(index);
                 });
-                m_slots.Add(SlotInstance);
-                m_SlotLeftPosition += slotWidth;
+                slots.Add(SlotInstance);
+                slotLeftPosition += slotWidth;
             }
         }
 
-        public void onSlotTaken(int index, Sprite icon)
+        public void OnSlotTaken(int index, Sprite icon)
         {
-            m_slots[index].GetComponentInChildren<Image>().sprite = icon;
+            slots[index].GetComponentInChildren<Image>().sprite = icon;
         }
     }
 }

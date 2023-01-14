@@ -5,31 +5,30 @@ namespace DamageSystem
 {
     public class DamageableUI : MonoBehaviour
     {
-        [SerializeField]
-        GameObject HealthUIPrefab;
+        [SerializeField] private GameObject HealthUIPrefab;
 
-        private Slider m_HealthBar;
+        private Slider healthBar;
 
-        public GameObject HealthUI { get => HealthUIPrefab; }
+        public GameObject HealthUI => HealthUIPrefab;
 
         private void Awake()
         {
-            m_HealthBar = HealthUI.GetComponentInChildren<Slider>();
+            healthBar = HealthUI.GetComponentInChildren<Slider>();
         }
 
-        public void SetMaxHP(float value)
+        public void SetMaxHp(float value)
         {
             if (HealthUI)
             {
-                m_HealthBar.maxValue = value;
-                SetHP(value);
+                healthBar.maxValue = value;
+                SetHp(value);
             }
         }
 
-        public void SetHP(float value)
+        public void SetHp(float value)
         {
             if (HealthUI)
-                m_HealthBar.value = value;
+                healthBar.value = value;
         }
     }
 }

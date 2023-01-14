@@ -5,8 +5,7 @@ namespace Graphics
 {
     public class Dissolve : MonoBehaviour
     {
-        [SerializeField]
-        float DissolveTime;
+        [SerializeField] private float DissolveTime;
 
         private void Awake()
         {

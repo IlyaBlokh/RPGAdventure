@@ -7,14 +7,10 @@ namespace Player
 {
     public class PlayerStats : MonoBehaviour, IMessageReceiver
     {
-        [SerializeField]
-        int currentLevel;
-        [SerializeField]
-        int experience;
-        [SerializeField]
-        int maxLevel;
-        [SerializeField]
-        int[] availableLevels;
+        [SerializeField] private int currentLevel;
+        [SerializeField] private int experience;
+        [SerializeField] private int maxLevel;
+        [SerializeField] private int[] availableLevels;
 
         private void Awake()
         {
@@ -30,18 +26,17 @@ namespace Player
             var exp = 0;
             switch (messageType)
             {
-                case IMessageReceiver.MessageType.DEAD:
+                case IMessageReceiver.MessageType.Dead:
                     exp = ((Damageable.DamageData)messageData).DamageReceiver.ExperienceForKill;
                     break;
-                case IMessageReceiver.MessageType.QUEST_COMPLETE:
+                case IMessageReceiver.MessageType.QuestComplete:
                     exp = ((AcceptedQuest)messageData).experienceReward;
                     break;
-                default: break;
             }
             GainExperience(exp);
         }
 
-        public void GainExperience(int exp)
+        private void GainExperience(int exp)
         {
             experience += exp;
             if (currentLevel == maxLevel) return;

@@ -9,65 +9,58 @@ namespace Player
 {
     public class PlayerInput : MonoBehaviour
     {
-        public static PlayerInput Instance { get => s_Instance; }
+        public static PlayerInput Instance => instance;
 
-        private static PlayerInput s_Instance;
-        private Vector3 m_PlayerInput;
-        private bool m_IsAttacking;
-        private bool m_IsPlayerControllerInputBlocked;
-        private Clickable m_ClickableObject;
-        private GameObject m_LastTextUnderPointer;
+        private static PlayerInput instance;
+        private Vector3 playerInput;
+        private GameObject lastTextUnderPointer;
 
-        public Vector3 MoveInput { get => m_PlayerInput.normalized; }
-
-        public bool IsAttacking { get => m_IsAttacking; }
-
-        public bool IsMoving{ get => !Mathf.Approximately(m_PlayerInput.magnitude, 0); }
-
-        public Clickable GetClickableObject { get => m_ClickableObject; }
-        public bool IsPlayerControllerInputBlocked { get => m_IsPlayerControllerInputBlocked; set => m_IsPlayerControllerInputBlocked = value; }
+        public Vector3 MoveInput => playerInput.normalized;
+        public bool IsAttacking { get; private set; }
+        public bool IsMoving => !Mathf.Approximately(playerInput.magnitude, 0);
+        public Clickable GetClickableObject { get; private set; }
+        public bool IsPlayerControllerInputBlocked { get; set; }
 
         private void Awake()
         {
-            s_Instance = this;
+            instance = this;
         }
 
-        void Update()
+        private void Update()
         {
-            if (!IsPlayerControllerInputBlocked)
+            if (IsPlayerControllerInputBlocked) 
+                return;
+            playerInput.Set(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+            if (Input.GetButtonDown("Fire1"))
+                HandlePrimaryAction();
+
+            if (Input.GetButtonDown("Fire2"))
+                HandleSecondaryAction();
+
+            if (lastTextUnderPointer != null)
             {
-                m_PlayerInput.Set(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-
-                if (Input.GetButtonDown("Fire1"))
-                    HandlePrimaryAction();
-
-                if (Input.GetButtonDown("Fire2"))
-                    HandleSecondaryAction();
-
-                if (m_LastTextUnderPointer != null)
+                if (EventSystem.current.IsPointerOverGameObject())
                 {
-                    if (EventSystem.current.IsPointerOverGameObject())
-                    {
-                        var UIObject = GetUIObjectUnderPointer();
-                        if (!AreTextsEqual(UIObject, m_LastTextUnderPointer))
-                        {
-                            SetUITextColor(new Color(.19f, .19f, .19f));
-                        }
-                    }
-                    else
+                    var UIObject = GetUIObjectUnderPointer();
+                    if (!AreTextsEqual(UIObject, lastTextUnderPointer))
                     {
                         SetUITextColor(new Color(.19f, .19f, .19f));
                     }
                 }
-
-                if (EventSystem.current.IsPointerOverGameObject())
+                else
                 {
-                    var UIObject = GetUIObjectUnderPointer();
-                    if (UIObject.tag == "option_text")
-                    {
-                        m_LastTextUnderPointer = UIObject;
-                        SetUITextColor(Color.yellow);
-                    }
+                    SetUITextColor(new Color(.19f, .19f, .19f));
+                }
+            }
+
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                GameObject UIObject = GetUIObjectUnderPointer();
+                if (UIObject.CompareTag("option_text"))
+                {
+                    lastTextUnderPointer = UIObject;
+                    SetUITextColor(Color.yellow);
                 }
             }
         }
@@ -82,12 +75,12 @@ namespace Player
 
         private void SetUITextColor(Color color)
         {
-            m_LastTextUnderPointer.GetComponent<Text>().color = color;
+            lastTextUnderPointer.GetComponent<Text>().color = color;
         }
 
         private void HandlePrimaryAction()
         {
-            if (!m_IsAttacking && GetUIObjectUnderPointer() == null)
+            if (!IsAttacking && GetUIObjectUnderPointer() == null)
                 StartCoroutine(TriggerAttack());
         }
 
@@ -115,16 +108,16 @@ namespace Player
         }
         private IEnumerator TriggerAttack()
         {
-            m_IsAttacking = true;
+            IsAttacking = true;
             yield return new WaitForSeconds(0.03f);
-            m_IsAttacking = false;
+            IsAttacking = false;
         }
 
         private IEnumerator TriggerInteract(Clickable clickableObject)
         {
-            m_ClickableObject = clickableObject.CheckClickCondition();
+            GetClickableObject = clickableObject.CheckClickCondition();
             yield return new WaitForSeconds(0.03f);
-            m_ClickableObject = null;
+            GetClickableObject = null;
         }
     }
 }

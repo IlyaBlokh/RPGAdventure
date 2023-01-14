@@ -5,20 +5,20 @@ namespace Utils
 {
     public class FaceToCamera : MonoBehaviour
     {
-        private CameraController m_CameraController;
-        private Vector3 m_CameraDirection;
-        private Quaternion m_TargetRotation;
+        private CameraController cameraController;
+        private Vector3 cameraDirection;
+        private Quaternion targetRotation;
 
         void Awake()
         {
-            m_CameraController = UnityEngine.Camera.main.GetComponent<CameraController>();
+            cameraController = UnityEngine.Camera.main.GetComponent<CameraController>();
         }
 
         void Update()
         {
-            m_CameraDirection = Quaternion.Euler(0, m_CameraController.FreeLookCamera.m_XAxis.Value, 0) * Vector3.forward;
-            m_TargetRotation = Quaternion.LookRotation(-m_CameraDirection);
-            transform.rotation = m_TargetRotation;
+            cameraDirection = Quaternion.Euler(0, cameraController.FreeLookCamera.m_XAxis.Value, 0) * Vector3.forward;
+            targetRotation = Quaternion.LookRotation(-cameraDirection);
+            transform.rotation = targetRotation;
         }
     }
 }
