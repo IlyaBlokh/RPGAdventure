@@ -1,0 +1,1292 @@
+fileFormatVersion: 2
+guid: ae4bd5fd299935a4aba87106087abf2a
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: Sniper_RIG_mat_Arnold:Root_M
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Hip_L
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Hip_R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Knee_L
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Knee_R
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Ankle_L
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Ankle_R
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:RootPart1_M
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Spine1_M
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Neck_M
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Head_M
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Scapula_L
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Scapula_R
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Shoulder_L
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Shoulder_R
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Elbow_L
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Elbow_R
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Wrist_L
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Wrist_R
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Toes_L
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Toes_R
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Eye_L
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Eye_R
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Jaw_M
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:ThumbFinger1_L
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:ThumbFinger2_L
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:ThumbFinger3_L
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:IndexFinger1_L
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:IndexFinger2_L
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:IndexFinger3_L
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:MiddleFinger1_L
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:MiddleFinger2_L
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:MiddleFinger3_L
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:RingFinger1_L
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:RingFinger2_L
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:RingFinger3_L
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:ThumbFinger1_R
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:ThumbFinger2_R
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:ThumbFinger3_R
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:IndexFinger1_R
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:IndexFinger2_R
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:IndexFinger3_R
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:MiddleFinger1_R
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:MiddleFinger2_R
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:MiddleFinger3_R
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:RingFinger1_R
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:RingFinger2_R
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:RingFinger3_R
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Sniper_RIG_mat_Arnold:Spine1Part1_M
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Sniper_000001_Zero(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Geometry
+      parentName: Sniper_000001_Zero(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Body
+      parentName: Sniper_RIG_mat_Arnold:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:BodyBase
+      parentName: Sniper_RIG_mat_Arnold:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Dawn_Zub
+      parentName: Sniper_RIG_mat_Arnold:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Deck_1
+      parentName: Sniper_RIG_mat_Arnold:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Deck_2
+      parentName: Sniper_RIG_mat_Arnold:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Deck_3
+      parentName: Sniper_RIG_mat_Arnold:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Glass
+      parentName: Sniper_RIG_mat_Arnold:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Gun_01
+      parentName: Sniper_RIG_mat_Arnold:Geometry
+      position: {x: 0.935314, y: -0.00037251526, z: 0.3932979}
+      rotation: {x: 0.0023246473, y: 0.9986529, z: -0.029078227, w: -0.042912997}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:L_Dawn_Veko
+      parentName: Sniper_RIG_mat_Arnold:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:L_Eye
+      parentName: Sniper_RIG_mat_Arnold:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:L_Up_Veko
+      parentName: Sniper_RIG_mat_Arnold:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:L_Veko
+      parentName: Sniper_RIG_mat_Arnold:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Lifon
+      parentName: Sniper_RIG_mat_Arnold:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Midle_Eye
+      parentName: Sniper_RIG_mat_Arnold:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Mouth
+      parentName: Sniper_RIG_mat_Arnold:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:R_Dawn_Veko
+      parentName: Sniper_RIG_mat_Arnold:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:R_Eye
+      parentName: Sniper_RIG_mat_Arnold:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:R_Up_Veko
+      parentName: Sniper_RIG_mat_Arnold:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:R_Veko
+      parentName: Sniper_RIG_mat_Arnold:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Sniper_Hair_S_01
+      parentName: Sniper_RIG_mat_Arnold:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Up_Zub
+      parentName: Sniper_RIG_mat_Arnold:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Main_Sniper_1
+      parentName: Sniper_000001_Zero(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:DeformationSystem
+      parentName: Sniper_RIG_mat_Arnold:Main_Sniper_1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:root_sniper_02_jnt
+      parentName: Sniper_RIG_mat_Arnold:DeformationSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Root_M
+      parentName: Sniper_RIG_mat_Arnold:root_sniper_02_jnt
+      position: {x: -4.3507232e-17, y: 1.0822698, z: 0.061593227}
+      rotation: {x: -0.5197151, y: 0.479475, z: 0.5197151, w: -0.479475}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Gun_jnt_R
+      parentName: Sniper_RIG_mat_Arnold:Root_M
+      position: {x: -0.44246298, y: 0.037302565, z: -1.1308203}
+      rotation: {x: 0.18772742, y: -0.71174073, z: -0.66857654, w: -0.10577825}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:Gun_jny_2_R
+      parentName: Sniper_RIG_mat_Arnold:Gun_jnt_R
+      position: {x: -0.12134454, y: 1.4210854e-16, z: 0}
+      rotation: {x: 0.36268026, y: 0.9319123, z: 0.0011307895, w: -0.0011762679}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:Stvol_jnt_R
+      parentName: Sniper_RIG_mat_Arnold:Gun_jny_2_R
+      position: {x: -0.61153, y: -1.0569323e-15, z: 1.9042544e-14}
+      rotation: {x: 0.00031857088, y: -0.001600343, z: 0.1967757, w: 0.9804472}
+      scale: {x: 1.0000005, y: 1.0000001, z: 1.0000005}
+    - name: Sniper_RIG_mat_Arnold:Stvol_jntPart1_R
+      parentName: Sniper_RIG_mat_Arnold:Stvol_jnt_R
+      position: {x: -0.3464796, y: -5.684342e-16, z: 5.684342e-16}
+      rotation: {x: -0, y: -0, z: 0.0000000031832879, w: 1}
+      scale: {x: 1.0000006, y: 1.0000002, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:Stvol_jntPart2_R
+      parentName: Sniper_RIG_mat_Arnold:Stvol_jntPart1_R
+      position: {x: -0.3464796, y: -6.3948843e-16, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:Stvol_jnt1_R
+      parentName: Sniper_RIG_mat_Arnold:Stvol_jntPart2_R
+      position: {x: -0.3464796, y: -6.3948843e-16, z: 5.684342e-16}
+      rotation: {x: -0.000000010681105, y: 0.000000078813166, z: 0.011429639, w: 0.99993473}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:Stvol_end_jnt_R
+      parentName: Sniper_RIG_mat_Arnold:Stvol_jnt1_R
+      position: {x: -0.06718755, y: -5.684342e-16, z: 5.684342e-16}
+      rotation: {x: 8.881782e-16, y: -0, z: 8.4181157e-16, w: 1}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:Hip_L
+      parentName: Sniper_RIG_mat_Arnold:Root_M
+      position: {x: 0.023571597, y: -0.08444048, z: 0.17851393}
+      rotation: {x: 0.9913325, y: 0.06261821, z: 0.09495133, w: 0.06575148}
+      scale: {x: 1.0000008, y: 1.0000006, z: 1.0000007}
+    - name: Sniper_RIG_mat_Arnold:HipPart1_L
+      parentName: Sniper_RIG_mat_Arnold:Hip_L
+      position: {x: 0.25366566, y: -8.0608864e-10, z: -2.842171e-16}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:Knee_L
+      parentName: Sniper_RIG_mat_Arnold:HipPart1_L
+      position: {x: 0.25366566, y: -8.0608864e-10, z: -7.105427e-17}
+      rotation: {x: 0.000000029802322, y: 0.000000029802322, z: 0.0981974, w: 0.99516696}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: Sniper_RIG_mat_Arnold:Ankle_L
+      parentName: Sniper_RIG_mat_Arnold:Knee_L
+      position: {x: 0.4285184, y: -0.0000000013617287, z: 2.7711166e-15}
+      rotation: {x: 0.06405813, y: -0.09890622, z: -0.07455627, w: 0.99023}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000004}
+    - name: Sniper_RIG_mat_Arnold:Toes_L
+      parentName: Sniper_RIG_mat_Arnold:Ankle_L
+      position: {x: 0.12028553, y: -0.08368541, z: 1.03680405e-10}
+      rotation: {x: 0.0077214157, y: -0.011532924, z: 0.6500801, w: -0.75973904}
+      scale: {x: 0.9999998, y: 0.99999994, z: 0.9999998}
+    - name: Sniper_RIG_mat_Arnold:ToesEnd_L
+      parentName: Sniper_RIG_mat_Arnold:Toes_L
+      position: {x: 0.13838378, y: -5.639933e-16, z: -9.947598e-16}
+      rotation: {x: 4.6566118e-10, y: -9.3132235e-10, z: 0.000000030973744, w: 1}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: Sniper_RIG_mat_Arnold:Hip_R
+      parentName: Sniper_RIG_mat_Arnold:Root_M
+      position: {x: 0.023571597, y: -0.08444048, z: -0.17851393}
+      rotation: {x: 0.06261829, y: -0.9913324, z: -0.065751486, w: 0.09495132}
+      scale: {x: 1.0000006, y: 1.0000002, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:HipPart1_R
+      parentName: Sniper_RIG_mat_Arnold:Hip_R
+      position: {x: -0.25366566, y: -1.5543122e-17, z: -7.105427e-17}
+      rotation: {x: 0.000000006519258, y: -0, z: 0.000000007450581, w: 1}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000007}
+    - name: Sniper_RIG_mat_Arnold:Knee_R
+      parentName: Sniper_RIG_mat_Arnold:HipPart1_R
+      position: {x: -0.25366566, y: -2.4424906e-17, z: 0}
+      rotation: {x: -0.000000006022089, y: -0.000000021711568, z: 0.098197475, w: 0.99516696}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Ankle_R
+      parentName: Sniper_RIG_mat_Arnold:Knee_R
+      position: {x: -0.4285184, y: -5.3290704e-17, z: -2.1316282e-16}
+      rotation: {x: 0.06405806, y: -0.098906174, z: -0.07455624, w: 0.9902301}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: Sniper_RIG_mat_Arnold:Toes_R
+      parentName: Sniper_RIG_mat_Arnold:Ankle_R
+      position: {x: -0.12028553, y: 0.08368541, z: -1.4210854e-16}
+      rotation: {x: -0.0077213263, y: 0.011532924, z: -0.65008014, w: 0.759739}
+      scale: {x: 0.9999996, y: 0.99999994, z: 0.9999998}
+    - name: Sniper_RIG_mat_Arnold:ToesEnd_R
+      parentName: Sniper_RIG_mat_Arnold:Toes_R
+      position: {x: -0.13838378, y: -1.0524914e-15, z: 4.2632563e-16}
+      rotation: {x: 4.6566118e-10, y: -0, z: 0.00000002994056, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:Hvost_joint1_M
+      parentName: Sniper_RIG_mat_Arnold:Root_M
+      position: {x: 0.00022235423, y: -0.21486881, z: -1.4460098e-16}
+      rotation: {x: -0, y: -0, z: -0.8797374, w: -0.47545987}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Hvost_joint2_M
+      parentName: Sniper_RIG_mat_Arnold:Hvost_joint1_M
+      position: {x: -0.18707782, y: 8.5265126e-16, z: 3.599829e-16}
+      rotation: {x: -0, y: -0, z: -0.08265388, w: 0.9965784}
+      scale: {x: 1.0000007, y: 1, z: 1.0000007}
+    - name: Sniper_RIG_mat_Arnold:Hvost_joint3_M
+      parentName: Sniper_RIG_mat_Arnold:Hvost_joint2_M
+      position: {x: -0.30735755, y: -1.4210854e-16, z: 3.9996173e-16}
+      rotation: {x: -0.000000008668958, y: -0.00000004124568, z: -0.10562527, w: 0.99440604}
+      scale: {x: 1.0000002, y: 1, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:Hvost_joint4_M
+      parentName: Sniper_RIG_mat_Arnold:Hvost_joint3_M
+      position: {x: -0.26379374, y: 1.4210854e-15, z: 1.3404004e-16}
+      rotation: {x: 0.0000000027947982, y: 0.000000042054086, z: -0.034973755, w: 0.9993883}
+      scale: {x: 1.0000004, y: 0.99999994, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:Hvost_joint5_M
+      parentName: Sniper_RIG_mat_Arnold:Hvost_joint4_M
+      position: {x: -0.1978302, y: 0, z: 1.8210786e-16}
+      rotation: {x: 6.6613376e-16, y: 3.5527133e-15, z: -0.039717913, w: 0.999211}
+      scale: {x: 1.0000005, y: 0.9999998, z: 1.0000005}
+    - name: Sniper_RIG_mat_Arnold:Hvost_joint6_M
+      parentName: Sniper_RIG_mat_Arnold:Hvost_joint5_M
+      position: {x: -0.290498, y: 2.842171e-16, z: -3.1742771e-16}
+      rotation: {x: 6.252039e-17, y: -3.5768266e-15, z: -0.039946914, w: 0.99920183}
+      scale: {x: 1.0000007, y: 1, z: 1.0000005}
+    - name: Sniper_RIG_mat_Arnold:Hvost_joint7_M
+      parentName: Sniper_RIG_mat_Arnold:Hvost_joint6_M
+      position: {x: -0.27051958, y: 0, z: -1.6160029e-15}
+      rotation: {x: 5.616419e-10, y: -0.0000000421431, z: -0.09085205, w: 0.9958644}
+      scale: {x: 1.0000005, y: 0.9999998, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:Hvost_joint8_M
+      parentName: Sniper_RIG_mat_Arnold:Hvost_joint7_M
+      position: {x: -0.23340996, y: -6.3948843e-16, z: -9.379011e-16}
+      rotation: {x: -0.000000005827752, y: 0.000000041741995, z: -0.03440648, w: 0.99940795}
+      scale: {x: 1.0000006, y: 1, z: 1.0000004}
+    - name: Sniper_RIG_mat_Arnold:Hvost_joint9_M
+      parentName: Sniper_RIG_mat_Arnold:Hvost_joint8_M
+      position: {x: -0.1635457, y: -8.881784e-16, z: -5.4830767e-16}
+      rotation: {x: -4.4408916e-16, y: -0, z: 2.4326199e-16, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:RootPart1_M
+      parentName: Sniper_RIG_mat_Arnold:Root_M
+      position: {x: -0.08435337, y: -1.3322676e-17, z: -1.1254806e-16}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Spine1_M
+      parentName: Sniper_RIG_mat_Arnold:RootPart1_M
+      position: {x: -0.08435337, y: 5.7731595e-17, z: -2.6113594e-16}
+      rotation: {x: -0.000000029802322, y: 0.000000029802322, z: -0.108511835, w: -0.9940952}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:Spine1Part1_M
+      parentName: Sniper_RIG_mat_Arnold:Spine1_M
+      position: {x: -0.099007525, y: -1.2434498e-15, z: -1.3667647e-16}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Chest_M
+      parentName: Sniper_RIG_mat_Arnold:Spine1Part1_M
+      position: {x: -0.099007525, y: -8.171241e-16, z: -2.337677e-16}
+      rotation: {x: -0.000000029802322, y: 0.000000029802322, z: 0.016265959, w: 0.99986774}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Neck_M
+      parentName: Sniper_RIG_mat_Arnold:Chest_M
+      position: {x: -0.21920769, y: -2.842171e-16, z: 8.8509496e-16}
+      rotation: {x: 0.00000002553794, y: -0.00000003352865, z: 0.117925, w: 0.9930225}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: Sniper_RIG_mat_Arnold:NeckPart1_M
+      parentName: Sniper_RIG_mat_Arnold:Neck_M
+      position: {x: -0.10573488, y: -1.4210854e-16, z: -8.6083535e-17}
+      rotation: {x: -0, y: -0, z: 8.605701e-16, w: 1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Head_M
+      parentName: Sniper_RIG_mat_Arnold:NeckPart1_M
+      position: {x: -0.10573488, y: 2.842171e-16, z: -1.5586832e-16}
+      rotation: {x: 0.000000024168061, y: -0.000000034529148, z: 0.20155153, w: -0.97947794}
+      scale: {x: 0.9999998, y: 1.0000001, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:Eye1_L
+      parentName: Sniper_RIG_mat_Arnold:Head_M
+      position: {x: -0.15281777, y: 0.19323371, z: -0.000013443231}
+      rotation: {x: -4.1729883e-15, y: 3.6029716e-16, z: -0.7071068, w: 0.7071068}
+      scale: {x: 1.0000005, y: 1.0000007, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:EyeEnd_1_L
+      parentName: Sniper_RIG_mat_Arnold:Eye1_L
+      position: {x: -0.03771833, y: 1.9895197e-15, z: -4.3359847e-16}
+      rotation: {x: -0.13868624, y: -0.0022722934, z: -0.00015833315, w: 0.99033374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Eye2_L
+      parentName: Sniper_RIG_mat_Arnold:Head_M
+      position: {x: -0.15281777, y: 0.19323371, z: -0.000013443231}
+      rotation: {x: 0.2583089, y: 0.25830892, z: -0.6582374, w: 0.65823746}
+      scale: {x: 1.0000004, y: 1.0000007, z: 1.0000005}
+    - name: Sniper_RIG_mat_Arnold:EyeEnd_11_L
+      parentName: Sniper_RIG_mat_Arnold:Eye2_L
+      position: {x: -0.03771833, y: -1.4210854e-15, z: -3.5527135e-16}
+      rotation: {x: -0.13868624, y: -0.0022722934, z: -0.00015833315, w: 0.99033374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Eye2_R
+      parentName: Sniper_RIG_mat_Arnold:Head_M
+      position: {x: -0.15281777, y: 0.19323371, z: 0.000013443231}
+      rotation: {x: 0.2583089, y: 0.25830892, z: 0.6582374, w: -0.65823746}
+      scale: {x: 1.0000006, y: 1.0000007, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:EyeEnd_11_R
+      parentName: Sniper_RIG_mat_Arnold:Eye2_R
+      position: {x: -0.03771833, y: -1.7053025e-15, z: 1.5987211e-16}
+      rotation: {x: 0.13868624, y: 0.0022722934, z: -0.00015833315, w: 0.99033374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Eye_1_Down_L
+      parentName: Sniper_RIG_mat_Arnold:Head_M
+      position: {x: -0.15281777, y: 0.19323371, z: -0.000013443231}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Eye_1_Down_R
+      parentName: Sniper_RIG_mat_Arnold:Head_M
+      position: {x: -0.15281777, y: 0.19323371, z: 0.000013443231}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Eye_1_Up_L
+      parentName: Sniper_RIG_mat_Arnold:Head_M
+      position: {x: -0.15281777, y: 0.19323371, z: -0.000013443231}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Eye_1_Up_R
+      parentName: Sniper_RIG_mat_Arnold:Head_M
+      position: {x: -0.15281777, y: 0.19323371, z: 0.000013443231}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Eye_Down_L
+      parentName: Sniper_RIG_mat_Arnold:Head_M
+      position: {x: -0.08732674, y: 0.14570054, z: 0.07932048}
+      rotation: {x: 0.00000004586653, y: 0.000000027979315, z: 0.87694764, w: -0.48058587}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:EyeEnd_Down_L
+      parentName: Sniper_RIG_mat_Arnold:Eye_Down_L
+      position: {x: -0.03771833, y: 5.684342e-16, z: -3.6415315e-16}
+      rotation: {x: -0.13868624, y: -0.0022722934, z: -0.00015833315, w: 0.99033374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Eye_Down_R
+      parentName: Sniper_RIG_mat_Arnold:Head_M
+      position: {x: -0.08732674, y: 0.14570054, z: -0.07932048}
+      rotation: {x: 0.00000004586653, y: 0.000000027979315, z: 0.87694764, w: -0.48058587}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:EyeEnd_Down_R
+      parentName: Sniper_RIG_mat_Arnold:Eye_Down_R
+      position: {x: -0.03771833, y: 1.9895197e-15, z: 3.1974422e-16}
+      rotation: {x: 0.13868624, y: 0.0022722934, z: -0.00015833315, w: 0.99033374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Eye_L
+      parentName: Sniper_RIG_mat_Arnold:Head_M
+      position: {x: -0.08732674, y: 0.14570054, z: 0.07932048}
+      rotation: {x: -4.1729883e-15, y: 3.6029716e-16, z: -0.7071068, w: 0.7071068}
+      scale: {x: 1.0000005, y: 1.0000007, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:EyeEnd_L
+      parentName: Sniper_RIG_mat_Arnold:Eye_L
+      position: {x: -0.03771833, y: 2.2737367e-15, z: -5.2402524e-16}
+      rotation: {x: -0.13868624, y: -0.0022722934, z: -0.00015833315, w: 0.99033374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Eye_R
+      parentName: Sniper_RIG_mat_Arnold:Head_M
+      position: {x: -0.08732674, y: 0.14570054, z: -0.07932048}
+      rotation: {x: -4.1729883e-15, y: 3.6029716e-16, z: -0.7071068, w: 0.7071068}
+      scale: {x: 1.0000005, y: 1.0000007, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:EyeEnd_R
+      parentName: Sniper_RIG_mat_Arnold:Eye_R
+      position: {x: -0.03771833, y: 2.2737367e-15, z: 1.2434498e-16}
+      rotation: {x: 0.13868624, y: 0.0022722934, z: -0.00015833315, w: 0.99033374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Eye_Up_L
+      parentName: Sniper_RIG_mat_Arnold:Head_M
+      position: {x: -0.08732674, y: 0.14570054, z: 0.07932048}
+      rotation: {x: -0, y: -0, z: 0.3907885, w: -0.9204805}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Eye_Up_end_L
+      parentName: Sniper_RIG_mat_Arnold:Eye_Up_L
+      position: {x: -0.03771833, y: 2.2737367e-15, z: -9.414691e-16}
+      rotation: {x: -0.13868624, y: -0.0022722934, z: -0.00015833315, w: 0.99033374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Eye_Up_R
+      parentName: Sniper_RIG_mat_Arnold:Head_M
+      position: {x: -0.08732674, y: 0.14570054, z: -0.07932048}
+      rotation: {x: -0, y: -0, z: 0.3907885, w: -0.9204805}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Eye_Up_end_R
+      parentName: Sniper_RIG_mat_Arnold:Eye_Up_R
+      position: {x: -0.03771833, y: 2.2737367e-15, z: 2.9309886e-16}
+      rotation: {x: 0.13868624, y: 0.0022722934, z: -0.00015833315, w: 0.99033374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:HeadEnd_M
+      parentName: Sniper_RIG_mat_Arnold:Head_M
+      position: {x: -0.22060803, y: -1.1546319e-16, z: -6.3438215e-16}
+      rotation: {x: -0, y: -0, z: -0.000000014901157, w: 1}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Jaw_M
+      parentName: Sniper_RIG_mat_Arnold:Head_M
+      position: {x: 0.07856871, y: -0.011309804, z: 1.4802379e-16}
+      rotation: {x: 0.000000009169871, y: 0.000000005237586, z: -0.71476215, w: 0.6993677}
+      scale: {x: 1.000001, y: 1.000002, z: 1.000001}
+    - name: Sniper_RIG_mat_Arnold:Jaw_midle_M
+      parentName: Sniper_RIG_mat_Arnold:Jaw_M
+      position: {x: -0.2186403, y: 1.1368684e-15, z: -1.8633643e-15}
+      rotation: {x: -0, y: -0.000000029802322, z: 0.0554678, w: 0.99846053}
+      scale: {x: 0.9999998, y: 0.9999998, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:JawEnd_M
+      parentName: Sniper_RIG_mat_Arnold:Jaw_midle_M
+      position: {x: -0.08651319, y: -2.842171e-16, z: -1.5320432e-15}
+      rotation: {x: -0, y: -0, z: -1.3271286e-17, w: 1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:joint1_M
+      parentName: Sniper_RIG_mat_Arnold:Head_M
+      position: {x: -0.17114298, y: 0.21751146, z: -2.633285e-15}
+      rotation: {x: -0.000000030977436, y: -0.000000028578935, z: -0.99998134, w: 0.006116584}
+      scale: {x: 0.9999998, y: 0.9999998, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:joint2_M
+      parentName: Sniper_RIG_mat_Arnold:joint1_M
+      position: {x: -0.059624147, y: -1.7763567e-16, z: 1.5671976e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:joint3
+      parentName: Sniper_RIG_mat_Arnold:Head_M
+      position: {x: -0.3780454, y: 0.1220486, z: 0.07076098}
+      rotation: {x: 0.8758218, y: -0.26729417, z: 0.117302686, w: 0.38435674}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:joint4
+      parentName: Sniper_RIG_mat_Arnold:joint3
+      position: {x: -0.16736698, y: -1.4210854e-16, z: 3.5527136e-17}
+      rotation: {x: 0.000000029802322, y: -0.000000044703484, z: 0.22147089, w: 0.97516704}
+      scale: {x: 0.9999997, y: 0.9999998, z: 0.9999997}
+    - name: Sniper_RIG_mat_Arnold:joint5
+      parentName: Sniper_RIG_mat_Arnold:joint4
+      position: {x: -0.1463474, y: -0.011153421, z: -1.7763568e-17}
+      rotation: {x: 0.00000007217567, y: 0.00000015533644, z: 0.13234653, w: 0.99120355}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:joint6
+      parentName: Sniper_RIG_mat_Arnold:joint5
+      position: {x: -0.11943562, y: -0.026330538, z: 3.1974422e-16}
+      rotation: {x: -0.000000037510986, y: -0.00000016926539, z: 0.48876905, w: 0.8724133}
+      scale: {x: 1.0000001, y: 1, z: 1.0000005}
+    - name: Sniper_RIG_mat_Arnold:joint7
+      parentName: Sniper_RIG_mat_Arnold:joint6
+      position: {x: -0.062334288, y: 0, z: -1.0658141e-16}
+      rotation: {x: 0.000000117396866, y: 0.00000013333317, z: 0.33056054, w: 0.94378483}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000005}
+    - name: Sniper_RIG_mat_Arnold:joint8
+      parentName: Sniper_RIG_mat_Arnold:joint7
+      position: {x: -0.07783861, y: 0.016215974, z: -3.704024e-17}
+      rotation: {x: -0.46329767, y: -0.5341868, z: -0.46329743, w: 0.53418666}
+      scale: {x: 0.9999998, y: 0.99999994, z: 0.9999998}
+    - name: Sniper_RIG_mat_Arnold:joint9
+      parentName: Sniper_RIG_mat_Arnold:Head_M
+      position: {x: -0.464764, y: 0.04381487, z: -0.10622073}
+      rotation: {x: 0.89084697, y: -0.39603153, z: 0.09042552, w: 0.20340618}
+      scale: {x: 1.0000004, y: 0.9999998, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:joint10
+      parentName: Sniper_RIG_mat_Arnold:joint9
+      position: {x: -0.107812844, y: -2.842171e-16, z: -3.5527136e-17}
+      rotation: {x: -0.000000074505806, y: 0.000000044703484, z: 0.15502581, w: 0.9879105}
+      scale: {x: 0.9999998, y: 1.0000002, z: 0.99999994}
+    - name: Sniper_RIG_mat_Arnold:joint11
+      parentName: Sniper_RIG_mat_Arnold:joint10
+      position: {x: -0.14402126, y: -0.017713368, z: 1.9539925e-16}
+      rotation: {x: -0.000000017842565, y: 0.0000000299322, z: 0.14673363, w: 0.98917603}
+      scale: {x: 1.0000002, y: 0.99999994, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:joint12
+      parentName: Sniper_RIG_mat_Arnold:joint11
+      position: {x: -0.06101939, y: 0, z: 1.7763568e-17}
+      rotation: {x: -0.000000004570294, y: -0.00000007921092, z: 0.26988524, w: 0.96289253}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:joint13
+      parentName: Sniper_RIG_mat_Arnold:joint12
+      position: {x: -0.076907106, y: -5.684342e-16, z: -7.105427e-17}
+      rotation: {x: -0.00000007632371, y: -0.00000007941621, z: 0.38042158, w: 0.9248132}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000004}
+    - name: Sniper_RIG_mat_Arnold:joint14
+      parentName: Sniper_RIG_mat_Arnold:joint13
+      position: {x: -0.08591824, y: -2.753353e-16, z: -8.8817837e-17}
+      rotation: {x: -0.9762333, y: -0.21672243, z: 0.0000000107891704, w: 0.00000013080123}
+      scale: {x: 1, y: 1.0000004, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:joint15
+      parentName: Sniper_RIG_mat_Arnold:joint14
+      position: {x: -0.15063469, y: -1.9206859e-16, z: 6.4361295e-19}
+      rotation: {x: 0.48352912, y: 0.5159454, z: -0.48352903, w: 0.51594543}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:Lenta_first
+      parentName: Sniper_RIG_mat_Arnold:Head_M
+      position: {x: -0.091205455, y: -0.033617724, z: -0.17382121}
+      rotation: {x: 0.50241536, y: -0.49757293, z: 0.49757293, w: 0.50241536}
+      scale: {x: 1.0000004, y: 1, z: 1.0000005}
+    - name: Sniper_RIG_mat_Arnold:Lenta_first1
+      parentName: Sniper_RIG_mat_Arnold:Lenta_first
+      position: {x: -0.2114922, y: 0.07393498, z: 0.10684364}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000004, y: 1, z: 1.0000005}
+    - name: Sniper_RIG_mat_Arnold:Lenta_first2
+      parentName: Sniper_RIG_mat_Arnold:Lenta_first1
+      position: {x: -0.15490201, y: 0.022492405, z: 0.03595227}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000004, y: 1, z: 1.0000005}
+    - name: Sniper_RIG_mat_Arnold:Lenta_Fin_1
+      parentName: Sniper_RIG_mat_Arnold:Lenta_first2
+      position: {x: -0.19993074, y: -0.06745614, z: 0.069413394}
+      rotation: {x: 0.0048424304, y: -0.9999883, z: -0.000000029802322, w: 0}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Lenta_first3
+      parentName: Sniper_RIG_mat_Arnold:Lenta_first
+      position: {x: -0.09498921, y: -0.04554313, z: -0.031104246}
+      rotation: {x: -0, y: -0, z: -0.035915315, w: 0.9993549}
+      scale: {x: 1.0000004, y: 1, z: 1.0000005}
+    - name: Sniper_RIG_mat_Arnold:Lenta_first4
+      parentName: Sniper_RIG_mat_Arnold:Lenta_first3
+      position: {x: -0.14464167, y: -0.0098260585, z: 0.022138162}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000004, y: 1, z: 1.0000005}
+    - name: Sniper_RIG_mat_Arnold:Lenta_Fin_2
+      parentName: Sniper_RIG_mat_Arnold:Lenta_first4
+      position: {x: -0.13412935, y: 0.046578836, z: -0.015816571}
+      rotation: {x: 0.0407542, y: -0.99916923, z: -0.000000029783095, w: 0.0000000010703598}
+      scale: {x: 1.0000002, y: 1, z: 1.0000004}
+    - name: Sniper_RIG_mat_Arnold:Nose_joint1_M
+      parentName: Sniper_RIG_mat_Arnold:Head_M
+      position: {x: -0.046435483, y: 0.15195009, z: -1.631261e-15}
+      rotation: {x: 0.000000037252903, y: 0.000000029802322, z: -0.82507, w: 0.5650305}
+      scale: {x: 1.0000004, y: 1, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:Nose_joint2_M
+      parentName: Sniper_RIG_mat_Arnold:Nose_joint1_M
+      position: {x: -0.1445055, y: 1.4210854e-15, z: -3.2235011e-16}
+      rotation: {x: -0.000000022646676, y: -0.000000010409035, z: 0.32504645, w: 0.9456981}
+      scale: {x: 0.9999997, y: 0.99999994, z: 0.9999997}
+    - name: Sniper_RIG_mat_Arnold:Nose_joint3_M
+      parentName: Sniper_RIG_mat_Arnold:Nose_joint2_M
+      position: {x: -0.06526603, y: -1.1368684e-15, z: -5.097629e-16}
+      rotation: {x: -0, y: 8.881784e-16, z: -2.3573004e-16, w: 1}
+      scale: {x: 1.0000004, y: 1.0000007, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:Scapula_L
+      parentName: Sniper_RIG_mat_Arnold:Chest_M
+      position: {x: -0.19882654, y: 0.0653336, z: 0.09636209}
+      rotation: {x: -0.73767155, y: 0.15220112, z: -0.6570569, w: 0.03085015}
+      scale: {x: 1.0000012, y: 1.0000005, z: 1.0000006}
+    - name: Sniper_RIG_mat_Arnold:Shoulder_L
+      parentName: Sniper_RIG_mat_Arnold:Scapula_L
+      position: {x: 0.14518802, y: -1.0391687e-15, z: -1.7053025e-15}
+      rotation: {x: 0.003140646, y: 0.046112183, z: -0.06787848, w: 0.9966225}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:ShoulderPart1_L
+      parentName: Sniper_RIG_mat_Arnold:Shoulder_L
+      position: {x: 0.2, y: -0.019, z: 0}
+      rotation: {x: 0.00000007566993, y: 0.0071586906, z: -0.018752106, w: 0.99979854}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: Sniper_RIG_mat_Arnold:Elbow_L
+      parentName: Sniper_RIG_mat_Arnold:ShoulderPart1_L
+      position: {x: 0.20194732, y: -2.3021585e-14, z: 9.094947e-15}
+      rotation: {x: -0.000537888, y: -0.005336132, z: 0.07726361, w: -0.99699634}
+      scale: {x: 1.0000013, y: 1.0000007, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:ElbowPart1_L
+      parentName: Sniper_RIG_mat_Arnold:Elbow_L
+      position: {x: 0.16995943, y: -5.709154e-11, z: -6.8496315e-14}
+      rotation: {x: 0.000000023629003, y: 0.000000002381593, z: -0.000000029802315,
+        w: 1}
+      scale: {x: 1, y: 1, z: 1.0000005}
+    - name: Sniper_RIG_mat_Arnold:Wrist_L
+      parentName: Sniper_RIG_mat_Arnold:ElbowPart1_L
+      position: {x: 0.16995943, y: -4.8272566e-11, z: -3.0483137e-11}
+      rotation: {x: -0.0006727766, y: 0.005845076, z: -0.027085496, w: 0.99961585}
+      scale: {x: 1.0000001, y: 1, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:Cup_L
+      parentName: Sniper_RIG_mat_Arnold:Wrist_L
+      position: {x: 0.04135571, y: 0.028369248, z: 0.00078057643}
+      rotation: {x: 0.00095316186, y: -0.022336481, z: -0.04262418, w: 0.99884105}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Sniper_RIG_mat_Arnold:RingFinger1_L
+      parentName: Sniper_RIG_mat_Arnold:Cup_L
+      position: {x: 0.07416728, y: 0.020799214, z: 0.0047033355}
+      rotation: {x: 0.005927308, y: -0.011832001, z: -0.11954301, w: -0.99274087}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:RingFinger2_L
+      parentName: Sniper_RIG_mat_Arnold:RingFinger1_L
+      position: {x: 0.036750287, y: 1.7763567e-16, z: -3.410605e-15}
+      rotation: {x: 0.0024728265, y: 0.037214532, z: -0.000037903283, w: -0.9993043}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000004}
+    - name: Sniper_RIG_mat_Arnold:RingFinger3_L
+      parentName: Sniper_RIG_mat_Arnold:RingFinger2_L
+      position: {x: 0.0332754, y: 2.1316282e-16, z: -5.684342e-16}
+      rotation: {x: 0.0049379864, y: -0.020813804, z: -0.00023032066, w: 0.9997712}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:RingFinger4_L
+      parentName: Sniper_RIG_mat_Arnold:RingFinger3_L
+      position: {x: 0.07702175, y: 1.1013412e-15, z: 3.126388e-15}
+      rotation: {x: 4.6566118e-10, y: -0, z: -7.275956e-12, w: 1}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:IndexFinger1_L
+      parentName: Sniper_RIG_mat_Arnold:Wrist_L
+      position: {x: 0.12627147, y: -0.04664084, z: 0.008554937}
+      rotation: {x: 0.0032072626, y: -0.060178988, z: -0.052597493, w: 0.9967957}
+      scale: {x: 1, y: 1, z: 1.0000005}
+    - name: Sniper_RIG_mat_Arnold:IndexFinger2_L
+      parentName: Sniper_RIG_mat_Arnold:IndexFinger1_L
+      position: {x: 0.03731777, y: 2.842171e-16, z: 2.842171e-16}
+      rotation: {x: -0.00000021420412, y: 0.037779685, z: 0.0000040954314, w: -0.9992861}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:IndexFinger3_L
+      parentName: Sniper_RIG_mat_Arnold:IndexFinger2_L
+      position: {x: 0.0382791, y: -3.0198067e-16, z: 4.263256e-15}
+      rotation: {x: -0.014227506, y: -0.024482148, z: 0.0012191517, w: 0.99959826}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:IndexFinger4_L
+      parentName: Sniper_RIG_mat_Arnold:IndexFinger3_L
+      position: {x: 0.08017388, y: 1.3855583e-15, z: -2.2737367e-15}
+      rotation: {x: -9.3132235e-10, y: -0, z: 2.9103824e-11, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:MiddleFinger1_L
+      parentName: Sniper_RIG_mat_Arnold:Wrist_L
+      position: {x: 0.12912606, y: -4.0856205e-16, z: 4.8316907e-15}
+      rotation: {x: 0.014657236, y: -0.0655436, z: 0.049508248, w: 0.996513}
+      scale: {x: 0.9999998, y: 1, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:MiddleFinger2_L
+      parentName: Sniper_RIG_mat_Arnold:MiddleFinger1_L
+      position: {x: 0.03580233, y: -3.7303492e-16, z: -1.9895197e-15}
+      rotation: {x: 0.00031946777, y: -0.03931756, z: -0.0000070178626, w: 0.99922675}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: Sniper_RIG_mat_Arnold:MiddleFinger3_L
+      parentName: Sniper_RIG_mat_Arnold:MiddleFinger2_L
+      position: {x: 0.03962028, y: 8.5265126e-16, z: -3.410605e-15}
+      rotation: {x: 0.00046473634, y: -0.032374218, z: -0.000031881173, w: 0.9994757}
+      scale: {x: 1.0000002, y: 1, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:MiddleFinger4_L
+      parentName: Sniper_RIG_mat_Arnold:MiddleFinger3_L
+      position: {x: 0.09545024, y: -3.7303492e-16, z: 2.8421708e-15}
+      rotation: {x: -0, y: -0, z: 2.7284832e-12, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:ThumbFinger1_L
+      parentName: Sniper_RIG_mat_Arnold:Wrist_L
+      position: {x: 0.039454713, y: -0.053671394, z: 0.008627095}
+      rotation: {x: 0.4206098, y: -0.099066645, z: 0.3230239, w: -0.84197915}
+      scale: {x: 1.0000005, y: 0.9999997, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:ThumbFinger2_L
+      parentName: Sniper_RIG_mat_Arnold:ThumbFinger1_L
+      position: {x: 0.04141346, y: -5.684342e-16, z: -1.2789769e-15}
+      rotation: {x: -0.18746401, y: -0.003965844, z: 0.019843152, w: -0.982063}
+      scale: {x: 1.0000002, y: 0.9999991, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:ThumbFinger3_L
+      parentName: Sniper_RIG_mat_Arnold:ThumbFinger2_L
+      position: {x: 0.054901917, y: -7.105427e-16, z: 3.126388e-15}
+      rotation: {x: -0.01830561, y: 0.0021529992, z: -0.02273764, w: -0.9995716}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1}
+    - name: Sniper_RIG_mat_Arnold:ThumbFinger4_L
+      parentName: Sniper_RIG_mat_Arnold:ThumbFinger3_L
+      position: {x: 0.044874653, y: -2.842171e-16, z: -2.842171e-16}
+      rotation: {x: -9.3132224e-10, y: 0.000000003725289, z: -0.0000000073341626,
+        w: 1}
+      scale: {x: 1, y: 0.9999997, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:Scapula_R
+      parentName: Sniper_RIG_mat_Arnold:Chest_M
+      position: {x: -0.19882654, y: 0.0653336, z: -0.09636209}
+      rotation: {x: 0.15220118, y: 0.73767155, z: -0.03085022, w: -0.657057}
+      scale: {x: 1.0000019, y: 1.0000008, z: 1.0000007}
+    - name: Sniper_RIG_mat_Arnold:Shoulder_R
+      parentName: Sniper_RIG_mat_Arnold:Scapula_R
+      position: {x: -0.14518802, y: -4.352074e-16, z: 1.7053025e-15}
+      rotation: {x: 0.0031407252, y: 0.04611227, z: -0.067878485, w: 0.9966225}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:ShoulderPart1_R
+      parentName: Sniper_RIG_mat_Arnold:Shoulder_R
+      position: {x: -0.201, y: 0.01, z: -0}
+      rotation: {x: -0.000000077066915, y: 0.007158374, z: -0.018752087, w: 0.9997986}
+      scale: {x: 0.9999996, y: 0.9999998, z: 1}
+    - name: Sniper_RIG_mat_Arnold:Elbow_R
+      parentName: Sniper_RIG_mat_Arnold:ShoulderPart1_R
+      position: {x: -0.20194732, y: 2.5011104e-14, z: 1.4210854e-15}
+      rotation: {x: 0.0005378544, y: 0.0053363154, z: -0.07726362, w: 0.9969963}
+      scale: {x: 1.0000005, y: 1.0000001, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:ElbowPart1_R
+      parentName: Sniper_RIG_mat_Arnold:Elbow_R
+      position: {x: -0.16995943, y: 5.7079886e-11, z: 6.778578e-14}
+      rotation: {x: -0.0000000164541, y: 0.00000006573653, z: -0.000000029802317,
+        w: 1}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000005}
+    - name: Sniper_RIG_mat_Arnold:Wrist_R
+      parentName: Sniper_RIG_mat_Arnold:ElbowPart1_R
+      position: {x: -0.16995943, y: 2.7583269e-11, z: 4.9973463e-11}
+      rotation: {x: -0.0006727631, y: 0.005845084, z: -0.027085423, w: 0.99961585}
+      scale: {x: 1.0000005, y: 1.0000005, z: 0.99999994}
+    - name: Sniper_RIG_mat_Arnold:Cup_R
+      parentName: Sniper_RIG_mat_Arnold:Wrist_R
+      position: {x: -0.04135571, y: -0.028369248, z: -0.00078057643}
+      rotation: {x: 0.0009531473, y: -0.022336492, z: -0.042624276, w: 0.99884105}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: Sniper_RIG_mat_Arnold:RingFinger1_R
+      parentName: Sniper_RIG_mat_Arnold:Cup_R
+      position: {x: -0.07416728, y: -0.020799214, z: -0.0047033355}
+      rotation: {x: -0.0059271962, y: 0.011832999, z: 0.119542316, w: 0.9927409}
+      scale: {x: 0.99999934, y: 0.99999994, z: 1}
+    - name: Sniper_RIG_mat_Arnold:RingFinger2_R
+      parentName: Sniper_RIG_mat_Arnold:RingFinger1_R
+      position: {x: -0.036750287, y: -7.5495166e-17, z: -2.5579537e-15}
+      rotation: {x: -0.0024727941, y: -0.03721587, z: 0.000037278256, w: 0.99930423}
+      scale: {x: 0.9999998, y: 1.0000001, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:RingFinger3_R
+      parentName: Sniper_RIG_mat_Arnold:RingFinger2_R
+      position: {x: -0.0332754, y: -2.220446e-16, z: 6.252776e-15}
+      rotation: {x: 0.004938037, y: -0.020813793, z: -0.00023026671, w: 0.9997712}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Sniper_RIG_mat_Arnold:RingFinger4_R
+      parentName: Sniper_RIG_mat_Arnold:RingFinger3_R
+      position: {x: -0.07702175, y: -1.6342482e-15, z: -3.694822e-15}
+      rotation: {x: -0, y: -0, z: -7.2759567e-12, w: 1}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1}
+    - name: Sniper_RIG_mat_Arnold:IndexFinger1_R
+      parentName: Sniper_RIG_mat_Arnold:Wrist_R
+      position: {x: -0.12627147, y: 0.04664084, z: -0.008554937}
+      rotation: {x: 0.0032072726, y: -0.060179025, z: -0.052597567, w: 0.9967958}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000007}
+    - name: Sniper_RIG_mat_Arnold:IndexFinger2_R
+      parentName: Sniper_RIG_mat_Arnold:IndexFinger1_R
+      position: {x: -0.03731777, y: -3.5527135e-16, z: 1.9895197e-15}
+      rotation: {x: -0.000000091502365, y: -0.037777994, z: -0.0000037382674, w: 0.9992862}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:IndexFinger3_R
+      parentName: Sniper_RIG_mat_Arnold:IndexFinger2_R
+      position: {x: -0.0382791, y: 5.3290704e-17, z: -2.8421708e-15}
+      rotation: {x: -0.014227574, y: -0.02448205, z: 0.001219208, w: 0.99959826}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:IndexFinger4_R
+      parentName: Sniper_RIG_mat_Arnold:IndexFinger3_R
+      position: {x: -0.08017388, y: -2.096101e-15, z: 2.8421708e-15}
+      rotation: {x: -9.3132235e-10, y: -0, z: -2.9103824e-11, w: 1}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:MiddleFinger1_R
+      parentName: Sniper_RIG_mat_Arnold:Wrist_R
+      position: {x: -0.12912606, y: -1.7763567e-16, z: -2.5579537e-15}
+      rotation: {x: 0.014657168, y: -0.06554366, z: 0.049508195, w: 0.99651307}
+      scale: {x: 0.9999997, y: 1.0000002, z: 1.0000008}
+    - name: Sniper_RIG_mat_Arnold:MiddleFinger2_R
+      parentName: Sniper_RIG_mat_Arnold:MiddleFinger1_R
+      position: {x: -0.03580233, y: -3.0198067e-16, z: 4.263256e-15}
+      rotation: {x: 0.0003193121, y: -0.039320685, z: -0.0000059943372, w: 0.9992266}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1.0000004}
+    - name: Sniper_RIG_mat_Arnold:MiddleFinger3_R
+      parentName: Sniper_RIG_mat_Arnold:MiddleFinger2_R
+      position: {x: -0.03962028, y: -8.2600594e-16, z: 5.684342e-16}
+      rotation: {x: 0.00046474318, y: -0.03237407, z: -0.000031944477, w: 0.9994757}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000002}
+    - name: Sniper_RIG_mat_Arnold:MiddleFinger4_R
+      parentName: Sniper_RIG_mat_Arnold:MiddleFinger3_R
+      position: {x: -0.09545024, y: -2.753353e-16, z: 8.5265126e-16}
+      rotation: {x: -0, y: -0, z: -1.818989e-12, w: 1}
+      scale: {x: 1, y: 1.0000002, z: 1.0000004}
+    - name: Sniper_RIG_mat_Arnold:ThumbFinger1_R
+      parentName: Sniper_RIG_mat_Arnold:Wrist_R
+      position: {x: -0.039454713, y: 0.053671394, z: -0.008627095}
+      rotation: {x: -0.42060974, y: 0.09906717, z: -0.32302475, w: 0.8419787}
+      scale: {x: 1.0000007, y: 1.0000007, z: 0.99999994}
+    - name: Sniper_RIG_mat_Arnold:ThumbFinger2_R
+      parentName: Sniper_RIG_mat_Arnold:ThumbFinger1_R
+      position: {x: -0.04141346, y: -1.7053025e-15, z: 2.131628e-15}
+      rotation: {x: 0.18746385, y: 0.0039645187, z: -0.019846218, w: 0.98206306}
+      scale: {x: 1.0000002, y: 0.99999946, z: 1.0000004}
+    - name: Sniper_RIG_mat_Arnold:ThumbFinger3_R
+      parentName: Sniper_RIG_mat_Arnold:ThumbFinger2_R
+      position: {x: -0.054901917, y: -1.2789769e-15, z: -1.1368684e-15}
+      rotation: {x: 0.018305449, y: -0.002154871, z: 0.02273969, w: 0.9995715}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000005}
+    - name: Sniper_RIG_mat_Arnold:ThumbFinger4_R
+      parentName: Sniper_RIG_mat_Arnold:ThumbFinger3_R
+      position: {x: -0.044874653, y: 1.1368684e-15, z: 5.684342e-16}
+      rotation: {x: 0.000000003725289, y: -0, z: 0.000000025087493, w: 1}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

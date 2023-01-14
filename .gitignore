@@ -18,9 +18,8 @@
 [Ll]ogs/
 [Rr]ecordings/
 
-#ignore all imported assets except the game project file
-[Aa]ssets/
-![Aa]ssets/RPGAdventure/
+#ignore all imported assets
+[Aa]ssets/Plugins/
 
 # Never ignore Asset meta data
 ![Aa]ssets/**/*.meta

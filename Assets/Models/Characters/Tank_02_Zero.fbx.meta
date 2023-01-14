@@ -1,0 +1,1029 @@
+fileFormatVersion: 2
+guid: b919dc5e283cf39499b67148a39bd261
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Bone length in configuration
+      does not match position in animation file:\n\t'Tank_4_Rig:Hip_L' : position
+      error = 29261.916016 mm\n\t'Tank_4_Rig:HipPart1_L' : position error = 15067.212891
+      mm\n\t'Tank_4_Rig:Knee_L' : position error = 15067.212891 mm\n\t'Tank_4_Rig:Ankle_L'
+      : position error = 34993.101563 mm\n\t'Tank_4_Rig:Toes_L' : position error
+      = 19346.324219 mm\n"
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: Tank_4_Rig:Root_M
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:Hip_L
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:Hip_R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:Knee_L
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:Knee_R
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:Ankle_L
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:Ankle_R
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:RootPart1_M
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:Spine1_M
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:Neck_M
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:Head_M
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:Shoulder_L
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:Shoulder_R
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:ShoulderPart1_L
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:ShoulderPart1_R
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:Elbow_L
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:Elbow_R
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:Wrist_L
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:Wrist_R
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:Toes_L
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:Toes_R
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:Eye2_L
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:Eye2_R
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:Jaw_M
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:ThumbFinger1_L
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:ThumbFinger2_L
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:ThumbFinger3_L
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:IndexFinger1_L
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:IndexFinger2_L
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:RingFinger1_L
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:RingFinger2_L
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:ThumbFinger1_R
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:ThumbFinger2_R
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:ThumbFinger3_R
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:IndexFinger1_R
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:IndexFinger2_R
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:RingFinger1_R
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:RingFinger2_R
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Tank_4_Rig:Chest_M
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Tank_02_Zero(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Main
+      parentName: Tank_02_Zero(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:DeformationSystem
+      parentName: Tank_4_Rig:Main
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:tank_2_root_jnt
+      parentName: Tank_4_Rig:DeformationSystem
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Root_M
+      parentName: Tank_4_Rig:tank_2_root_jnt
+      position: {x: -7.269789e-17, y: 1.0585827, z: 0.038301446}
+      rotation: {x: 0.45659617, y: -0.53992593, z: -0.45659617, w: 0.53992593}
+      scale: {x: 1.0000007, y: 1.0000007, z: 1.0000007}
+    - name: Tank_4_Rig:M_P_jnt
+      parentName: Tank_4_Rig:Root_M
+      position: {x: -0.0071372455, y: 0.76701695, z: 1.3860725e-16}
+      rotation: {x: -0.45659617, y: 0.53992593, z: 0.45659617, w: 0.53992593}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Hip_R
+      parentName: Tank_4_Rig:Root_M
+      position: {x: 0.14277922, y: 0.029848833, z: -0.3526357}
+      rotation: {x: 0.110770226, y: 0.99109256, z: -0.007515624, w: -0.07354671}
+      scale: {x: 1.0000001, y: 1.0000005, z: 1.0000002}
+    - name: Tank_4_Rig:HipPart1_R
+      parentName: Tank_4_Rig:Hip_R
+      position: {x: -0.19649608, y: -1.9539926e-16, z: -1.3500313e-15}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999994, y: 1.0000001, z: 0.99999994}
+    - name: Tank_4_Rig:Knee_R
+      parentName: Tank_4_Rig:HipPart1_R
+      position: {x: -0.19649608, y: -1.6875391e-16, z: -1.3500313e-15}
+      rotation: {x: 9.3132246e-10, y: 0.000000014901159, z: 0.14784782, w: 0.98901016}
+      scale: {x: 1.0000007, y: 1.0000005, z: 1.0000004}
+    - name: Tank_4_Rig:Ankle_R
+      parentName: Tank_4_Rig:Knee_R
+      position: {x: -0.45635557, y: 8.3488777e-16, z: 3.694822e-15}
+      rotation: {x: 0.024189498, y: -0.07838369, z: -0.171224, w: 0.98181117}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000005}
+    - name: Tank_4_Rig:Toes_R
+      parentName: Tank_4_Rig:Ankle_R
+      position: {x: -0.08364215, y: 0.23803344, z: 4.1922024e-15}
+      rotation: {x: -0.08475658, y: 0.013489211, z: -0.5104514, w: 0.8556132}
+      scale: {x: 1.0000006, y: 1.0000002, z: 1.0000005}
+    - name: Tank_4_Rig:ToesEnd_R
+      parentName: Tank_4_Rig:Toes_R
+      position: {x: -0.26095688, y: 6.394885e-16, z: 4.973799e-16}
+      rotation: {x: -0, y: 0.0000000037252894, z: -0.000000006868502, w: 1}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1.0000004}
+    - name: Tank_4_Rig:Tail_joint1_M
+      parentName: Tank_4_Rig:Root_M
+      position: {x: -0.16154262, y: -0.42160368, z: -6.1760143e-17}
+      rotation: {x: -0, y: -0, z: 0.87162215, w: 0.49017826}
+      scale: {x: 1, y: 1, z: 0.9999997}
+    - name: Tank_4_Rig:Tail_joint2_M
+      parentName: Tank_4_Rig:Tail_joint1_M
+      position: {x: -0.32812324, y: -5.6843423e-16, z: -4.3122778e-17}
+      rotation: {x: -0, y: -0, z: -0.19263825, w: 0.9812699}
+      scale: {x: 1.0000005, y: 1, z: 1.0000004}
+    - name: Tank_4_Rig:Tail_joint3_M
+      parentName: Tank_4_Rig:Tail_joint2_M
+      position: {x: -0.2937773, y: -4.2632566e-16, z: 3.3511374e-16}
+      rotation: {x: -0.000000019338872, y: 0.000000022675675, z: -0.06938108, w: 0.99759024}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: Tank_4_Rig:Tail_joint4_M
+      parentName: Tank_4_Rig:Tail_joint3_M
+      position: {x: -0.36177412, y: -7.105427e-16, z: 1.532803e-16}
+      rotation: {x: 0.00000002266249, y: -0.00000001935432, z: -0.08827426, w: 0.9960962}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
+    - name: Tank_4_Rig:Tail_joint5_M
+      parentName: Tank_4_Rig:Tail_joint4_M
+      position: {x: -0.34545648, y: -4.2632566e-16, z: -3.8261958e-16}
+      rotation: {x: -0, y: 3.5527137e-15, z: -0.0685552, w: 0.99764735}
+      scale: {x: 1, y: 0.9999999, z: 1.0000001}
+    - name: Tank_4_Rig:Tail_joint6_M
+      parentName: Tank_4_Rig:Tail_joint5_M
+      position: {x: -0.26373658, y: 1.4210856e-16, z: -8.9095233e-17}
+      rotation: {x: -1.3093703e-15, y: -5.920823e-17, z: -0.13116956, w: 0.99135995}
+      scale: {x: 1.0000001, y: 1, z: 1.0000002}
+    - name: Tank_4_Rig:Tail_joint7_M
+      parentName: Tank_4_Rig:Tail_joint6_M
+      position: {x: -0.2466346, y: 1.2079228e-15, z: -1.4913479e-16}
+      rotation: {x: 1.05879106e-22, y: 1.3234888e-23, z: -7.75255e-32, w: 1}
+      scale: {x: 1.0000005, y: 1.0000001, z: 1.0000002}
+    - name: Tank_4_Rig:RootPart1_M
+      parentName: Tank_4_Rig:Root_M
+      position: {x: -0.24838357, y: -3.552714e-17, z: -1.3522168e-16}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: Tank_4_Rig:Spine1_M
+      parentName: Tank_4_Rig:RootPart1_M
+      position: {x: -0.24838357, y: -2.4868996e-16, z: -2.8423143e-16}
+      rotation: {x: -0, y: -0, z: -0.037561253, w: 0.9992944}
+      scale: {x: 1.0000006, y: 1.0000004, z: 1.0000005}
+    - name: Tank_4_Rig:Spine1Part1_M
+      parentName: Tank_4_Rig:Spine1_M
+      position: {x: -0.13427576, y: 3.1974424e-16, z: -3.560238e-16}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 0.9999998, y: 0.99999994, z: 0.9999998}
+    - name: Tank_4_Rig:Chest_M
+      parentName: Tank_4_Rig:Spine1Part1_M
+      position: {x: -0.13427576, y: 1.7763567e-16, z: -6.3771517e-16}
+      rotation: {x: -0, y: -0, z: -0.052768674, w: 0.99860674}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000002}
+    - name: Tank_4_Rig:Neck_M
+      parentName: Tank_4_Rig:Chest_M
+      position: {x: -0.36358237, y: 5.151435e-16, z: 1.6825658e-15}
+      rotation: {x: -0, y: -0, z: -0.13910411, w: 0.99027777}
+      scale: {x: 0.9999997, y: 0.9999997, z: 0.9999997}
+    - name: Tank_4_Rig:NeckPart1_M
+      parentName: Tank_4_Rig:Neck_M
+      position: {x: -0.057492107, y: 2.8421711e-16, z: -1.2666234e-16}
+      rotation: {x: -0, y: -0, z: -0.000000014901159, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: Tank_4_Rig:Head_M
+      parentName: Tank_4_Rig:NeckPart1_M
+      position: {x: -0.057492107, y: 5.6843423e-16, z: -2.1316603e-16}
+      rotation: {x: -0, y: -0, z: 0.14554352, w: 0.9893519}
+      scale: {x: 1.0000006, y: 1.0000001, z: 1.0000007}
+    - name: Tank_4_Rig:HeadEnd_M
+      parentName: Tank_4_Rig:Head_M
+      position: {x: -0.53369933, y: -1.567635e-15, z: -4.4442236e-16}
+      rotation: {x: -0, y: -0, z: 0.000000014901159, w: 1}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000004}
+    - name: Tank_4_Rig:Eye2_L
+      parentName: Tank_4_Rig:Head_M
+      position: {x: -0.29752266, y: 0.24546808, z: 0.096402325}
+      rotation: {x: 0.051835775, y: 0.121537484, z: -0.9114331, w: 0.38965556}
+      scale: {x: 1.0000004, y: 1.0000008, z: 1.000001}
+    - name: Tank_4_Rig:EyeEnd1_L
+      parentName: Tank_4_Rig:Eye2_L
+      position: {x: -0.06302499, y: 1.4210854e-15, z: 1.6875391e-16}
+      rotation: {x: -0.13868621, y: -0.0022722934, z: -0.00015833312, w: 0.99033374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Eye1_L
+      parentName: Tank_4_Rig:Head_M
+      position: {x: -0.29752266, y: 0.24546808, z: 0.096402325}
+      rotation: {x: 0.11898017, y: 0.0574632, z: -0.4303165, w: 0.8929555}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000007}
+    - name: Tank_4_Rig:EyeEnd2_L
+      parentName: Tank_4_Rig:Eye1_L
+      position: {x: -0.06302499, y: 2.557954e-15, z: 6.4837026e-16}
+      rotation: {x: -0.13868621, y: -0.0022722934, z: -0.00015833312, w: 0.99033374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Midle_eye1_M
+      parentName: Tank_4_Rig:Head_M
+      position: {x: -0.31794873, y: 0.2920308, z: 0.0000006890297}
+      rotation: {x: 0.313625, y: 0.3138955, z: 0.63341004, w: -0.63395643}
+      scale: {x: 1.0000017, y: 1.0000019, z: 1.0000002}
+    - name: Tank_4_Rig:Midle_eyeEnd1_R
+      parentName: Tank_4_Rig:Midle_eye1_M
+      position: {x: -0.06302499, y: -3.4106053e-15, z: 3.5527135e-16}
+      rotation: {x: 0.13868621, y: 0.0022722934, z: -0.00015833312, w: 0.99033374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Midle_eyeEnd1_L
+      parentName: Tank_4_Rig:Midle_eye1_M
+      position: {x: 0.016700497, y: -3.9790393e-15, z: 0.060770925}
+      rotation: {x: -0.08419998, y: 0.7862335, z: 0.110200934, w: 0.6021653}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Eye2_R
+      parentName: Tank_4_Rig:Head_M
+      position: {x: -0.29752266, y: 0.24546808, z: -0.096402325}
+      rotation: {x: 0.051835798, y: 0.121537484, z: 0.9114331, w: -0.38965556}
+      scale: {x: 1.0000007, y: 1.0000008, z: 1.0000007}
+    - name: Tank_4_Rig:EyeEnd1_R
+      parentName: Tank_4_Rig:Eye2_R
+      position: {x: -0.06302499, y: 5.6843423e-16, z: -9.769963e-17}
+      rotation: {x: 0.13868621, y: 0.0022722934, z: -0.00015833312, w: 0.99033374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Eye1_R
+      parentName: Tank_4_Rig:Head_M
+      position: {x: -0.29752266, y: 0.24546808, z: -0.096402325}
+      rotation: {x: 0.11898014, y: 0.05746319, z: 0.43031648, w: -0.8929554}
+      scale: {x: 1.0000005, y: 1.0000007, z: 1.0000006}
+    - name: Tank_4_Rig:EyeEnd2_R
+      parentName: Tank_4_Rig:Eye1_R
+      position: {x: -0.06302499, y: 2.8421708e-15, z: -3.4638962e-16}
+      rotation: {x: 0.13868621, y: 0.0022722934, z: -0.00015833312, w: 0.99033374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Eye_L
+      parentName: Tank_4_Rig:Head_M
+      position: {x: -0.29752266, y: 0.24546808, z: 0.096402325}
+      rotation: {x: 0.09338965, y: 0.09347021, z: -0.70060486, w: 0.7012094}
+      scale: {x: 1.0000001, y: 1.0000012, z: 1.0000008}
+    - name: Tank_4_Rig:EyeEnd_L
+      parentName: Tank_4_Rig:Eye_L
+      position: {x: -0.06302499, y: -2.273737e-15, z: -6.217249e-17}
+      rotation: {x: -0.13868621, y: -0.0022722934, z: -0.00015833312, w: 0.99033374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Midle_eye_M
+      parentName: Tank_4_Rig:Head_M
+      position: {x: -0.31794873, y: 0.2920308, z: 0.0000006890297}
+      rotation: {x: -8.693575e-16, y: -1.1999369e-16, z: 0.7068019, w: -0.7074116}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000002}
+    - name: Tank_4_Rig:Midle_eyeEnd_M
+      parentName: Tank_4_Rig:Midle_eye_M
+      position: {x: -0.06302499, y: -2.273737e-15, z: 2.741073e-16}
+      rotation: {x: 0.13868621, y: 0.0022722934, z: -0.00015833312, w: 0.99033374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Eye_R
+      parentName: Tank_4_Rig:Head_M
+      position: {x: -0.29752266, y: 0.24546808, z: -0.096402325}
+      rotation: {x: 0.09338965, y: 0.09347021, z: 0.70060486, w: -0.7012094}
+      scale: {x: 1.0000007, y: 1.0000012, z: 1.0000005}
+    - name: Tank_4_Rig:EyeEnd_R
+      parentName: Tank_4_Rig:Eye_R
+      position: {x: -0.06302499, y: -5.6843423e-16, z: -3.1974424e-16}
+      rotation: {x: 0.13868621, y: 0.0022722934, z: -0.00015833312, w: 0.99033374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Jaw_M
+      parentName: Tank_4_Rig:Head_M
+      position: {x: -0.0031425697, y: 0.18378744, z: -6.274373e-16}
+      rotation: {x: 0.000000026077034, y: 0.000000029802326, z: -0.69873184, w: 0.71538377}
+      scale: {x: 1.0000006, y: 1.0000008, z: 1.0000005}
+    - name: Tank_4_Rig:JawEnd_M
+      parentName: Tank_4_Rig:Jaw_M
+      position: {x: -0.31832695, y: 6.536993e-15, z: -1.1322531e-15}
+      rotation: {x: -0, y: -0, z: -6.5526765e-16, w: 1}
+      scale: {x: 1.0000002, y: 1.0000007, z: 1.0000002}
+    - name: Tank_4_Rig:Nose_joint1_M
+      parentName: Tank_4_Rig:Head_M
+      position: {x: -0.23249534, y: 0.2640279, z: -2.213397e-15}
+      rotation: {x: -0.000000007450581, y: -0, z: 0.8893306, w: -0.45726478}
+      scale: {x: 1.0000005, y: 1.0000011, z: 1.0000008}
+    - name: Tank_4_Rig:Nose_joint2_M
+      parentName: Tank_4_Rig:Nose_joint1_M
+      position: {x: -0.11755134, y: 5.6843423e-16, z: -9.7288e-16}
+      rotation: {x: -0, y: -0, z: -0.4283003, w: -0.9036365}
+      scale: {x: 0.99999946, y: 1.0000001, z: 0.9999998}
+    - name: Tank_4_Rig:Nose_joint3_M
+      parentName: Tank_4_Rig:Nose_joint2_M
+      position: {x: -0.14679188, y: 2.273737e-15, z: -5.900103e-16}
+      rotation: {x: -0, y: -1.7763564e-15, z: -0.000000029802315, w: 1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+    - name: Tank_4_Rig:Scapula_R
+      parentName: Tank_4_Rig:Chest_M
+      position: {x: -0.26707494, y: 0.1357379, z: -0.20864737}
+      rotation: {x: 0.43773288, y: 0.5494526, z: 0.52970403, w: -0.47529522}
+      scale: {x: 1.0000031, y: 1.0000025, z: 0.9999998}
+    - name: Tank_4_Rig:Shoulder_R
+      parentName: Tank_4_Rig:Scapula_R
+      position: {x: -0.29214448, y: 4.547474e-15, z: -1.5738523e-14}
+      rotation: {x: -0.0036541661, y: -0.06509024, z: -0.05593194, w: 0.9963039}
+      scale: {x: 1, y: 0.99999994, z: 1.0000008}
+    - name: Tank_4_Rig:ShoulderPart1_R
+      parentName: Tank_4_Rig:Shoulder_R
+      position: {x: -0.32299325, y: 3.4106053e-15, z: -6.217249e-16}
+      rotation: {x: -0.000000027939674, y: 0.043265175, z: 0.10616643, w: 0.9934067}
+      scale: {x: 1, y: 1.0000001, z: 0.99999946}
+    - name: Tank_4_Rig:Elbow_R
+      parentName: Tank_4_Rig:ShoulderPart1_R
+      position: {x: -0.32299325, y: 3.694822e-15, z: -6.394885e-16}
+      rotation: {x: 0.0004989919, y: 0.008141468, z: -0.004936229, w: 0.9999546}
+      scale: {x: 1.0000025, y: 1.0000023, z: 1}
+    - name: Tank_4_Rig:ElbowPart1_R
+      parentName: Tank_4_Rig:Elbow_R
+      position: {x: -0.3690773, y: 1.4210854e-15, z: 3.3789863e-13}
+      rotation: {x: -0, y: -0, z: 1.3141775e-12, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Tank_4_Rig:Elbow1_R
+      parentName: Tank_4_Rig:ElbowPart1_R
+      position: {x: -0.3690773, y: 1.9895197e-15, z: 3.3788082e-13}
+      rotation: {x: 0.000025766958, y: -0.0002222437, z: -0.0010757815, w: 0.9999994}
+      scale: {x: 1.0000011, y: 1.0000008, z: 1}
+    - name: Tank_4_Rig:Wrist_R
+      parentName: Tank_4_Rig:Elbow1_R
+      position: {x: -0.11699705, y: -8.81073e-15, z: -9.947598e-16}
+      rotation: {x: 0.69979227, y: -0.05304771, z: -0.62115335, w: 0.34877676}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:ThumbFinger1_R
+      parentName: Tank_4_Rig:Wrist_R
+      position: {x: -0.3027473, y: -8.81073e-15, z: 2.8421708e-15}
+      rotation: {x: -0.81661695, y: 0.19497822, z: 0.2797083, w: 0.46570748}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:ThumbFinger2_R
+      parentName: Tank_4_Rig:ThumbFinger1_R
+      position: {x: -0.1470781, y: -2.8421711e-16, z: 1.7763567e-16}
+      rotation: {x: -0.2349258, y: 0.030465215, z: -0.0052553625, w: 0.9715216}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:ThumbFinger3_R
+      parentName: Tank_4_Rig:ThumbFinger2_R
+      position: {x: -0.1940848, y: 1.7053026e-15, z: 1.6342482e-15}
+      rotation: {x: 0.07569786, y: -0.036254447, z: -0.0024470352, w: 0.9964685}
+      scale: {x: 1.0000005, y: 1.0000004, z: 0.99999994}
+    - name: Tank_4_Rig:ThumbFinger4_R
+      parentName: Tank_4_Rig:ThumbFinger3_R
+      position: {x: -0.1613583, y: 5.6843423e-16, z: 3.9079853e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:IndexFinger1_R
+      parentName: Tank_4_Rig:Wrist_R
+      position: {x: -0.064593844, y: -0.047849003, z: 0.3490378}
+      rotation: {x: -0.2592996, y: 0.43436977, z: 0.40054464, w: 0.76397026}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:IndexFinger2_R
+      parentName: Tank_4_Rig:IndexFinger1_R
+      position: {x: -0.2123779, y: 1.8740564e-15, z: 2.273737e-15}
+      rotation: {x: 0.00004066525, y: -0.031393632, z: -0.0000033155068, w: 0.9995072}
+      scale: {x: 1.0000013, y: 1.000001, z: 1.0000008}
+    - name: Tank_4_Rig:IndexFinger3_R
+      parentName: Tank_4_Rig:IndexFinger2_R
+      position: {x: -0.21775773, y: -1.2678747e-14, z: -4.547474e-15}
+      rotation: {x: -0.012622515, y: -0.26022613, z: -0.00010383787, w: 0.96546525}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Cup_R
+      parentName: Tank_4_Rig:Wrist_R
+      position: {x: 0.083155915, y: -0.27628088, z: 0.039475147}
+      rotation: {x: 0.69766635, y: 0.47856212, z: 0.2060203, w: 0.4917272}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:RingFinger1_R
+      parentName: Tank_4_Rig:Cup_R
+      position: {x: -0.13005885, y: 2.557954e-15, z: -1.1368685e-15}
+      rotation: {x: -0.18715586, y: -0.09157484, z: -0.44009104, w: 0.8734453}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:RingFinger2_R
+      parentName: Tank_4_Rig:RingFinger1_R
+      position: {x: -0.18253833, y: 0, z: -1.3145041e-15}
+      rotation: {x: 0.011182675, y: -0.03249672, z: -0.00031704814, w: 0.9994092}
+      scale: {x: 1.000001, y: 1.0000006, z: 1.0000018}
+    - name: Tank_4_Rig:RingFinger3_R
+      parentName: Tank_4_Rig:RingFinger2_R
+      position: {x: -0.14250904, y: -1.9895197e-15, z: 2.025047e-15}
+      rotation: {x: 0.045776777, y: -0.27758512, z: 0.011423971, w: 0.9595418}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:R_P_jnt
+      parentName: Tank_4_Rig:Shoulder_R
+      position: {x: -0.119628236, y: -0.20027728, z: 0.2772864}
+      rotation: {x: -0.62673473, y: 0.40410563, z: -0.43800113, w: 0.5020531}
+      scale: {x: 1.0000005, y: 1.0000006, z: 1.0000005}
+    - name: Tank_4_Rig:Scapula_L
+      parentName: Tank_4_Rig:Chest_M
+      position: {x: -0.26707494, y: 0.1357379, z: 0.20864737}
+      rotation: {x: -0.5494526, y: 0.43773282, z: -0.47529525, w: -0.529704}
+      scale: {x: 1.0000023, y: 0.99999994, z: 1.0000017}
+    - name: Tank_4_Rig:Shoulder_L
+      parentName: Tank_4_Rig:Scapula_L
+      position: {x: 0.29214448, y: -3.694822e-15, z: 1.5063507e-14}
+      rotation: {x: -0.0036542406, y: -0.065090194, z: -0.055932, w: 0.9963039}
+      scale: {x: 1.0000006, y: 1, z: 1.0000006}
+    - name: Tank_4_Rig:ShoulderPart1_L
+      parentName: Tank_4_Rig:Shoulder_L
+      position: {x: 0.32299325, y: -1.9895197e-15, z: -3.5527135e-16}
+      rotation: {x: -0.00000006170011, y: 0.043265294, z: 0.10616638, w: 0.9934067}
+      scale: {x: 1, y: 1.0000001, z: 0.99999994}
+    - name: Tank_4_Rig:Elbow_L
+      parentName: Tank_4_Rig:ShoulderPart1_L
+      position: {x: 0.32299325, y: -1.7053026e-15, z: -3.019807e-16}
+      rotation: {x: 0.00049898756, y: 0.008141367, z: -0.004936154, w: 0.9999546}
+      scale: {x: 1.0000021, y: 0.99999994, z: 1.0000013}
+    - name: Tank_4_Rig:ElbowPart1_L
+      parentName: Tank_4_Rig:Elbow_L
+      position: {x: 0.3690773, y: 0, z: -3.3899993e-13}
+      rotation: {x: -0, y: -0, z: 1.234848e-12, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 0.99999994}
+    - name: Tank_4_Rig:Elbow1_L
+      parentName: Tank_4_Rig:ElbowPart1_L
+      position: {x: 0.3690773, y: -5.6843423e-16, z: -3.3896443e-13}
+      rotation: {x: 0.00002583337, y: -0.0002222843, z: -0.0010757332, w: 0.99999946}
+      scale: {x: 1.0000012, y: 0.99999994, z: 1.0000012}
+    - name: Tank_4_Rig:Wrist_L
+      parentName: Tank_4_Rig:Elbow1_L
+      position: {x: 0.11699705, y: 6.2527765e-15, z: 5.8619773e-16}
+      rotation: {x: 0.69979227, y: -0.05304771, z: -0.62115335, w: 0.34877676}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:ThumbFinger1_L
+      parentName: Tank_4_Rig:Wrist_L
+      position: {x: 0.3027473, y: 7.389644e-15, z: -1.9895197e-15}
+      rotation: {x: -0.81661636, y: 0.19497782, z: 0.27970922, w: 0.4657082}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:ThumbFinger2_L
+      parentName: Tank_4_Rig:ThumbFinger1_L
+      position: {x: 0.1470781, y: -1.1368685e-15, z: 5.3290707e-16}
+      rotation: {x: -0.23492572, y: 0.03046484, z: -0.0052557117, w: 0.9715216}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:ThumbFinger3_L
+      parentName: Tank_4_Rig:ThumbFinger2_L
+      position: {x: 0.1940848, y: 5.6843423e-16, z: 1.9895197e-15}
+      rotation: {x: 0.075697914, y: -0.036255054, z: -0.0024463872, w: 0.99646854}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000012}
+    - name: Tank_4_Rig:ThumbFinger4_L
+      parentName: Tank_4_Rig:ThumbFinger3_L
+      position: {x: 0.1613583, y: -2.8421708e-15, z: -2.344791e-15}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:IndexFinger1_L
+      parentName: Tank_4_Rig:Wrist_L
+      position: {x: 0.064593844, y: 0.047849003, z: -0.3490378}
+      rotation: {x: -0.25929916, y: 0.4343686, z: 0.40054488, w: 0.76397103}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:IndexFinger2_L
+      parentName: Tank_4_Rig:IndexFinger1_L
+      position: {x: 0.2123779, y: 6.8833825e-16, z: -5.6843423e-16}
+      rotation: {x: -0.00004069504, y: 0.03139386, z: 0.0000026673056, w: -0.99950707}
+      scale: {x: 1.0000008, y: 1.0000008, z: 1.0000007}
+    - name: Tank_4_Rig:IndexFinger3_L
+      parentName: Tank_4_Rig:IndexFinger2_L
+      position: {x: 0.21775773, y: 1.2314594e-14, z: -1.1368685e-15}
+      rotation: {x: -0.012622515, y: -0.26022613, z: -0.00010383787, w: 0.96546525}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Cup_L
+      parentName: Tank_4_Rig:Wrist_L
+      position: {x: -0.083155915, y: 0.27628088, z: -0.039475147}
+      rotation: {x: 0.69766635, y: 0.47856212, z: 0.2060203, w: 0.4917272}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:RingFinger1_L
+      parentName: Tank_4_Rig:Cup_L
+      position: {x: 0.13005885, y: -2.8421711e-16, z: -2.4158455e-15}
+      rotation: {x: -0.18715742, y: -0.091575384, z: -0.44009054, w: 0.8734452}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:RingFinger2_L
+      parentName: Tank_4_Rig:RingFinger1_L
+      position: {x: 0.18253833, y: -8.526513e-16, z: 3.161872e-15}
+      rotation: {x: 0.011182566, y: -0.032495685, z: -0.00031653018, w: 0.99940926}
+      scale: {x: 1.000001, y: 1.0000008, z: 1.0000002}
+    - name: Tank_4_Rig:RingFinger3_L
+      parentName: Tank_4_Rig:RingFinger2_L
+      position: {x: 0.14250904, y: 2.557954e-15, z: -1.8118842e-15}
+      rotation: {x: 0.045776777, y: -0.27758512, z: 0.011423971, w: 0.9595418}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:L_P_jnt
+      parentName: Tank_4_Rig:Shoulder_L
+      position: {x: 0.11962616, y: 0.20027669, z: -0.27728614}
+      rotation: {x: -0.4041055, y: -0.6267348, z: -0.5020531, w: -0.43800116}
+      scale: {x: 1.0000007, y: 1.0000006, z: 1.0000007}
+    - name: Tank_4_Rig:Rocket2
+      parentName: Tank_4_Rig:Chest_M
+      position: {x: -0.075757794, y: -0.47155714, z: 1.008149e-15}
+      rotation: {x: -0.50345635, y: 0.49651957, z: 0.50345635, w: 0.49651957}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Tank_4_Rig:Rocket1
+      parentName: Tank_4_Rig:Rocket2
+      position: {x: -4.9303804e-33, y: -0.4506935, z: -0.16358504}
+      rotation: {x: -0.4058374, y: 0.5790475, z: -0.40583733, w: 0.57904756}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: Tank_4_Rig:Hip_L
+      parentName: Tank_4_Rig:Root_M
+      position: {x: 0.14277922, y: 0.029848833, z: 0.3526357}
+      rotation: {x: -0.99109256, y: 0.110770226, z: -0.07354672, w: 0.007515639}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000001}
+    - name: Tank_4_Rig:HipPart1_L
+      parentName: Tank_4_Rig:Hip_L
+      position: {x: 0.19649608, y: 7.993606e-17, z: 9.237055e-16}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: Tank_4_Rig:Knee_L
+      parentName: Tank_4_Rig:HipPart1_L
+      position: {x: 0.19649608, y: 7.105428e-17, z: 7.105427e-16}
+      rotation: {x: -0.000000009313225, y: 0.0000000023283062, z: 0.14784789, w: 0.98901016}
+      scale: {x: 1.0000008, y: 1.0000002, z: 1.0000004}
+    - name: Tank_4_Rig:Ankle_L
+      parentName: Tank_4_Rig:Knee_L
+      position: {x: 0.45635557, y: 3.7303495e-16, z: -2.7000626e-15}
+      rotation: {x: 0.024189465, y: -0.07838371, z: -0.17122409, w: 0.98181117}
+      scale: {x: 1.0000006, y: 1.0000006, z: 1.0000005}
+    - name: Tank_4_Rig:Toes_L
+      parentName: Tank_4_Rig:Ankle_L
+      position: {x: 0.08364215, y: -0.23803344, z: -4.831691e-15}
+      rotation: {x: 0.08475656, y: -0.013489218, z: 0.5104513, w: -0.8556131}
+      scale: {x: 1.0000004, y: 0.9999998, z: 1.0000002}
+    - name: Tank_4_Rig:ToesEnd_L
+      parentName: Tank_4_Rig:Toes_L
+      position: {x: 0.26095688, y: 0, z: -2.1316283e-16}
+      rotation: {x: 0.000000007450581, y: -0, z: 0.000000053085387, w: 1}
+      scale: {x: 1, y: 0.99999976, z: 1}
+    - name: Tank_4_Rig:Geometry
+      parentName: Tank_02_Zero(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Body
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Up_Teth
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Dawn_Teth
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:R_Eye_ball
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:M_Eye_ball
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:L_Eye_ball
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:L_Up_Veko
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:R_DawnVeko
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:R_M_Veko
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:L_M_Veko
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:R_Up_Veko
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:L_Dawn_Veko
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:L_Hand_Arm
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Deck_Armor
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Pole_M
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Pole_L
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Pole_R
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Hand_Bull
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Fingers
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Bolty_1
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Armor_Shold
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Armor_Shold_2
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Head_Antena
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Bolty_3
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Bolty_2
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tank_4_Rig:Hand_Ar_big
+      parentName: Tank_4_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

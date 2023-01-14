@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Robot2AnimControl
+  m_Controller: {fileID: 9100000, guid: 57f3ce1bf45213f41956cde114817b2b, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 1827226128182048838, guid: 51d164ecc72ffc44287e23fc215972c0,
+      type: 3}
+    m_OverrideClip: {fileID: -5252816984213320552, guid: 38207ead73e03e64f980c207a7b57146,
+      type: 3}
+  - m_OriginalClip: {fileID: 1827226128182048838, guid: c0cb6f8f87cb1e142b7cd2fedac03220,
+      type: 3}
+    m_OverrideClip: {fileID: 2459078804267041145, guid: 24b659f34328d1f4f9609d2e2dc3211c,
+      type: 3}
+  - m_OriginalClip: {fileID: 1827226128182048838, guid: 0b70a7e9c4dba7246ab210ba198b7741,
+      type: 3}
+    m_OverrideClip: {fileID: 641136364113939877, guid: cbe4fae9ca7713d4eae3612fe99bb1f3,
+      type: 3}
+  - m_OriginalClip: {fileID: 1827226128182048838, guid: 8fda347e9f1de2043818b48ba42bd477,
+      type: 3}
+    m_OverrideClip: {fileID: 6200578666267062213, guid: 11ecec69cb4221f418d0690b6c05f027,
+      type: 3}
+  - m_OriginalClip: {fileID: 1827226128182048838, guid: 0d7d29b0c8729e149b2a8d61f6e9cc3c,
+      type: 3}
+    m_OverrideClip: {fileID: -8380032128695896174, guid: 3f5031946120134478e84f4c587ba4bf,
+      type: 3}
+  - m_OriginalClip: {fileID: 1827226128182048838, guid: 2c249e02b8f9dcf49a5e25302854d264,
+      type: 3}
+    m_OverrideClip: {fileID: 89903728378656913, guid: 33a1a4ccab1eea2478ebadbbcfd94024,
+      type: 3}
+  - m_OriginalClip: {fileID: 1827226128182048838, guid: 5d3f8328f808faa4e955d80ff2accc27,
+      type: 3}
+    m_OverrideClip: {fileID: 151196642899983320, guid: da889d08aafaff44d8c354853b830a97,
+      type: 3}
+  - m_OriginalClip: {fileID: 1827226128182048838, guid: 80735e6a09473964783e15f961aca7b2,
+      type: 3}
+    m_OverrideClip: {fileID: -1841769225762364984, guid: 484a503187a9cfb4787b9142cc535529,
+      type: 3}
