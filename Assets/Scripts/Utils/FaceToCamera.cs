@@ -16,7 +16,7 @@ namespace Utils
 
         void Update()
         {
-            m_CameraDirection = Quaternion.Euler(0, m_CameraController.m_FreeLookCamera.m_XAxis.Value, 0) * Vector3.forward;
+            m_CameraDirection = Quaternion.Euler(0, m_CameraController.FreeLookCamera.m_XAxis.Value, 0) * Vector3.forward;
             m_TargetRotation = Quaternion.LookRotation(-m_CameraDirection);
             transform.rotation = m_TargetRotation;
         }
