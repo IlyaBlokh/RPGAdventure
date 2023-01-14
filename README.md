@@ -2,7 +2,7 @@
 
 3rd-person RPG on Unity
 
-[![Gameplay](http://img.youtube.com/vi/xlgOMDI-S48/0.jpg)](http://www.youtube.com/watch?v=xlgOMDI-S48 "Unity RPG Game")
+[![Gameplay](http://img.youtube.com/vi/osCme_ffLK8/0.jpg)](https://youtu.be/osCme_ffLK8 "Unity RPG Game")
 
 *Click to watch video*
 
@@ -14,4 +14,4 @@ This is a classic 3-rd person RPG game with essential game mechanics:
 - quests
 - dialogs with NPC
 - experience and level up
-- nice enviroment and SFX
+- nice environment and SFX
