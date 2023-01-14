@@ -39,15 +39,9 @@ namespace Dialogs
             forceDialogQuit = false;
         }
 
+        /*
         private void Update()
         {
-            if (!DialogUI.activeSelf && 
-                playerInput.GetClickableObject)
-            {
-                npc = playerInput.GetClickableObject.gameObject;
-                StartDialog();
-            }
-
             if (DialogUI.activeSelf &&
                 npc.GetComponent<Clickable>().CheckEndInteractCondition())
             {
@@ -72,6 +66,7 @@ namespace Dialogs
                 }
             }
         }
+        */
 
         private void StartDialog()
         {
