@@ -5,20 +5,20 @@ namespace Camera
 {
     public class CameraController : MonoBehaviour
     {
-        [SerializeField] CinemachineFreeLook freeLookCamera;
+        [SerializeField] private CinemachineVirtualCamera followCamera;
         [SerializeField] private CinemachineVirtualCamera fixedLookCamera;
-        public CinemachineFreeLook FreeLookCamera => freeLookCamera;
+        public CinemachineVirtualCamera FollowCamera => followCamera;
         public CinemachineVirtualCamera FixedLookCamera => fixedLookCamera;
 
         public void SwitchToFixedView()
         {
-            freeLookCamera.gameObject.SetActive(false);
+            followCamera.gameObject.SetActive(false);
             fixedLookCamera.gameObject.SetActive(true);
         }
  
         public void SwitchToFreeLookView()
         {
-            freeLookCamera.gameObject.SetActive(true);
+            followCamera.gameObject.SetActive(true);
             fixedLookCamera.gameObject.SetActive(false);
         }
     }

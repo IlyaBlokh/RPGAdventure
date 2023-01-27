@@ -1,10 +1,13 @@
+using System;
 using Audio;
 using Camera;
+using Cinemachine;
 using DamageSystem;
 using Events;
 using UnityEngine;
 using Utils;
 using Weapons;
+using Zenject;
 
 namespace Player
 {
@@ -57,13 +60,19 @@ namespace Player
 
         private const float Acceleration = 20.0f;
         private const float Deceleration = 40.0f;
+
+        [Inject]
+        private void Construct(CameraController cameraController)
+        {
+            this.cameraController = cameraController;
+        }
+        
         private void Awake()
         {
             charController = GetComponent<CharacterController>();
             inputController = GetComponent<InputController>();
             animator = GetComponent<Animator>();
             damageable = GetComponent<Damageable>();
-            cameraController = UnityEngine.Camera.main.GetComponent<CameraController>();
             if (MeleeWeapon != null)
                 MeleeWeapon.Owner = gameObject;
             SpawnPosition = transform.position;
@@ -80,29 +89,6 @@ namespace Player
             Combat();
         }
 
-        private void ComputeForwardMovement()
-        {
-            desiredForwardSpeed = inputController.MoveInput.magnitude * MaxMovementSpeed;
-            forwardSpeed = Mathf.MoveTowards(
-                forwardSpeed, 
-                desiredForwardSpeed, 
-                (inputController.IsMoving? Acceleration : Deceleration) * Time.fixedDeltaTime);
-            animator.SetFloat(hashedForwardSpeed, forwardSpeed);
-        }
-
-        private void ComputeVerticalMovement()
-        {
-            verticalSpeed = -Gravity;
-        }
-
-        private void OnAnimatorMove()
-        {
-            if (IsRespawning) return;
-            movementDirection = animator.deltaPosition;
-            movementDirection += Vector3.up * verticalSpeed * Time.fixedDeltaTime;
-            charController.Move(movementDirection);
-        }
-
         private void CacheAnimatorState()
         {
             currentAnimatorState = animator.GetCurrentAnimatorStateInfo(0);
@@ -117,31 +103,36 @@ namespace Player
                 nextAnimatorState.tagHash == hashedBlockInput;
         }
 
+        private void ComputeForwardMovement()
+        {
+            desiredForwardSpeed = inputController.MoveInput.magnitude * MaxMovementSpeed;
+            forwardSpeed = Mathf.MoveTowards(
+                forwardSpeed, 
+                desiredForwardSpeed, 
+                (inputController.IsMoving? Acceleration : Deceleration) * Time.fixedDeltaTime);
+            animator.SetFloat(hashedForwardSpeed, forwardSpeed);
+        }
+
+        private void ComputeVerticalMovement() => 
+            verticalSpeed = -Gravity;
+
         private void ComputeRotation()
         {
-            movementRotation = Quaternion.FromToRotation(Vector3.forward, inputController.MoveInput);
-
-            if (Mathf.Approximately(Vector3.Dot(Vector3.forward, inputController.MoveInput), -1))
-            {
-                targetRotation = Quaternion.LookRotation(-cameraDirection);
-            }
-            else
-            {
-                cameraDirection = Quaternion.Euler(0, cameraController.FreeLookCamera.m_XAxis.Value, 0) * Vector3.forward;
-                targetRotation = Quaternion.LookRotation(movementRotation * cameraDirection);
-            }
-
-            if (inputController.IsMoving)
-            {
-                rotationSpeed = Mathf.Lerp(MaxRotationSpeed, MinRotationSpeed , forwardSpeed / desiredForwardSpeed);
-                targetRotation = Quaternion.RotateTowards(
-                    transform.rotation,
-                    targetRotation,
-                    rotationSpeed * Time.fixedDeltaTime);
-                transform.rotation = targetRotation;
-            }
+            float targetRotation = cameraController.FollowCamera.State.RawOrientation.eulerAngles.y;
+            transform.eulerAngles = Vector3.Lerp(
+                transform.eulerAngles, 
+                new Vector3(transform.eulerAngles.x, targetRotation, transform.eulerAngles.z), 
+                10f * Time.fixedDeltaTime);
         }
-    
+
+        private void OnAnimatorMove()
+        {
+            if (IsRespawning) return;
+            movementDirection = animator.deltaPosition;
+            movementDirection += Vector3.up * verticalSpeed * Time.fixedDeltaTime;
+            charController.Move(movementDirection);
+        }
+
         public void AE_Attack (int AttackStatus)
         {
             if (MeleeWeapon != null)

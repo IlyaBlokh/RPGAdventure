@@ -1,5 +1,6 @@
 using Camera;
 using UnityEngine;
+using Zenject;
 
 namespace Utils
 {
@@ -9,16 +10,17 @@ namespace Utils
         private Vector3 cameraDirection;
         private Quaternion targetRotation;
 
-        void Awake()
+        [Inject]
+        private void Construct(CameraController cameraController)
         {
-            cameraController = UnityEngine.Camera.main.GetComponent<CameraController>();
+            this.cameraController = cameraController;
         }
 
         void Update()
         {
-            cameraDirection = Quaternion.Euler(0, cameraController.FreeLookCamera.m_XAxis.Value, 0) * Vector3.forward;
+            /*cameraDirection = Quaternion.Euler(0, cameraController.FreeLookCamera.m_XAxis.Value, 0) * Vector3.forward;
             targetRotation = Quaternion.LookRotation(-cameraDirection);
-            transform.rotation = targetRotation;
+            transform.rotation = targetRotation;*/
         }
     }
 }
