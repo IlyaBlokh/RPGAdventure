@@ -1,5 +1,6 @@
 using System;
 using Graphics;
+using Interaction;
 using Player;
 using QuestSystem;
 using UnityEngine;
@@ -18,7 +19,7 @@ namespace Dialogs
         [SerializeField] private float TimeToShowDialogOptions = 2.0f;
 
         private QuestManager questManager;
-        private PlayerInput playerInput;
+        private InputController inputController;
         private GameObject npc;
         private Dialog activeDialog;
         private float optionTopPosition;
@@ -35,47 +36,28 @@ namespace Dialogs
         private void Start()
         {
             questManager = FindObjectOfType<QuestManager>();
-            playerInput = PlayerInput.Instance;
+            inputController = InputController.Instance;
             forceDialogQuit = false;
         }
-
-        /*
-        private void Update()
+        
+        public void StartDialogWith(DialogInteractable dialogInteractable)
         {
-            if (DialogUI.activeSelf &&
-                npc.GetComponent<Clickable>().CheckEndInteractCondition())
-            {
-                StopDialog();
-            }
-
-            //Timer is triggered
-            if (timerForDialogOptions > 0)
-            {
-                timerForDialogOptions += Time.deltaTime;
-                if (timerForDialogOptions >= TimeToShowDialogOptions)
-                {
-                    if (forceDialogQuit)
-                    {
-                        StopDialog();
-                    }
-                    else
-                    {
-                        timerForDialogOptions = .0f;
-                        DisplayDialogOptions();
-                    }
-                }
-            }
-        }
-        */
-
-        private void StartDialog()
-        {
+            npc = dialogInteractable.gameObject;
             DialogHeaderText.text = npc.name;
             activeDialog = npc.GetComponent<QuestOwner>().Dialog;
             DialogUI.SetActive(true);
             CleanupDialogOptionList();
             DisplayAnswerText(activeDialog.welcomeText);
             TriggerDisplayDialogOptions();
+        }
+
+        public void StopDialog()
+        {
+            DialogUI.SetActive(false);
+            npc = null;
+            activeDialog = null;
+            forceDialogQuit = false;
+            timerForDialogOptions = .0f;
         }
 
         private void DisplayAnswerText(String answerText)
@@ -134,7 +116,7 @@ namespace Dialogs
             clickDownEvent.callback.AddListener((e) => {
                 if (!string.IsNullOrEmpty(query.dialogAnswer.questId))
                 {
-                    playerInput.GetComponent<QuestLog>().AddQuest(questManager.GetQuest(query.dialogAnswer.questId));
+                    inputController.GetComponent<QuestLog>().AddQuest(questManager.GetQuest(query.dialogAnswer.questId));
                 }
                 forceDialogQuit = query.dialogAnswer.shouldForceExit;
                 query.isAsked = true;
@@ -143,15 +125,6 @@ namespace Dialogs
                 TriggerDisplayDialogOptions();
             });
             eventTrigger.triggers.Add(clickDownEvent);
-        }
-
-        private void StopDialog()
-        {
-            DialogUI.SetActive(false);
-            npc = null;
-            activeDialog = null;
-            forceDialogQuit = false;
-            timerForDialogOptions = .0f;
         }
     }
 }

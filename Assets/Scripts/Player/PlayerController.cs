@@ -27,7 +27,7 @@ namespace Player
         //Components
         private CharacterController charController;
         private CameraController cameraController;
-        private PlayerInput playerInput;
+        private InputController inputController;
         private Animator animator;
         private Damageable damageable;
 
@@ -60,7 +60,7 @@ namespace Player
         private void Awake()
         {
             charController = GetComponent<CharacterController>();
-            playerInput = GetComponent<PlayerInput>();
+            inputController = GetComponent<InputController>();
             animator = GetComponent<Animator>();
             damageable = GetComponent<Damageable>();
             cameraController = UnityEngine.Camera.main.GetComponent<CameraController>();
@@ -82,11 +82,11 @@ namespace Player
 
         private void ComputeForwardMovement()
         {
-            desiredForwardSpeed = playerInput.MoveInput.magnitude * MaxMovementSpeed;
+            desiredForwardSpeed = inputController.MoveInput.magnitude * MaxMovementSpeed;
             forwardSpeed = Mathf.MoveTowards(
                 forwardSpeed, 
                 desiredForwardSpeed, 
-                (playerInput.IsMoving? Acceleration : Deceleration) * Time.fixedDeltaTime);
+                (inputController.IsMoving? Acceleration : Deceleration) * Time.fixedDeltaTime);
             animator.SetFloat(hashedForwardSpeed, forwardSpeed);
         }
 
@@ -112,16 +112,16 @@ namespace Player
 
         private void UpdateInputBlocking()
         {
-            playerInput.IsPlayerControllerInputBlocked = 
+            inputController.IsPlayerControllerInputBlocked = 
                 currentAnimatorState.tagHash == hashedBlockInput && !isAnimatorTransitioning ||
                 nextAnimatorState.tagHash == hashedBlockInput;
         }
 
         private void ComputeRotation()
         {
-            movementRotation = Quaternion.FromToRotation(Vector3.forward, playerInput.MoveInput);
+            movementRotation = Quaternion.FromToRotation(Vector3.forward, inputController.MoveInput);
 
-            if (Mathf.Approximately(Vector3.Dot(Vector3.forward, playerInput.MoveInput), -1))
+            if (Mathf.Approximately(Vector3.Dot(Vector3.forward, inputController.MoveInput), -1))
             {
                 targetRotation = Quaternion.LookRotation(-cameraDirection);
             }
@@ -131,7 +131,7 @@ namespace Player
                 targetRotation = Quaternion.LookRotation(movementRotation * cameraDirection);
             }
 
-            if (playerInput.IsMoving)
+            if (inputController.IsMoving)
             {
                 rotationSpeed = Mathf.Lerp(MaxRotationSpeed, MinRotationSpeed , forwardSpeed / desiredForwardSpeed);
                 targetRotation = Quaternion.RotateTowards(
@@ -156,7 +156,7 @@ namespace Player
         private void Combat()
         {
             animator.ResetTrigger(hashedMeleeAttack);
-            if (playerInput.IsAttacking) 
+            if (inputController.IsAttacking) 
                 animator.SetTrigger(hashedMeleeAttack);
         }
 

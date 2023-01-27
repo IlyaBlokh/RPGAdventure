@@ -64,7 +64,7 @@ namespace Inventory {
         {
             if (CompareTag("Player"))
             {
-                bool isInputBlocked = FindObjectOfType<PlayerInput>().IsPlayerControllerInputBlocked;
+                bool isInputBlocked = FindObjectOfType<InputController>().IsPlayerControllerInputBlocked;
                 if (isInputBlocked) 
                     return;
                 string itemID = inventory[index].ItemID;
