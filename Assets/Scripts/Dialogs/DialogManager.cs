@@ -6,6 +6,7 @@ using QuestSystem;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Zenject;
 
 namespace Dialogs
 {
@@ -25,9 +26,16 @@ namespace Dialogs
         private float optionTopPosition;
         private float timerForDialogOptions;
         private bool forceDialogQuit;
+        private GameManager gameManager;
 
         private const float OptionIndend = 44.0f;
 
+        [Inject]
+        private void Construct(GameManager gameManager)
+        {
+            this.gameManager = gameManager;
+        }
+        
         private void Awake()
         {
             DialogUI.SetActive(false);
@@ -42,6 +50,7 @@ namespace Dialogs
         
         public void StartDialogWith(DialogInteractable dialogInteractable)
         {
+            gameManager.EnableCursor();
             npc = dialogInteractable.gameObject;
             DialogHeaderText.text = npc.name;
             activeDialog = npc.GetComponent<QuestOwner>().Dialog;
@@ -53,6 +62,7 @@ namespace Dialogs
 
         public void StopDialog()
         {
+            gameManager.DisableCursor();
             DialogUI.SetActive(false);
             npc = null;
             activeDialog = null;

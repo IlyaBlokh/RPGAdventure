@@ -1,25 +1,33 @@
 using Cinemachine;
+using Player;
 using UnityEngine;
+using Zenject;
 
 namespace Camera
 {
     public class CameraController : MonoBehaviour
     {
         [SerializeField] private CinemachineVirtualCamera followCamera;
-        [SerializeField] private CinemachineVirtualCamera fixedLookCamera;
-        public CinemachineVirtualCamera FollowCamera => followCamera;
-        public CinemachineVirtualCamera FixedLookCamera => fixedLookCamera;
+        [SerializeField] private CinemachineVirtualCamera zoomedCamera;
+        private PlayerController playerController;
 
+        [Inject]
+        private void Construct(PlayerController playerController)
+        {
+            this.playerController = playerController;
+        }
+        public Quaternion RawOrientation => 
+            followCamera.Priority > zoomedCamera.Priority ? followCamera.State.RawOrientation : zoomedCamera.State.RawOrientation;
         public void SwitchToFixedView()
         {
-            followCamera.gameObject.SetActive(false);
-            fixedLookCamera.gameObject.SetActive(true);
+            followCamera.Priority = 0;
+            zoomedCamera.Priority = 1;
         }
  
         public void SwitchToFreeLookView()
         {
-            followCamera.gameObject.SetActive(true);
-            fixedLookCamera.gameObject.SetActive(false);
+            followCamera.Priority = 1;
+            zoomedCamera.Priority = 0;
         }
     }
 }

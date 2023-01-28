@@ -10,8 +10,11 @@ namespace Core.Installers
     public override void InstallBindings()
     {
       Container.Bind<CameraController>().FromComponentInHierarchy().AsSingle();
+      Container.Bind<PlayerController>().FromComponentInHierarchy().AsSingle();
       Container.Bind<InputController>().FromComponentInHierarchy().AsSingle();
       Container.Bind<DialogManager>().FromComponentInHierarchy().AsSingle();
+      Container.Bind<GameManager>().FromComponentInHierarchy().AsSingle();
+      
     }
   }
 }

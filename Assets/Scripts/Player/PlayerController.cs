@@ -60,6 +60,7 @@ namespace Player
 
         private const float Acceleration = 20.0f;
         private const float Deceleration = 40.0f;
+        private const float RotationSpeed = 50f;
 
         [Inject]
         private void Construct(CameraController cameraController)
@@ -118,11 +119,11 @@ namespace Player
 
         private void ComputeRotation()
         {
-            float targetRotation = cameraController.FollowCamera.State.RawOrientation.eulerAngles.y;
+            float targetRotation = cameraController.RawOrientation.eulerAngles.y;
             transform.eulerAngles = Vector3.Lerp(
                 transform.eulerAngles, 
                 new Vector3(transform.eulerAngles.x, targetRotation, transform.eulerAngles.z), 
-                10f * Time.fixedDeltaTime);
+                RotationSpeed * Time.fixedDeltaTime);
         }
 
         private void OnAnimatorMove()

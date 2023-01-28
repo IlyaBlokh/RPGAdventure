@@ -1,4 +1,5 @@
 using UnityEngine;
+using Zenject;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,19 +8,22 @@ public class GameManager : MonoBehaviour
 
     private Vector2 hotspot;
 
-    private void Awake()
+    [Inject]
+    private void Construct()
     {
         hotspot = new Vector2(0, 0);
-    }
-
-    private void Start()
-    {
         SetCursor();
     }
-
+    
     public void SetCursor()
     {
         Cursor.SetCursor(CursorImage, hotspot, cursorMode);
+        DisableCursor();
     }
+
+    public void EnableCursor() => 
+        Cursor.visible = true;
+    public void DisableCursor() => 
+        Cursor.visible = false;
 
 }
