@@ -80,7 +80,7 @@ namespace Player
             Instance = this;
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             CacheAnimatorState();
             UpdateInputBlocking();

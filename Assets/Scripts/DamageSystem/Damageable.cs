@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using Player;
 using QuestSystem;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace DamageSystem
 {
@@ -13,7 +16,7 @@ namespace DamageSystem
         [SerializeField] private int experienceForKill;
         [SerializeField] private LayerMask layerToInformPlayer;
         [SerializeField] private List<MonoBehaviour> DamageMessageListeners;
-        [SerializeField] private float UnvulnerabilityTime = 0.25f;
+        [SerializeField] private float InvulnerabilityTime = 0.25f;
         [SerializeField] private DamageableUI DamageableUI;
 
         private bool isVulnerable;
@@ -64,13 +67,13 @@ namespace DamageSystem
                 (damageMessageListener as IMessageReceiver)?.OnMessageReceive(messageType, data);
             }
 
-            StartCoroutine(SetUnvulnerability());
+            SetInvulnerability();
         }
 
-        private IEnumerator SetUnvulnerability()
+        private async UniTask SetInvulnerability()
         {
             isVulnerable = false;
-            yield return new WaitForSeconds(UnvulnerabilityTime);
+            await UniTask.Delay(TimeSpan.FromSeconds(InvulnerabilityTime));
             isVulnerable = true;
         }
 
