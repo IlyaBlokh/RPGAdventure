@@ -15,7 +15,7 @@ namespace Player
         private Vector3 playerInput;
         private GameObject lastTextUnderPointer;
         private CameraController cameraController;
-
+        private GameInputActions gameInputActions;
         public IInteractable CurrentInteractable { get; set; }
         public Vector3 MoveInput => playerInput.normalized;
         public bool IsAttacking { get; private set; }
@@ -26,13 +26,22 @@ namespace Player
         private void Construct(CameraController cameraController)
         {
             this.cameraController = cameraController;
+            gameInputActions = new GameInputActions();
+            gameInputActions.Player.Move.performed += Move;
+            gameInputActions.Player.Move.canceled += Move;
+            gameInputActions.Enable();
+        }
+
+        private void Move(InputAction.CallbackContext moveContext)
+        {
+            Vector2 direction = moveContext.ReadValue<Vector2>();
+            playerInput.Set(direction.x, 0, direction.y);
         }
         
         private void Update()
         {
             if (IsPlayerControllerInputBlocked) 
                 return;
-            playerInput.Set(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
             if (Input.GetButtonDown("Fire1"))
                 HandlePrimaryAction();
