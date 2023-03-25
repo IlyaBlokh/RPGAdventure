@@ -31,9 +31,10 @@ namespace Dialogs
         private const float OptionIndend = 44.0f;
 
         [Inject]
-        private void Construct(GameManager gameManager)
+        private void Construct(GameManager gameManager, InputController inputController)
         {
             this.gameManager = gameManager;
+            this.inputController = inputController;
         }
         
         private void Awake()
@@ -44,7 +45,6 @@ namespace Dialogs
         private void Start()
         {
             questManager = FindObjectOfType<QuestManager>();
-            inputController = InputController.Instance;
             forceDialogQuit = false;
         }
         

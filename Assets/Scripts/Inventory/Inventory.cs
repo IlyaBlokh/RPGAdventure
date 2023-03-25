@@ -16,6 +16,7 @@ namespace Inventory {
         private int currentVolume;
         private InventoryUIManager interfaceManager;
         private InventoryManager inventoryManager;
+        private PlayerController playerController;
 
         public int Size => size;
 
@@ -28,6 +29,7 @@ namespace Inventory {
             {
                 inventoryManager = FindObjectOfType<InventoryManager>();
                 interfaceManager = FindObjectOfType<InventoryUIManager>();
+                playerController = GetComponent<PlayerController>();
                 onSlotTaken.AddListener(interfaceManager.OnSlotTaken);
             }
         }
@@ -71,7 +73,7 @@ namespace Inventory {
                 if (!string.IsNullOrEmpty(itemID))
                 {
                     GameObject item = inventoryManager.GetItem(itemID);
-                    PlayerController.Instance.EquipItem(item);
+                    playerController.EquipItem(item);
                 }
             }
         }

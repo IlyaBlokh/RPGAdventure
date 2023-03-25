@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 
 namespace Inventory
 {
-    public class InventorySlotHandler : MonoBehaviour
+    [Serializable]
+    public class InventorySlotHandler
     {
         public readonly int Index;
 

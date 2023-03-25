@@ -12,9 +12,6 @@ namespace Player
 {
     public class InputController : MonoBehaviour
     {
-        public static InputController Instance => instance;
-
-        private static InputController instance;
         private Vector3 playerInput;
         private GameObject lastTextUnderPointer;
         private CameraController cameraController;
@@ -31,11 +28,6 @@ namespace Player
             this.cameraController = cameraController;
         }
         
-        private void Awake()
-        {
-            instance = this;
-        }
-
         private void Update()
         {
             if (IsPlayerControllerInputBlocked) 

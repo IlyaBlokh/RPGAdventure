@@ -14,13 +14,9 @@ namespace Player
     [RequireComponent(typeof(Inventory.Inventory))]
     public class PlayerController : MonoBehaviour, IAttackAnimListener, IMessageReceiver
     {
-        public static PlayerController Instance { get; private set; }
-
         public bool IsRespawning { get; set; }
 
         [SerializeField] private float MaxMovementSpeed = 12.0f;
-        [SerializeField] private float MinRotationSpeed = 400.0f;
-        [SerializeField] private float MaxRotationSpeed = 1200.0f;
         [SerializeField] private float Gravity = 10.0f;
         [SerializeField] private Vector3 SpawnPosition;
         [SerializeField] private MeleeWeapon MeleeWeapon;
@@ -77,7 +73,6 @@ namespace Player
             if (MeleeWeapon != null)
                 MeleeWeapon.Owner = gameObject;
             SpawnPosition = transform.position;
-            Instance = this;
         }
 
         private void Update()

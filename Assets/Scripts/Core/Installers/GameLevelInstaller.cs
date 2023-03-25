@@ -1,5 +1,6 @@
 ﻿using Camera;
 using Dialogs;
+using Inventory;
 using Player;
 using Zenject;
 
@@ -14,7 +15,7 @@ namespace Core.Installers
       Container.Bind<InputController>().FromComponentInHierarchy().AsSingle();
       Container.Bind<DialogManager>().FromComponentInHierarchy().AsSingle();
       Container.Bind<GameManager>().FromComponentInHierarchy().AsSingle();
-      
+      Container.Bind<InventoryManager>().FromComponentInHierarchy().AsSingle();
     }
   }
 }

@@ -6,9 +6,9 @@ namespace QuestSystem
     public class QuestLog : MonoBehaviour
     {
         [SerializeField]
-        List<AcceptedQuest> AcceptedQuests = new List<AcceptedQuest>();
+        private List<AcceptedQuest> AcceptedQuests = new();
 
-        public List<AcceptedQuest> Quests { get => AcceptedQuests; }
+        public List<AcceptedQuest> Quests => AcceptedQuests;
 
         public void AddQuest(Quest quest)
         {

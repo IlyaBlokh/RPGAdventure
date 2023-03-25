@@ -5,9 +5,11 @@ using Player;
 using UnityEngine;
 using Utils;
 using Weapons;
+using Zenject;
 
 namespace NPC.Bandit
 {
+    [RequireComponent(typeof(EnemyController))]
     public class BanditBehaviour : MonoBehaviour, IAttackAnimListener, IMessageReceiver
     {
         [SerializeField] private float TimeToStopPursuit = 2.0f;
@@ -27,16 +29,23 @@ namespace NPC.Bandit
         private Vector3 toBase;
         private Vector3 toTarget;
         private Quaternion initialRotation;
+        private PlayerController playerController;
 
         private bool HasFollowTarget => followTarget != null;
 
         private readonly int hashedInPursuit = Animator.StringToHash("inPursuit");
         private readonly int hashedNearSpot = Animator.StringToHash("NearSpot");
-        private readonly int hashedIsAwared = Animator.StringToHash("isAwared");
+        private readonly int hashedIsAware = Animator.StringToHash("isAware");
         private readonly int hashedAttack = Animator.StringToHash("Attack");
         private readonly int hashedHurt = Animator.StringToHash("Hurt");
         private readonly int hashedDead = Animator.StringToHash("Dead");
 
+        [Inject]
+        private void Construct(PlayerController playerController)
+        {
+            this.playerController = playerController;
+        }
+        
         private void Awake()
         {
             enemyController = GetComponent<EnemyController>();
@@ -47,7 +56,7 @@ namespace NPC.Bandit
 
         private void Update()
         {
-            if (PlayerController.Instance.IsRespawning)
+            if (playerController.IsRespawning)
                 StopPursuit(true);
             else
                 GuardPosition();
@@ -94,7 +103,7 @@ namespace NPC.Bandit
         {
             enemyController.SetDestination(followTarget.transform.position);
             enemyController.Animator.SetBool(hashedInPursuit, true);
-            enemyController.Animator.SetBool(hashedIsAwared, false);
+            enemyController.Animator.SetBool(hashedIsAware, false);
         }
 
         private void StopPursuit(bool stopImmediately)
@@ -103,10 +112,10 @@ namespace NPC.Bandit
             if (stopImmediately || timeNoDetecting > TimeToStopPursuit)
             {                
                 followTarget = null;
-                enemyController.Animator.SetBool(hashedIsAwared, true);
+                enemyController.Animator.SetBool(hashedIsAware, true);
                 if (stopImmediately)
                 {
-                    enemyController.Animator.SetBool(hashedIsAwared, false);
+                    enemyController.Animator.SetBool(hashedIsAware, false);
                     enemyController.Animator.SetBool(hashedInPursuit, false);
                 }
                 StartCoroutine(ReturnToSpotPosition());
@@ -117,7 +126,7 @@ namespace NPC.Bandit
         {
             yield return new WaitForSeconds(TimeToReturnToSpotPos);
             enemyController.SetDestination(spotPosition);
-            enemyController.Animator.SetBool(hashedIsAwared, false);
+            enemyController.Animator.SetBool(hashedIsAware, false);
             enemyController.Animator.SetBool(hashedInPursuit, false);
         }
 
