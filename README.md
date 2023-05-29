@@ -2,9 +2,7 @@
 
 3rd-person RPG on Unity
 
-[![Gameplay](http://img.youtube.com/vi/osCme_ffLK8/0.jpg)](https://youtu.be/osCme_ffLK8 "Unity RPG Game")
-
-*Click to watch video*
+https://github.com/IlyaBlokh/RPGAdventure/assets/1507182/40cddd36-dc98-44b9-8157-d34b8e4092c5
 
 This is a classic 3-rd person RPG game with essential game mechanics:
 - player control
